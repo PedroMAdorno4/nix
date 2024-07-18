@@ -20,6 +20,21 @@
     wl-clipboard
     hyprland
     waybar
+    home-manager
+    pamixer
+    wlogout
+    vim
+    kitty
+    pavucontrol
+    git
+    playerctl
+    wofi
+    wofi-emoji
+    slurp
+    grim
+    swappy
+    hyprpicker
+    hyprlock
     
     # GPU stuff
     amdvlk

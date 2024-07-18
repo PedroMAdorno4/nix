@@ -13,6 +13,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

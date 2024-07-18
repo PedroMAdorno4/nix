@@ -2,16 +2,16 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     bind = [
-      "$mainMod, RETURN, exec, kitty  "#open the terminal
-      "$mainMod, W, exec, kitty  "#open the terminal
-      "$mainMod, Q, killactive, "# close the active window
-      "$mainMod SHIFT, L, exec, swaylock "# Lock the screen
-      "$mainMod, BACKSPACE, exec, wlogout --protocol layer-shell "# show the logout window
-      "$mainMod SHIFT, M, exit, "# Exit Hyprland all together no (force quit Hyprland)
-      "$mainMod, E, exec, kitty -e yazi "# Open the terminal file browser
+      "$mainMod, RETURN, exec, kitty" #open the terminal
+      "$mainMod, W, exec, kitty" #open the terminal
+      "$mainMod, Q, killactive," # close the active window
+      "$mainMod SHIFT, L, exec, hyprlock" # Lock the screen
+      "$mainMod, BACKSPACE, exec, wlogout --protocol layer-shell" # show the logout window
+      "$mainMod SHIFT, M, exit," # Exit Hyprland all together no (force quit Hyprland)
+      "$mainMod, E, exec, kitty -e yazi" # Open the terminal file browser
       "$mainMod, F, fullscreen"
       "$mainMod, S, pin"
-      "$mainMod SHIFT, E, exec, wofi-emoji " # Open the emoji picker
+      "$mainMod SHIFT, E, exec, wofi-emoji" # Open the emoji picker
       "$mainMod SHIFT, SPACE, togglefloating, " # Allow a window to float
       "$mainMod, D, exec, wofi " # Show the graphicall app launcher
       "$mainMod, P, exec, hyprpicker | wl-copy " # Color picker
