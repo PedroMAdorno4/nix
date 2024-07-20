@@ -1,7 +1,22 @@
-{
+{pkgs, lib, config, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
-    bind = [
+    bind =
+      let
+        rotateMonitor = pkgs.writeShellScriptBin "rotate-monitor" ''
+          newTransform=$((`hyprctl monitors -j | jq -r '${config.home.sessionVariables.secondaryMonitorPortraitTransform} - (.[] | select(.name | contains("${config.home.sessionVariables.secondaryMonitorName}")).transform)'`))
+          folder=""
+          if [[ $newTransform == "0" ]]; then
+            folder="landscape"
+          else
+            folder="portrait"
+          fi
+
+
+          echo loadlist ${config.home.homeDirectory}/videos/wallpapers/$folder | ${pkgs.socat}/bin/socat - /tmp/mpv-socket
+          hyprctl keyword monitor ${config.home.sessionVariables.secondaryMonitor},transform,$newTransform
+        '';
+      in [
       "$mainMod, RETURN, exec, kitty" #open the terminal
       "$mainMod, W, exec, kitty" #open the terminal
       "$mainMod, Q, killactive," # close the active window
@@ -16,7 +31,7 @@
       "$mainMod, D, exec, wofi " # Show the graphicall app launcher
       "$mainMod, P, exec, hyprpicker | wl-copy " # Color picker
       "$mainMod, T, togglesplit, " # dwindle
-      ''$mainMod, N, exec, hyprctl keyword monitor $secondaryMonitor,transform,$((`hyprctl monitors -j | jq -r '$secondaryMonitorPortraitTransform - (.[] | select(.name | contains("$secondaryMonitorName")).transform)'`))''
+      "$mainMod, N, exec, ${lib.getExe rotateMonitor}"
       "$mainMod, M, exec, hyprctl dispatch movecursortocorner 1"
 
       '',107, exec, grim -g "$(slurp)" - | swappy -f - '' # take a screenshot

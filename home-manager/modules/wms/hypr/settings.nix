@@ -39,8 +39,8 @@
         rounding = 6;
         blur = { 
             enabled = true;
-            size = 7;
-            passes = 3;
+            size = 2;
+            passes = 1;
         };
 
         drop_shadow = true;

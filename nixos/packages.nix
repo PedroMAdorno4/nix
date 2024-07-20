@@ -5,8 +5,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Fix GIO to be able to open terminal apps with wofi - https://www.reddit.com/r/swaywm/comments/gfk3ct/wofi_term_issues/
-    (pkgs.writeShellScriptBin "gnome-terminal" "kitty $@")
+    (import ./scripts/terminal.nix { inherit pkgs; })
     brave
     yazi
     nodejs
@@ -48,7 +47,11 @@
     fzf
     wlprop
     vesktop
-    irssi
+    socat
+    jq
+    libnotify
+    mako
+    killall
     
     # GPU stuff
     amdvlk

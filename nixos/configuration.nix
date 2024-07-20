@@ -44,7 +44,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs pkgs; };
     users = {
       "quatro" = import ../home-manager/home.nix;
     };
@@ -61,6 +61,7 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.FLAKE = "/home/quatro/nix";
 
   programs.hyprlock = {
     enable = true;
