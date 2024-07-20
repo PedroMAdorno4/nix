@@ -8,8 +8,8 @@
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
       "waybar"
-      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle" DP-3 ~/Videos/wallpapers/landscape/''
-      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle" HDMI-A-1 ~/Videos/wallpapers/landscape/''
+      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle" DP-3 ~/videos/wallpapers/landscape/''
+      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle" HDMI-A-1 ~/videos/wallpapers/landscape/''
     ];
   };
 }

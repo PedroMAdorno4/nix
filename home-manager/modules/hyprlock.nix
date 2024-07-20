@@ -11,7 +11,7 @@
 
       background = [
         {
-          path = "~/pictures/wallpaper.webp";
+          path = "../../wallpaper.webp";
           blur_passes = 1;
           blur_size = 3;
         }

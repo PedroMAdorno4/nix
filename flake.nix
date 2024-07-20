@@ -8,13 +8,13 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+#    hyprland-plugins = {
+#      url = "github:hyprwm/hyprland-plugins";
+#      inputs.hyprland.follows = "hyprland";
+#    };
 
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -28,10 +28,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # stylix.url = "github:danth/stylix";
+    stylix.url = "git+file:/home/quatro/stylix";
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -42,13 +41,15 @@
     in {
 
       # yeti - system hostname
-      nixosConfigurations.yeti = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./nixos/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.nixvim.nixosModules.nixvim
-        ];
+      nixosConfigurations = {
+        yeti = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
       };
 
 #      homeConfigurations.quatro = inputs.home-manager.lib.homeManagerConfiguration {
