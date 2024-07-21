@@ -52,6 +52,8 @@
     libnotify
     mako
     killall
+    neofetch
+    pulseaudio
     
     # GPU stuff
     amdvlk

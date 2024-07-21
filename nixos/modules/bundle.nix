@@ -1,6 +1,6 @@
 {
   imports = [
-    ./bootloader.nix
+    ./boot.nix
     ./env.nix
     ./sound.nix
     ./steam.nix
