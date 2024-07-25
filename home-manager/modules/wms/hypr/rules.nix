@@ -8,5 +8,10 @@
       "noinitialfocus,class:^jetbrains-(?!toolbox),floating:1"
       "float,title:^(Torrent Options)$"
     ];
+
+    windowrulev2 = [
+      "workspace 1 silent, class:^(brave-browser)$, title:^(Brave: Main)$"
+      "workspace 11 silent, class:^(brave-browser)$, title:^(Brave: Secondary)$"
+    ];
   };
 }

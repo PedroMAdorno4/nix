@@ -10,10 +10,13 @@
       { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsor block
       { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
       { id = "apmmpaebfobifelkijhaljbmpcgbjbdo"; } # stylus
-      #{ id = ""; } # 
+      { id = "ponfpcnoihfmfllpaingbgckeeldkhle"; } # enhancer for youtube 
+      #{ id = ""; } #
     ];
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
+      "--hide-crash-restore-bubble"
+      "--restore-last-session"
     ];
   };
 }

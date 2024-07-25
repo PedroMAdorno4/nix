@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -28,9 +27,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # stylix.url = "github:danth/stylix";
-    stylix.url = "git+file:/home/quatro/stylix";
-
+    stylix.url = "github:danth/stylix";
+    # stylix.url = "git+file:/home/quatro/stylix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

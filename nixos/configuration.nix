@@ -26,21 +26,34 @@
 
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_TIME = "pt_BR.UTF-8";
+
+    };
+    supportedLocales = [ "all" ];
+  };
+
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
+
+  programs.zsh.enable = true;
   # services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.quatro = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+  users = {
+    defaultUserShell = pkgs.zsh;
+
+    users.quatro = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    };
   };
 
   home-manager = {
@@ -66,6 +79,13 @@
   programs.hyprlock = {
     enable = true;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    # For koreader
+    "openssl-1.1.1w"
+    # For something else (idk)
+    "python-2.7.18.8"
+  ];
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {

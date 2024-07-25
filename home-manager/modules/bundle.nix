@@ -12,5 +12,6 @@
     ./theme.nix
     ./wofi.nix
     ./zathura.nix
+    ./zsh.nix
   ];
 }

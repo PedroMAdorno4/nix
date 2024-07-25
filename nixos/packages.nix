@@ -54,6 +54,7 @@
     killall
     neofetch
     pulseaudio
+    (callPackage ../packages/koreader.nix {})
     
     # GPU stuff
     amdvlk

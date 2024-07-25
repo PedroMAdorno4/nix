@@ -1,11 +1,11 @@
 { inputs, pkgs, config, ... }: {
   imports = [
+    ./plugins.nix
     ./binds.nix
     ./display.nix
     ./startup.nix
     ./rules.nix
     ./settings.nix
-    ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {
