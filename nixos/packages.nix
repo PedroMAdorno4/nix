@@ -54,6 +54,7 @@
     killall
     neofetch
     pulseaudio
+    transmission-gtk
     (callPackage ../packages/koreader.nix {})
     
     # GPU stuff

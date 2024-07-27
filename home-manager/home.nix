@@ -2,6 +2,7 @@
   home = {
     username = "quatro";
     homeDirectory = "/home/quatro";
+
     sessionVariables = {
       mainMonitorName="DP-3";
       mainMonitorResolution="1920x1080@143.98100";

@@ -17,6 +17,7 @@
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
       "--hide-crash-restore-bubble"
       "--restore-last-session"
+      "--password-store=basic"
     ];
   };
 }

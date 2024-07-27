@@ -11,7 +11,9 @@
 
     windowrulev2 = [
       "workspace 1 silent, class:^(brave-browser)$, title:^(Brave: Main)$"
+      "workspace 5 silent, class:^(transmission-gtk)$, title:^(Transmission)$"
       "workspace 11 silent, class:^(brave-browser)$, title:^(Brave: Secondary)$"
+      "workspace 19 silent, title:^(ncspot)$"
     ];
   };
 }

@@ -3,8 +3,8 @@
     enable = true;
 
     iconTheme = {
-      package = pkgs.morewaita-icon-theme;
-      name = "MoreWaita";
+      package = pkgs.numix-icon-theme;
+      name = "numix-icon-theme";
     };
   };
 }
