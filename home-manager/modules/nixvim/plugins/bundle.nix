@@ -11,5 +11,6 @@
     ./nix.nix
     ./telescope.nix
     ./transparent.nix
+    ./ts-autotag.nix
   ];
 }

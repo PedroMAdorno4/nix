@@ -1,23 +1,20 @@
 { config, ... }: {
   programs.zsh = {
     enable = true;
-    # enableCompletion = true;
-    # autosuggestion.enable = true;
-    # syntaxHighlighting.enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    defaultKeymap = "emacs";
 
-    shellAliases =
-      let
-        flakeDir = "~/nix";
-      in
-      {
-        rb = "git -C ${flakeDir} && nh os switch";
-        upg = "git -C ${flakeDir} && nh os switch -u";
+    shellAliases = {
+      rb = ''git -C "$FLAKE" add -A && nh os switch'';
+      upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
 
-        conf = "nvim ${flakeDir}/nixos/configuration.nix";
-        pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      conf = "nvim $FLAKE/nixos/configuration.nix";
+      pkgs = "nvim $FLAKE/nixos/packages.nix";
 
-        ll = "ls -lh";
-      };
+      ll = "ls -lh";
+    };
 
     history = {
       size = 99999;
@@ -35,8 +32,6 @@
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-autosuggestions"
         "zsh-users/zsh-completions"
-        ""
-        ""
       ];
     };
   };

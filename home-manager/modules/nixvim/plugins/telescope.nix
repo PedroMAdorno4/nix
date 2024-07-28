@@ -24,5 +24,16 @@
       ];
       set_env.COLORTERM = "truecolor";
     };
+
+    extensions = {
+      ui-select = {
+        enable = true;
+        settings = {
+          specific_opts = {
+            codeactions = false;
+          };
+        };
+      };
+    };
   };
 }
