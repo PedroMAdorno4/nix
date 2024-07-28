@@ -5,12 +5,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (import ./scripts/terminal.nix { inherit pkgs; })
+    (import ./scripts/terminal.nix { inherit "pkgs"; })
     brave
     yazi
-    nodejs
-    python
-    go
     gcc
     fastfetch
     unzip
@@ -45,6 +42,7 @@
     steamPackages.steamcmd
     ripgrep
     fzf
+    fd
     wlprop
     vesktop
     socat

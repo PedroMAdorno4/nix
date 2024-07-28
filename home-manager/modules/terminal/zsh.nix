@@ -10,6 +10,8 @@
       rb = ''git -C "$FLAKE" add -A && nh os switch'';
       upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
 
+      dev = ''nix develop "$FLAKE" --command zsh'';
+
       conf = "nvim $FLAKE/nixos/configuration.nix";
       pkgs = "nvim $FLAKE/nixos/packages.nix";
 
@@ -36,3 +38,6 @@
     };
   };
 }
+
+
+

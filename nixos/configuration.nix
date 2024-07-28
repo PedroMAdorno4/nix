@@ -83,8 +83,6 @@
   nixpkgs.config.permittedInsecurePackages = [
     # For koreader
     "openssl-1.1.1w"
-    # For something else (idk)
-    "python-2.7.18.8"
   ];
 
   programs.mtr.enable = true;

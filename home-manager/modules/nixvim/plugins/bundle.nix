@@ -3,6 +3,7 @@
     ./cmp.nix
     ./comment.nix
     ./conform.nix
+    ./fidget.nix
     ./git-blame.nix
     ./lazygit.nix
     ./lsp.nix

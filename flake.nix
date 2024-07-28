@@ -7,10 +7,10 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-#    hyprland-plugins = {
-#      url = "github:hyprwm/hyprland-plugins";
-#      inputs.hyprland.follows = "hyprland";
-#    };
+    #    hyprland-plugins = {
+    #      url = "github:hyprwm/hyprland-plugins";
+    #      inputs.hyprland.follows = "hyprland";
+    #    };
 
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
@@ -36,7 +36,8 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
 
       # yeti - system hostname
       nixosConfigurations = {
@@ -50,9 +51,7 @@
         };
       };
 
-#      homeConfigurations.quatro = inputs.home-manager.lib.homeManagerConfiguration {
-#        pkgs = nixpkgs.legacyPackages.${system};
-#        modules = [ ./home-manager/home.nix ];
-#      };
+      devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
+
     };
 }
