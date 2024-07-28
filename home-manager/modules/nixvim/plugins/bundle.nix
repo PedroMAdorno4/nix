@@ -1,11 +1,14 @@
 {
   imports = [
+    ./cmp.nix
     ./comment.nix
+    ./conform.nix
+    ./git-blame.nix
+    ./lazygit.nix
     ./lsp.nix
     ./mini.nix
     ./neotree.nix
     ./nix.nix
-    ./otter.nix
     ./telescope.nix
     ./transparent.nix
   ];

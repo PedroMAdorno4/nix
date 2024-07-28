@@ -29,5 +29,9 @@
       "alt+c" = "copy_to_clipboard";
       "alt+v" = "paste_from_clipboard";
     };
+
+    shellIntegration = {
+      enableZshIntegration = true;
+    };
   };
 }

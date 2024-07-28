@@ -14,21 +14,5 @@
       HOME = "add chapter -1";
       END = "add chapter 1";
     };
-
-    profiles = {
-      wallpaper = {
-        fullscreen = true;
-        title = "mpv-wallpaper";
-        geometry = "100%x100%";
-        border = false;
-        no-window-dragging = true;
-        x11-name = "mpv-wallpaper";
-        aid = false;
-        vo = "gpu";
-        loop-file = true;
-        idle = false;
-      };
-    };
-
   };
 }

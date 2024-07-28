@@ -4,6 +4,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
     image = ../../wallpaper.webp;
 
+    targets.nixvim.enable = false;
+
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["python-2.7.18.8"];
+    permittedInsecurePackages = [ "python-2.7.18.8" ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -55,8 +55,11 @@
     neofetch
     pulseaudio
     transmission-gtk
-    (callPackage ../packages/koreader.nix {})
-    
+    (callPackage ../packages/koreader.nix { })
+    (callPackage ../packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
+    gotop
+    trackma
+
     # GPU stuff
     amdvlk
   ];
