@@ -51,6 +51,8 @@
                 "<leader>ld" = "<cmd>Lspsaga show_line_diagnostics<CR>";
                 "[d" = "<cmd>Lspsaga diagnostic_jump_next<CR>";
                 "]d" = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
+
+                "<leader>gs" = ":LazyGit<CR>";
               };
           visual =
             lib.mapAttrsToList

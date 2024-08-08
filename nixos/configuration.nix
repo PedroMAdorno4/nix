@@ -53,7 +53,7 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ];
     };
   };
 

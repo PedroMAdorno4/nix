@@ -5,5 +5,6 @@
     ./sound.nix
     ./steam.nix
     ./stylix.nix
+    ./sudo.nix
   ];
 }
