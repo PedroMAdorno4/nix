@@ -65,7 +65,7 @@
         "$mainMod SHIFT, E, exec, wofi-emoji" # Open the emoji picker
         "$mainMod SHIFT, SPACE, togglefloating, " # Allow a window to float
         "$mainMod, D, exec, wofi " # Show the graphicall app launcher
-        "$mainMod, A, exec, waydroid show-full-ui " # Show the graphicall app launcher
+        # "$mainMod, A, exec, waydroid show-full-ui " # Show the Android interface
         "$mainMod, P, exec, hyprpicker | wl-copy " # Color picker
         "$mainMod, T, togglesplit, " # dwindle
         "$mainMod, N, exec, ${lib.getExe rotateMonitor}"

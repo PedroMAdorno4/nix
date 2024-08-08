@@ -85,7 +85,7 @@
     "openssl-1.1.1w"
   ];
 
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
 
   programs.adb.enable = true;
 

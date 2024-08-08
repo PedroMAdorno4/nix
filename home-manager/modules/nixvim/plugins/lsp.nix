@@ -56,8 +56,8 @@
         bashls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
-        csharp_ls.enable = true;
-        docker_compose_language_service.enable = true;
+        csharp-ls.enable = true;
+        docker-compose-language-service.enable = true;
         dockerls.enable = true;
         eslint.enable = true;
         gopls.enable = true;
@@ -65,7 +65,7 @@
         jsonls.enable = true;
         lua-ls.enable = true;
         marksman.enable = true;
-        nil_ls.enable = true;
+        nil-ls.enable = true;
         prismals.enable = true;
         pyright.enable = true;
         svelte.enable = true;

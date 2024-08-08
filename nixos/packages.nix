@@ -52,14 +52,12 @@
     killall
     neofetch
     pulseaudio
-    transmission-gtk
+    transmission_4-gtk
     (callPackage ../packages/koreader.nix { })
     (callPackage ../packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     gotop
     trackma
     busybox
-    putty
-    pmbootstrap
 
     # GPU stuff
     amdvlk
