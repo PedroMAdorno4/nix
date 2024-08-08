@@ -11,6 +11,9 @@
       "workspace 11 silent, class:^(brave-browser)$, title:^(Brave: Secondary)$"
       "workspace 5 silent, class:^(transmission-gtk)$, title:^(Transmission)$"
       "workspace 19 silent, class:^(kitty)$, title:^(ncspot)$"
+      "workspace 18 silent, class:^(Waydroid)$, title:^(Waydroid)$"
+      "float, class:^(Waydroid)$, title:^(Waydroid)$"
+      "size 475 770, class:^(Waydroid)$, title:^(Waydroid)$"
     ];
   };
 }

@@ -52,8 +52,6 @@
     lsp = {
       enable = true;
 
-      # onAttach
-
       servers = {
         bashls.enable = true;
         clangd.enable = true;
@@ -96,10 +94,6 @@
           };
         };
       };
-    };
-
-    lsp-format = {
-      enable = true;
     };
 
     lsp-lines = {

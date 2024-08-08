@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, ... }: {
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
@@ -11,6 +11,7 @@
       { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
       { id = "apmmpaebfobifelkijhaljbmpcgbjbdo"; } # stylus
       { id = "ponfpcnoihfmfllpaingbgckeeldkhle"; } # enhancer for youtube 
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } #
       #{ id = ""; } #
     ];
     commandLineArgs = [

@@ -1,7 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }: {
   programs.nixvim = {
     extraConfigLuaPre =
@@ -104,8 +103,8 @@
           "black"
           "isort"
         ];
-        lua = ["stylua"];
-        nix = ["nixpkgs-fmt"];
+        lua = [ "stylua" ];
+        nix = [ "nixpkgs-fmt" ];
         markdown = [
           [
             "prettierd"
@@ -118,15 +117,15 @@
             "prettier"
           ]
         ];
-        terraform = ["terraform_fmt"];
-        bicep = ["bicep"];
+        terraform = [ "terraform_fmt" ];
+        bicep = [ "bicep" ];
         bash = [
           "shellcheck"
           "shellharden"
           "shfmt"
         ];
-        json = ["jq"];
-        "_" = ["trim_whitespace"];
+        json = [ "jq" ];
+        "_" = [ "trim_whitespace" ];
       };
 
       formatters = {

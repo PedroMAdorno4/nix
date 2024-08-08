@@ -53,7 +53,7 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ]; # Enable ‘sudo’ for the user.
     };
   };
 
@@ -84,6 +84,10 @@
     # For koreader
     "openssl-1.1.1w"
   ];
+
+  virtualisation.waydroid.enable = true;
+
+  programs.adb.enable = true;
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {

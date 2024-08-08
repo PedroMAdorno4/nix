@@ -7,6 +7,7 @@
     ./git-blame.nix
     ./lazygit.nix
     ./lsp.nix
+    ./lspsaga.nix
     ./mini.nix
     ./neotree.nix
     ./nix.nix

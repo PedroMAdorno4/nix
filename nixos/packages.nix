@@ -57,6 +57,9 @@
     (callPackage ../packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     gotop
     trackma
+    busybox
+    putty
+    pmbootstrap
 
     # GPU stuff
     amdvlk
