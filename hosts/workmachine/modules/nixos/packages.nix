@@ -1,15 +1,9 @@
 { pkgs, ... }: {
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [ "python-2.7.18.8" ];
-  };
-
   environment.systemPackages = with pkgs; [
-    (import ./scripts/terminal.nix { inherit "pkgs"; })
+    (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
     brave
     yazi
     gcc
-    fastfetch
     unzip
     zip
     lazygit
@@ -35,11 +29,8 @@
     ncspot
     mpv
     zathura
-    mpvpaper
     parted
     nh
-    steam
-    steamPackages.steamcmd
     ripgrep
     fzf
     fd
@@ -52,15 +43,9 @@
     killall
     neofetch
     pulseaudio
-    transmission_4-gtk
-    (callPackage ../packages/koreader.nix { })
-    (callPackage ../packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
+    (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     gotop
-    trackma
     busybox
-
-    # GPU stuff
-    amdvlk
   ];
 
   fonts.packages = with pkgs; [

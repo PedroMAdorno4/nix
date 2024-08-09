@@ -1,10 +1,10 @@
 { config, ... }: {
   home = {
-    username = "quatro";
-    homeDirectory = "/home/quatro";
+    username = "pedroma";
+    homeDirectory = "/home/pedroma";
 
     sessionVariables = {
-      FLAKE = "/home/quatro/nix";
+      FLAKE = "/home/pedroma/nix";
       mainMonitorName = "DP-3";
       mainMonitorResolution = "1920x1080@143.98100";
       mainMonitorPosition = "0x0";
@@ -23,7 +23,7 @@
   };
 
   imports = [
-    ./modules/bundle.nix
+    ./modules/home-manager/bundle.nix
   ];
 
   programs.home-manager.enable = true;

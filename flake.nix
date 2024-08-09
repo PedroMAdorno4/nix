@@ -44,14 +44,22 @@
         yeti = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            ./nixos/configuration.nix
+            ./hosts/yeti/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+        workmachine = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/workmachine/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
           ];
         };
       };
 
-      devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
+      # devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
 
     };
 }

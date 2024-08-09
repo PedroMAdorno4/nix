@@ -16,11 +16,10 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ./packages.nix
-      ./modules/bundle.nix
+      ./modules/nixos/bundle.nix
     ];
 
-  networking.hostName = "yeti"; # Define your hostname.
+  networking.hostName = "workmachine"; # Define your hostname.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Sao_Paulo";
@@ -44,23 +43,36 @@
   programs.zsh.enable = true;
   # services.printing.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
 
-    users.quatro = {
+    users.pedroma = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "quatro" ];
     };
   };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs pkgs; };
     users = {
-      "quatro" = import ../home-manager/home.nix;
+      "pedroma" = import ./home.nix;
+    };
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+    daemon.settings = {
+      userland-proxy = false;
+      experimental = true;
+      ipv6 = true;
+      fixed-cidr-v6 = "fd00::/80";
     };
   };
 
@@ -79,13 +91,6 @@
   programs.hyprlock = {
     enable = true;
   };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    # For koreader
-    "openssl-1.1.1w"
-  ];
-
-  # virtualisation.waydroid.enable = true;
 
   programs.adb.enable = true;
 

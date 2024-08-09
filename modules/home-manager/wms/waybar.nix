@@ -64,7 +64,7 @@
           disable-scroll = true;
           on-click = "activate";
           persistent-workspaces = {
-            "1" = [ "DP-3" ];
+            # "1" = [ "DP-3" ];
             # "2" = [ "DP-3" ];
             # "3" = [ "DP-3" ];
             # "4" = [ "DP-3" ];
@@ -74,7 +74,7 @@
             # "8" = [ "DP-3" ];
             # "9" = [ "DP-3" ];
             # "10" = [ "DP-3" ];
-            "11" = [ "HDMI-A-1" ];
+            # "11" = [ "HDMI-A-1" ];
             # "12" = [ "HDMI-A-1" ];
             # "13" = [ "HDMI-A-1" ];
             # "14" = [ "HDMI-A-1" ];
@@ -83,7 +83,7 @@
             # "17" = [ "HDMI-A-1" ];
             # "18" = [ "HDMI-A-1" ];
             # "19" = [ "HDMI-A-1" ];
-            "20" = [ "HDMI-A-1" ];
+            # "20" = [ "HDMI-A-1" ];
           };
           sort-by-number = true;
         };

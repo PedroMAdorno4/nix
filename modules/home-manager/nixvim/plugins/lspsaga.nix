@@ -9,7 +9,7 @@
       codeAction = "💡"; # Can be any symbol you want 💡
     };
     hover = {
-      openCmd = "!floorp"; # Choose your browser
+      openCmd = "!brave"; # Choose your browser
       openLink = "gx";
     };
     diagnostic = {
@@ -23,7 +23,7 @@
     codeAction = {
       extendGitSigns = false;
       showServerName = true;
-      onlyInCursor = true;
+      onlyInCursor = false;
       numShortcut = true;
       keys = {
         exec = "<CR>";
@@ -36,13 +36,13 @@
       virtualText = true;
     };
     implement = {
-      enable = false;
+      enable = true;
     };
     rename = {
       autoSave = false;
       keys = {
         exec = "<CR>";
-        quit = [ "<C-k>" "<Esc>" ];
+        quit = [ "<Esc>" "q" ];
         select = "x";
       };
     };
@@ -54,7 +54,7 @@
       winPosition = "right"; # left or right
       keys = {
         jump = "e";
-        quit = "q";
+        quit = [ "<Esc>" "q" ];
         toggleOrJump = "o";
       };
     };

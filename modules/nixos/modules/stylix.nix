@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
-    image = ../../wallpaper.webp;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    image = ../../../wallpaper.webp;
 
-    targets.nixvim.enable = false;
+    targets.nixvim.enable = true;
 
     cursor = {
       package = pkgs.bibata-cursors;
@@ -31,7 +31,7 @@
       sizes = {
         applications = 11;
         desktop = 9;
-        popups = 9;
+        popups = 14;
         terminal = 9;
       };
     };
@@ -39,6 +39,10 @@
     opacity = {
       terminal = 0.90;
       desktop = 0.00;
+      popups = 1.00;
+      applications = 1.00;
     };
+
+
   };
 }
