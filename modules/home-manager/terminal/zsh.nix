@@ -1,9 +1,7 @@
 { config, osConfig, pkgs, lib, ... }: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    zprof.enable = false;
     defaultKeymap = "emacs";
 
     shellAliases = {
@@ -13,7 +11,7 @@
       dev = ''nix develop "$FLAKE" --command zsh'';
 
       conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
-      pkgs = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/packages.nix";
+      pkgs = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/modules/nixos/packages.nix";
 
       ll = "ls -lh";
     };
@@ -37,14 +35,20 @@
       '';
 
     history = {
-      size = 99999;
-      save = 99999;
+      size = 9999;
+      save = 9999;
       path = "${config.xdg.dataHome}/zsh/history";
       share = true;
       ignoreDups = true;
       ignoreSpace = true;
-
     };
+
+    # Disable this vanilla functionality
+    # because we are using antidote to load
+    # these plugins since its much faster
+    enableCompletion = false;
+    autosuggestion.enable = false;
+    syntaxHighlighting.enable = false;
 
     antidote = {
       enable = true;

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./actions-preview.nix
     ./cmp.nix
     ./comment.nix
     ./conform.nix
