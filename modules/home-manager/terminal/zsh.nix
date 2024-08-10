@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, osConfig, pkgs, lib, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -12,11 +12,29 @@
 
       dev = ''nix develop "$FLAKE" --command zsh'';
 
-      conf = "nvim $FLAKE/nixos/configuration.nix";
-      pkgs = "nvim $FLAKE/nixos/packages.nix";
+      conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
+      pkgs = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/packages.nix";
 
       ll = "ls -lh";
     };
+
+    initExtra =
+      let
+        projectFinder = pkgs.writeShellScriptBin "projectFinder" ''
+          if [[ $# -eq 1 ]]; then
+              selected=$1
+          else
+              selected=$(find ~/pjx -mindepth 1 -maxdepth 1 -type d | ${pkgs.fzf}/bin/fzf)
+          fi
+
+          if [[ $selected ]]; then
+            cd "$selected" || exit
+          fi
+        '';
+      in
+      ''
+        bindkey -s '^f' '. ${lib.getExe projectFinder}\n';
+      '';
 
     history = {
       size = 99999;
