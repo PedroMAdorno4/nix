@@ -46,6 +46,8 @@
     (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     gotop
     busybox
+    devbox
+    slack
   ];
 
   fonts.packages = with pkgs; [

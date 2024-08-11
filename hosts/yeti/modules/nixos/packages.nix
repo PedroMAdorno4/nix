@@ -58,6 +58,7 @@
     gotop
     trackma
     busybox
+    devbox
 
     # GPU stuff
     amdvlk

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./direnv.nix
     ./eza.nix
     ./fzf.nix
     ./kitty.nix
