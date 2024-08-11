@@ -3,6 +3,31 @@
     enable = true;
     settings = {
       mainBar = {
+        exclusive = true;
+        gtk-layer-shell = true;
+        height = 30;
+        layer = "top";
+        mod = "dock";
+        modules-center = [ "mpris" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "memory"
+          "cpu"
+        ];
+        modules-right = [
+          "network"
+          "pulseaudio"
+          "pulseaudio#microphone"
+          "clock"
+          "tray"
+        ];
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+        };
+
+
+        # Module definitions
         backlight = {
           device = "intel_backlight";
           format = "{icon} {percent}%";
@@ -55,9 +80,6 @@
           format = "󰍛 {usage}%";
           interval = 10;
         };
-        exclusive = true;
-        gtk-layer-shell = true;
-        height = 30;
         "hyprland/workspaces" = {
           active-only = false;
           all-outputs = false;
@@ -87,7 +109,6 @@
           };
           sort-by-number = true;
         };
-        layer = "top";
         memory = {
           format = "󰾅 {used}GB";
           interval = 30;
@@ -95,19 +116,9 @@
           tooltip = true;
           tooltip-format = " {used:0.1f}GB/{total:0.1f}GB";
         };
-        mod = "dock";
-        modules-center = [ "mpris" ];
-        modules-left = [ "hyprland/workspaces" ];
-        modules-right = [
-          "memory"
-          "cpu"
-          "pulseaudio"
-          "pulseaudio#microphone"
-          "clock"
-          "tray"
-        ];
         mpris = {
           artist-len = 20;
+          player = "ncspot";
           format = "{status_icon} {artist} - {title} <small>[{position}-{length}]</small>";
           interval = 1;
           status-icons = {
@@ -162,10 +173,6 @@
           format = "{temperatureF}°F ";
           format-critical = "{temperatureC}°C ";
           thermal-zone = 1;
-        };
-        tray = {
-          icon-size = 18;
-          spacing = 10;
         };
 
       };
