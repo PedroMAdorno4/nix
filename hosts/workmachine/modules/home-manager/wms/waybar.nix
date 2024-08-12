@@ -15,6 +15,7 @@
           "cpu"
         ];
         modules-right = [
+          "backlight"
           "network"
           "pulseaudio"
           "pulseaudio#microphone"
