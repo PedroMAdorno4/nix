@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -15,6 +15,7 @@
           "cpu"
         ];
         modules-right = [
+          "battery"
           "backlight"
           "network"
           "pulseaudio"
@@ -87,26 +88,26 @@
           disable-scroll = true;
           on-click = "activate";
           persistent-workspaces = {
-            # "1" = [ "DP-3" ];
-            # "2" = [ "DP-3" ];
-            # "3" = [ "DP-3" ];
-            # "4" = [ "DP-3" ];
-            # "5" = [ "DP-3" ];
-            # "6" = [ "DP-3" ];
-            # "7" = [ "DP-3" ];
-            # "8" = [ "DP-3" ];
-            # "9" = [ "DP-3" ];
-            # "10" = [ "DP-3" ];
-            # "11" = [ "HDMI-A-1" ];
-            # "12" = [ "HDMI-A-1" ];
-            # "13" = [ "HDMI-A-1" ];
-            # "14" = [ "HDMI-A-1" ];
-            # "15" = [ "HDMI-A-1" ];
-            # "16" = [ "HDMI-A-1" ];
-            # "17" = [ "HDMI-A-1" ];
-            # "18" = [ "HDMI-A-1" ];
-            # "19" = [ "HDMI-A-1" ];
-            # "20" = [ "HDMI-A-1" ];
+            "1" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "2" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "3" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "4" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "5" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "6" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "7" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "8" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "9" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "10" = [ "${config.home.sessionVariables.mainMonitorName}" ];
+            "11" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "12" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "13" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "14" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "15" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "16" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "17" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "18" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "19" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "20" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
           };
           sort-by-number = true;
         };
