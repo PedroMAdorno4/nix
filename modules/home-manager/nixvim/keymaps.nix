@@ -54,6 +54,7 @@
                 "]d" = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
 
                 "<leader>gs" = ":LazyGit<CR>";
+                "<leader>vs" = "<cmd>VenvSelect<cr>";
               };
           visual =
             lib.mapAttrsToList
