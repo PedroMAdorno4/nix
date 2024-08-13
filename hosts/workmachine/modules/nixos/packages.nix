@@ -48,6 +48,7 @@
     busybox
     devbox
     slack
+    openvpn
   ];
 
   fonts.packages = with pkgs; [
