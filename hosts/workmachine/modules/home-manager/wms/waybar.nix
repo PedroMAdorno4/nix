@@ -15,9 +15,10 @@
           "cpu"
         ];
         modules-right = [
-          "battery"
           "backlight"
+          "battery"
           "network"
+          "bluetooth"
           "pulseaudio"
           "pulseaudio#microphone"
           "clock"
