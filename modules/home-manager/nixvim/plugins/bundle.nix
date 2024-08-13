@@ -1,9 +1,9 @@
 {
   imports = [
-    ./actions-preview.nix
     ./cmp.nix
     ./comment.nix
     ./conform.nix
+    ./extra-plugins.nix
     ./fidget.nix
     ./git-blame.nix
     ./lazygit.nix
