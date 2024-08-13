@@ -35,7 +35,7 @@
 
     users.pedroma = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "quatro" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "wireshark" ];
     };
   };
 
@@ -75,6 +75,7 @@
   };
 
   programs.adb.enable = true;
+  programs.wireshark.enable = true;
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {

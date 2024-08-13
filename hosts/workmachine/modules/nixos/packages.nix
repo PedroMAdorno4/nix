@@ -49,6 +49,7 @@
     devbox
     slack
     openvpn
+    wireshark
   ];
 
   fonts.packages = with pkgs; [
