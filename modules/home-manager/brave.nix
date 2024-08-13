@@ -16,6 +16,9 @@
     ];
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
+      "--enable-features=UseOzonePlatform"
+      "--ozone-platform=wayland"
+      "--enable-wayland-ime"
       "--hide-crash-restore-bubble"
       "--restore-last-session"
       "--password-store=basic"

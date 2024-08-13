@@ -3,7 +3,7 @@
     ../../../../../../modules/home-manager/wms/hypr/plugins.nix
     ../../../../../../modules/home-manager/wms/hypr/binds.nix
     ../../../../../../modules/home-manager/wms/hypr/rules.nix
-    ../../../../../../modules/home-manager/wms/hypr/settings.nix
+    ./settings.nix
     ./display.nix
     ./startup.nix
   ];

@@ -1,11 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { pkgs, inputs, ... }:
-
 {
-
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
@@ -23,17 +17,6 @@
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Sao_Paulo";
-
-
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_TIME = "pt_BR.UTF-8";
-
-    };
-    supportedLocales = [ "all" ];
-  };
 
   console = {
     font = "Lat2-Terminus16";
@@ -59,8 +42,6 @@
     };
   };
 
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -69,7 +50,11 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+  };
 
   programs.hyprlock = {
     enable = true;

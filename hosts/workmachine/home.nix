@@ -22,13 +22,6 @@
     stateVersion = "23.11";
   };
 
-  home.file.".XCompose".text = ''
-    include "%L"
-
-    <dead_acute> <C> : "Ç"
-    <dead_acute> <c> : "ç"
-  '';
-
   imports = [
     ./modules/home-manager/bundle.nix
   ];

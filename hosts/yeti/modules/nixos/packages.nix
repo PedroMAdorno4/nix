@@ -59,6 +59,7 @@
     trackma
     busybox
     devbox
+    element-desktop
 
     # GPU stuff
     amdvlk
