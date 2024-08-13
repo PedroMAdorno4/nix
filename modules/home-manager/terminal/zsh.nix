@@ -32,7 +32,7 @@
         '';
       in
       ''
-        bindkey -s '^f' '. ${lib.getExe projectFinder}\n';
+        bindkey -s '^f' ' . ${lib.getExe projectFinder}\n';
       '';
 
     history = {

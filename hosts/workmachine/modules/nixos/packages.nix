@@ -50,6 +50,7 @@
     slack
     openvpn
     wireshark
+    beekeeper-studio
   ];
 
   fonts.packages = with pkgs; [

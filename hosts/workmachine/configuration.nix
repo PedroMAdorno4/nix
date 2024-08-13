@@ -35,7 +35,7 @@
 
     users.pedroma = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "wireshark" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "docker" "adbusers" "wireshark" ];
     };
   };
 
@@ -54,9 +54,9 @@
     };
     daemon.settings = {
       userland-proxy = false;
-      experimental = true;
-      ipv6 = true;
-      fixed-cidr-v6 = "fd00::/80";
+      # experimental = true;
+      # ipv6 = true;
+      # fixed-cidr-v6 = "fd00::/80";
     };
   };
 
