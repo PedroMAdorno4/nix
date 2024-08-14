@@ -8,7 +8,7 @@
       "<leader>fb" = "buffers";
       "<leader>fh" = "help_tags";
       "<leader>fg" = "git_files";
-      "<leader>of" = "oldfiles";
+      "<leader>fo" = "oldfiles";
       "<leader>fd" = "diagnostics";
     };
 
