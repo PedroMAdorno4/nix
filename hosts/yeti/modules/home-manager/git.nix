@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
     userName = "Pedro Adorno";
@@ -13,6 +13,22 @@
       };
       rebase = {
         updateRefs = true;
+      };
+      core = {
+        excludesFile = pkgs.writeText "gitignore" ''
+          .direnv
+          .envrc
+          .idea
+          .vscode
+          __pycache__
+          node_modules
+          *.pyc
+          *.pyo
+          *.swp
+          devbox.json
+          devbox.lock
+        '';
+
       };
     };
   };
