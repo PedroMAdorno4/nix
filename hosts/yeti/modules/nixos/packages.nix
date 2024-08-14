@@ -37,7 +37,6 @@
     zathura
     mpvpaper
     parted
-    nh
     steam
     steamPackages.steamcmd
     ripgrep

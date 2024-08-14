@@ -48,15 +48,12 @@
 
   virtualisation.docker = {
     enable = true;
+    autoPrune.enable = true;
+    enableOnBoot = true;
+    liveRestore = true;
     rootless = {
       enable = true;
       setSocketVariable = true;
-    };
-    daemon.settings = {
-      userland-proxy = false;
-      # experimental = true;
-      # ipv6 = true;
-      # fixed-cidr-v6 = "fd00::/80";
     };
   };
 

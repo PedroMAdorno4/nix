@@ -31,7 +31,7 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" ];
     };
   };
 
@@ -66,6 +66,16 @@
   ];
 
   # virtualisation.waydroid.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+    liveRestore = true;
+    enableOnBoot = false;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 
   programs.adb.enable = true;
 

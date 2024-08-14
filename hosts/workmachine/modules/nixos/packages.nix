@@ -30,7 +30,6 @@
     mpv
     zathura
     parted
-    nh
     ripgrep
     fzf
     fd
