@@ -50,8 +50,8 @@
                 "<leader>la" = "<cmd>Lspsaga code_action<CR>";
                 "<leader>lA" = '':lua require("actions-preview").code_actions()<CR>'';
                 "<leader>ld" = "<cmd>Lspsaga show_line_diagnostics<CR>";
-                "[d" = "<cmd>Lspsaga diagnostic_jump_next<CR>";
-                "]d" = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
+                "]d" = "<cmd>Lspsaga diagnostic_jump_next<CR>";
+                "[d" = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
 
                 "<leader>gs" = ":LazyGit<CR>";
                 "<leader>vs" = "<cmd>VenvSelect<cr>";
