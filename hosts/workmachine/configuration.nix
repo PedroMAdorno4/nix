@@ -64,6 +64,7 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-wlr;
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

@@ -58,6 +58,7 @@
     trackma
     busybox
     devbox
+    firefox
 
     # GPU stuff
     amdvlk
