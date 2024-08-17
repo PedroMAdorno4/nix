@@ -11,7 +11,8 @@
       { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
       { id = "apmmpaebfobifelkijhaljbmpcgbjbdo"; } # stylus
       { id = "ponfpcnoihfmfllpaingbgckeeldkhle"; } # enhancer for youtube 
-      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } #
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # vimium
+      { id = "kekjfbackdeiabghhcdklcdoekaanoel"; } # mal-sync
       #{ id = ""; } #
     ];
     commandLineArgs = [

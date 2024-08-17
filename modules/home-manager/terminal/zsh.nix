@@ -33,6 +33,8 @@
       in
       ''
         bindkey -s '^f' ' . ${lib.getExe projectFinder}\n';
+        bindkey "^$terminfo[kRIT5]" forward-word
+        bindkey "^$terminfo[kLFT5]" backward-word
       '';
 
     history = {
