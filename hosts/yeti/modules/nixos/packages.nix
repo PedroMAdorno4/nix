@@ -59,9 +59,6 @@
     busybox
     devbox
     firefox
-
-    # GPU stuff
-    amdvlk
   ];
 
   fonts.packages = with pkgs; [

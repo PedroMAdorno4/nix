@@ -9,7 +9,8 @@
       upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
 
       dev = ''nix develop "$FLAKE" --command zsh'';
-      ssh = "kitten ssh";
+      s = "kitten ssh";
+      v = "nvim";
 
       conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
       pkgs = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/modules/nixos/packages.nix";

@@ -16,8 +16,8 @@
       #{ id = ""; } #
     ];
     commandLineArgs = [
+      "--enable-features=UseOzonePlatform,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,VaapiVideoDecoder,VaapiIgnoreDriverChecks"
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
-      "--enable-features=UseOzonePlatform"
       "--ozone-platform=wayland"
       "--enable-wayland-ime"
       "--hide-crash-restore-bubble"
