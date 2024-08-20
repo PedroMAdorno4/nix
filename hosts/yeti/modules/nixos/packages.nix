@@ -59,6 +59,7 @@
     busybox
     devbox
     firefox
+    bun
   ];
 
   fonts.packages = with pkgs; [

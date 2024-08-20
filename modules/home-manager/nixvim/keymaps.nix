@@ -15,7 +15,8 @@
               })
               {
                 # Open Neotree
-                "<leader>e" = ":Neotree<CR>";
+                "<leader>e" = ":Neotree toggle<CR>";
+                "<leader>o" = ":Neotree focus<CR>";
 
 
                 # Esc to clear search results

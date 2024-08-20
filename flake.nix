@@ -28,6 +28,8 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    ags.url = "github:Aylur/ags";
     # stylix.url = "git+file:/home/quatro/stylix";
   };
 
