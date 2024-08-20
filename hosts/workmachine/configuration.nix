@@ -49,6 +49,7 @@
   virtualisation.docker = {
     enable = true;
     autoPrune.enable = true;
+    autoPrune.dates = "daily";
     enableOnBoot = true;
     liveRestore = true;
     rootless = {

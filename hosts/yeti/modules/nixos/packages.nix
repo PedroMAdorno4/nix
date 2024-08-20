@@ -60,6 +60,7 @@
     devbox
     firefox
     bun
+    nix-index
   ];
 
   fonts.packages = with pkgs; [

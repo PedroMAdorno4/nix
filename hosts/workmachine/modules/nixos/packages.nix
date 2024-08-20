@@ -50,6 +50,7 @@
     openvpn
     wireshark
     beekeeper-studio
+    nix-index
   ];
 
   fonts.packages = with pkgs; [

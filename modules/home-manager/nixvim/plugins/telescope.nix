@@ -10,6 +10,7 @@
       "<leader>fg" = "git_files";
       "<leader>fo" = "oldfiles";
       "<leader>fd" = "diagnostics";
+      "<leader>'" = "resume";
     };
 
     settings.defaults = {
