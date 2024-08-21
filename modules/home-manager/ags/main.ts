@@ -110,12 +110,35 @@ function Media() {
     },
   );
 
-  return Widget.Button({
-    class_name: "media",
+  const button = Widget.Button({
     on_primary_click: () => mpris.getPlayer("ncspot")?.playPause(),
     on_scroll_up: () => mpris.getPlayer("ncspot")?.next(),
     on_scroll_down: () => mpris.getPlayer("ncspot")?.previous(),
     child: Widget.Label({ label }),
+  });
+
+  const icon = Widget.Icon({
+    icon: Utils.watch(
+      "media-playback-stop-symbolic",
+      mpris,
+      "player-changed",
+      () => {
+        const player = mpris.getPlayer("ncspot");
+        if (player) {
+          const { play_back_status } = player;
+          return play_back_status === "Playing"
+            ? "media-playback-pause-symbolic"
+            : "media-playback-start-symbolic";
+        } else {
+          return "media-playback-stop-symbolic";
+        }
+      },
+    ),
+  });
+
+  return Widget.Box({
+    class_name: "media",
+    children: [icon, button],
   });
 }
 
