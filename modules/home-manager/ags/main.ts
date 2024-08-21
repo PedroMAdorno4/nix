@@ -29,14 +29,14 @@ const cpu = Variable(0, {
 const memory = Variable(0, {
   poll: [
     10000,
-    "free -g",
+    "free -m",
     (out) =>
       Number(
         out
           .split("\n")
           .find((line) => line.includes("Mem:"))
           .split(/\s+/)[2],
-      ),
+      ) / 1000,
   ],
 });
 
