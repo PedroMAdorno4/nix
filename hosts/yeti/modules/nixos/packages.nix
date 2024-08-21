@@ -59,7 +59,7 @@
     busybox
     devbox
     firefox
-    bun
+    bun # for ags
     nix-index
   ];
 

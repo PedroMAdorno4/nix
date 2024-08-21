@@ -51,6 +51,7 @@
     wireshark
     beekeeper-studio
     nix-index
+    bun # for ags
   ];
 
   fonts.packages = with pkgs; [
