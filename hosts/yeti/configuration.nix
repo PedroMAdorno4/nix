@@ -42,8 +42,6 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.hyprland = {
@@ -62,8 +60,6 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    # For koreader
-    "openssl-1.1.1w"
   ];
 
   # virtualisation.waydroid.enable = true;

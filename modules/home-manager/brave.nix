@@ -16,9 +16,11 @@
       #{ id = ""; } #
     ];
     commandLineArgs = [
-      "--enable-features=UseOzonePlatform,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,VaapiVideoDecoder,VaapiIgnoreDriverChecks"
-      "--disable-features=WebRtcAllowInputVolumeAdjustment"
       "--ozone-platform=wayland"
+      "--use-angle=vulkan"
+      "--enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan,VaapiIgnoreDriverChecks,VaapiVideoDecoder,VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+      "--disable-features=WebRtcAllowInputVolumeAdjustment,UseChromeOSDirectVideoDecoder,UseSkiaRenderer"
+      "--ignore-gpu-blocklist"
       "--enable-wayland-ime"
       "--hide-crash-restore-bubble"
       "--restore-last-session"

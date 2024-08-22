@@ -38,4 +38,24 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-extension-layer
+      # amdvlk
+    ];
+    # extraPackages32 = with pkgs; [
+    #   driversi686Linux.amdvlk
+    # ];
+  };
+  hardware.amdgpu = {
+    initrd.enable = true;
+    amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+
+    };
+  };
 }

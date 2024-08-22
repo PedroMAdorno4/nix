@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
@@ -30,21 +29,35 @@
     stylix.url = "github:danth/stylix";
 
     ags.url = "github:Aylur/ags";
-    # stylix.url = "git+file:/home/quatro/stylix";
+
+    nur.url = "github:nix-community/nur";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
 
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [
+          inputs.nur.overlay
+        ];
+        config = {
+          allowUnfree = true;
+
+          permittedInsecurePackages = [
+            "python-2.7.18.8"
+            # For koreader
+            "openssl-1.1.1w"
+          ];
+        };
+      };
     in
     {
 
       # yeti - system hostname
       nixosConfigurations = {
         yeti = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs pkgs; };
           modules = [
             ./hosts/yeti/configuration.nix
             inputs.home-manager.nixosModules.default
@@ -52,7 +65,7 @@
           ];
         };
         workmachine = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs pkgs; };
           modules = [
             ./hosts/workmachine/configuration.nix
             inputs.home-manager.nixosModules.default

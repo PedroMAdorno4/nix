@@ -1,9 +1,4 @@
 { pkgs, ... }: {
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [ "python-2.7.18.8" ];
-  };
-
   environment.systemPackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
     brave
@@ -58,9 +53,9 @@
     trackma
     busybox
     devbox
-    firefox
     bun # for ags
     nix-index
+    vulkan-tools
   ];
 
   fonts.packages = with pkgs; [
