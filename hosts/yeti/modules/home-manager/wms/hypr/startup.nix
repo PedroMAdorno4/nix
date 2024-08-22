@@ -12,8 +12,8 @@
       "ags"
       "fcitx5"
       # "waydroid session start"
-      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle --profile=wallpaper" DP-3 ${config.home.homeDirectory}/videos/wallpapers/landscape/''
-      ''mpvpaper -o "input-ipc-server=/tmp/mpv-socket no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle --profile=wallpaper" HDMI-A-1 ${config.home.homeDirectory}/videos/wallpapers/landscape/''
+      ''mpvpaper -o "no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle --profile=fast" DP-3 ${config.home.homeDirectory}/videos/wallpapers/landscape/''
+      ''mpvpaper -o "input-ipc-server=/tmp/mpv-socket no-audio --loop-file=100 --reset-on-next-file=loop-file --loop-playlist shuffle --profile=fast" HDMI-A-1 ${config.home.homeDirectory}/videos/wallpapers/landscape/''
     ];
   };
 }
