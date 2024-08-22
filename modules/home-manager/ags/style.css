@@ -35,6 +35,7 @@ label {
 
 .workspaces,
 .volume,
+.microphone,
 .battery,
 .media,
 .clock,
@@ -43,9 +44,9 @@ label {
 .memory,
 .cpu,
 .notification {
-  background-color: @theme_bg_color;
   padding-left: 8px;
   padding-right: 8px;
+  background-color: @theme_bg_color;
   color: @theme_fg_color;
   border-radius: 6px;
   font-size: 12px;
@@ -72,10 +73,11 @@ highlight {
     color: @theme_fg_color;
   }
   35% {
-    color: #00ff3d;
+    /* color: #0094ff; */ /* blue */
+    color: #fd6806;
   }
   65% {
-    color: #00ff3d;
+    color: #fd6806;
   }
   100% {
     color: @theme_fg_color;
@@ -91,5 +93,5 @@ highlight {
 }
 
 box {
-  opacity: 0.95;
+  opacity: 0.9;
 }
