@@ -56,6 +56,7 @@
     bun # for ags
     nix-index
     vulkan-tools
+    amdgpu_top
   ];
 
   fonts.packages = with pkgs; [

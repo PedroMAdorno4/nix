@@ -67,6 +67,29 @@ highlight {
   min-height: 10px;
 }
 
+@keyframes blink {
+  0% {
+    color: @theme_fg_color;
+  }
+  35% {
+    color: #00ff3d;
+  }
+  65% {
+    color: #00ff3d;
+  }
+  100% {
+    color: @theme_fg_color;
+  }
+}
+
+.microphone-recording {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  /* animation-timing-function: cubic-bezier(1, -0.01, 0, 1.07); */
+  animation-iteration-count: infinite;
+}
+
 box {
   opacity: 0.95;
 }

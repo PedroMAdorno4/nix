@@ -167,11 +167,17 @@ function Microphone() {
       : ` ${Math.floor(audio.microphone.volume * 100)}%`;
   }
 
+  function getLabelClass() {
+    return `microphone-${audio.microphone.is_muted ? "muted" : "recording"}`;
+  }
+
   const icon = Widget.Icon({
+    class_name: Utils.watch(getLabelClass(), audio.microphone, getLabelClass),
     icon: Utils.watch(getIcon(), audio.microphone, getIcon),
   });
 
   const label = Widget.Label({
+    class_name: Utils.watch(getLabelClass(), audio.microphone, getLabelClass),
     label: Utils.watch(getLabel(), audio.microphone, getLabel),
   });
 
