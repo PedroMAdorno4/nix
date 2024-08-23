@@ -1,10 +1,5 @@
 { pkgs, inputs, ... }:
 {
-  nix.settings = {
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  };
-
   imports =
     [
       # Include the results of the hardware scan.
@@ -14,16 +9,11 @@
     ];
 
   networking.hostName = "yeti"; # Define your hostname.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Sao_Paulo";
 
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
 
-  programs.zsh.enable = true;
   # services.printing.enable = true;
 
   users = {
@@ -31,7 +21,7 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" "ydotool" ];
     };
   };
 
@@ -41,48 +31,6 @@
       "quatro" = import ./home.nix;
     };
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = pkgs.xdg-desktop-portal-wlr;
-  };
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    XMODIFIERS = "@im=fcitx";
-    QT_IM_MODULE = "fcitx";
-  };
-
-  programs.hyprlock = {
-    enable = true;
-  };
-
-  nixpkgs.config.permittedInsecurePackages = [
-  ];
-
-  # virtualisation.waydroid.enable = true;
-  virtualisation.docker = {
-    enable = true;
-    autoPrune.enable = true;
-    liveRestore = true;
-    enableOnBoot = false;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
-
-  programs.adb.enable = true;
-
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  services.openssh.enable = true;
 
   system.stateVersion = "24.05"; # Did you read the comment?
 

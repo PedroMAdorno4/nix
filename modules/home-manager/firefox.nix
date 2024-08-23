@@ -24,6 +24,23 @@
           definedAliases = [ "!np" ];
         };
 
+        "Nix Options" = {
+          urls = [{
+            template = "https://search.nixos.org/options";
+            params = [
+              { name = "channel"; value = "24.05"; }
+              { name = "from"; value = "0"; }
+              { name = "size"; value = "50"; }
+              { name = "sort"; value = "relevance"; }
+              { name = "type"; value = "packages"; }
+              { name = "query"; value = "{searchTerms}"; }
+            ];
+          }];
+
+          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "!no" ];
+        };
+
         "NixOS Wiki" = {
           urls = [{ template = "https://wiki.nixos.org/index.php?search={searchTerms}"; }];
           iconUpdateURL = "https://wiki.nixos.org/favicon.png";
@@ -33,10 +50,14 @@
 
         "Brave Search" = {
           urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
-          icon = "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/brave-logo-small.1fMdoHsa.svg";
-          definedAliases = [ "!np" ];
+        };
+
+        "Nyaa" = {
+          urls = [{ template = "https://nyaa.si/?f=0&c=1_2&q=1080p+{searchTerms}"; }];
+          definedAliases = [ "!ns" ];
         };
       };
+
       search.default = "Brave Search";
       search.force = true;
 

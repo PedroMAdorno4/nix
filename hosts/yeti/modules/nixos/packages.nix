@@ -57,6 +57,7 @@
     nix-index
     vulkan-tools
     amdgpu_top
+    ydotool
   ];
 
   fonts.packages = with pkgs; [
