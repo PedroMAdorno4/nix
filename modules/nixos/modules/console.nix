@@ -1,6 +1,6 @@
 {
   console = {
-    font = "IBM Plex Mono";
+    font = "Lat2-Terminus16";
     keyMap = "us";
   };
 }
