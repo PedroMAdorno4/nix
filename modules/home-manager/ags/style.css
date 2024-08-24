@@ -17,16 +17,16 @@ button {
   background-color: @theme_selected_bg_color;
 }
 
+.workspaces button:hover {
+  color: @theme_fg_color;
+}
+
 .workspaces .workspace-focused button {
   color: @theme_selected_bg_color;
 }
 
 .workspaces .workspace-unfocused button {
   color: @theme_fg_color;
-}
-
-.workspaces button:hover {
-  color: @theme_selected_fg_color;
 }
 
 label {

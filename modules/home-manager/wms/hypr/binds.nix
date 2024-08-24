@@ -51,6 +51,47 @@
           #SINK_INPUTS=($(pactl list short sink-inputs | grep -Eo '^[0-9]+'))
           #for SINK_INPUT in ''${SINK_INPUTS[*]}; do pactl move-sink-input $SINK_INPUT $NEW_SINK; done
         '';
+
+
+        autoClicker = pkgs.writers.writePython3Bin "auto-clicker"
+          {
+            libraries = [ pkgs.python3Packages.python-uinput ];
+            flakeIgnore = [ "E265" "E225" "E501" ];
+          }
+          ''
+            import os
+            import subprocess
+            import time
+
+            import uinput
+
+            keys = [uinput.BTN_LEFT]
+
+            filename = "${config.home.homeDirectory}/.toggle"
+
+            if os.path.exists(filename):
+
+                os.remove(filename)
+
+                ps = subprocess.run(["ps", "-aux"], check=True, capture_output=True)
+                grep = subprocess.run(
+                    ["grep", "auto-clicker"], input=ps.stdout, capture_output=True
+                )
+                grep2 = subprocess.run(
+                    ["grep", "-v", "grep"], input=grep.stdout, capture_output=True
+                )
+                pid = grep2.stdout.split(None, 2)[1]
+                os.kill(int(pid), 9)
+            else:
+                with open(filename, "w") as f:
+                    f.write("1")
+                device = uinput.Device(keys)
+                time.sleep(1)
+                while True:
+                    device.emit(uinput.BTN_LEFT, 1)
+                    device.emit(uinput.BTN_LEFT, 0)
+                    time.sleep(0.025)
+          '';
       in
       [
         "$mainMod, RETURN, exec, kitty" #open the terminal
@@ -59,6 +100,7 @@
         # "$mainMod SHIFT, L, exec, hyprlock" # Lock the screen
         "$mainMod, BACKSPACE, exec, wlogout --protocol layer-shell" # show the logout window
         "$mainMod SHIFT, M, exit," # Exit Hyprland all together no (force quit Hyprland)
+        "$mainMod, C, exec, ${lib.getExe autoClicker}"
         "$mainMod, E, exec, kitty -e yazi" # Open the terminal file browser
         "$mainMod, F, fullscreen"
         "$mainMod, S, pin"
