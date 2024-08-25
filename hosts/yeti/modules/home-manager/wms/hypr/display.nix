@@ -16,7 +16,7 @@
       "8, monitor:${config.home.sessionVariables.mainMonitorName}"
       "9, monitor:${config.home.sessionVariables.mainMonitorName}"
       "10, monitor:${config.home.sessionVariables.mainMonitorName}"
-      "11, monitor:${config.home.sessionVariables.secondaryMonitorName}, default:true"
+      "11, monitor:${config.home.sessionVariables.secondaryMonitorName}"
       "12, monitor:${config.home.sessionVariables.secondaryMonitorName}"
       "13, monitor:${config.home.sessionVariables.secondaryMonitorName}"
       "14, monitor:${config.home.sessionVariables.secondaryMonitorName}"

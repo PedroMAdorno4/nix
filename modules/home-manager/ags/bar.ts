@@ -230,7 +230,6 @@ function Volume() {
 
 const WifiIndicator = () =>
   Widget.Box({
-    class_name: "network",
     children: [
       Widget.Icon({
         icon: network.wifi.bind("icon_name"),
@@ -239,6 +238,49 @@ const WifiIndicator = () =>
         label: network.wifi.bind("ssid").as((ssid) => ssid || "Unknown"),
       }),
     ],
+  });
+
+const WiredIndicator = () =>
+  Widget.Box({
+    children: [
+      Widget.Icon({
+        icon: network.wired.bind("icon_name"),
+      }),
+      Widget.Label({
+        label: network.wired.bind("internet").as((internet) => ` ${internet}`),
+      }),
+    ],
+  });
+
+const VpnIndicator = () => {
+  const connection = network.vpn
+    .bind("activated_connections")
+    .as((connections) => (connections.length > 0 ? connections[0] : null));
+
+  return Widget.Box({
+    children: [
+      Widget.Icon({
+        icon: connection.icon_name,
+      }),
+      Widget.Label({
+        label: connection.uuid,
+      }),
+    ],
+  });
+};
+
+const Network = () =>
+  Widget.Stack({
+    class_name: "network",
+    children: {
+      wifi: WifiIndicator(),
+      wired: WiredIndicator(),
+      vpn: VpnIndicator(),
+    },
+    shown: Utils.merge(
+      [network.bind("primary"), network.vpn.bind("activated_connections")],
+      (p, vpn) => (vpn.length > 0 ? "vpn" : p ?? "wifi"),
+    ),
   });
 
 const SysTray = () => {
@@ -278,7 +320,7 @@ function Right() {
   return Widget.Box({
     hpack: "end",
     spacing: 8,
-    children: [Microphone(), Volume(), Clock(), SysTray()],
+    children: [Network(), Microphone(), Volume(), Clock(), SysTray()],
   });
 }
 

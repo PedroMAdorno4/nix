@@ -3,6 +3,12 @@
     enable = true;
     userName = "Pedro Adorno";
     userEmail = "pedroadorno99@gmail.com";
+
+    signing = {
+      key = null; # GnuPG decides what signing key to use depending on commit’s author details
+      signByDefault = true;
+    };
+
     extraConfig = {
       rerere = {
         enabled = true;
@@ -14,6 +20,7 @@
       rebase = {
         updateRefs = true;
       };
+
       core =
         let
           gitignore = (pkgs.writeText "gitignore" ''
