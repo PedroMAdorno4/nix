@@ -52,6 +52,7 @@
     beekeeper-studio
     nix-index
     bun # for ags
+    bruno
   ];
 
   fonts.packages = with pkgs; [

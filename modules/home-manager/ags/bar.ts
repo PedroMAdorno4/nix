@@ -230,18 +230,22 @@ function Volume() {
 
 const WifiIndicator = () =>
   Widget.Box({
+    class_name: "network",
     children: [
       Widget.Icon({
         icon: network.wifi.bind("icon_name"),
       }),
       Widget.Label({
-        label: network.wifi.bind("ssid").as((ssid) => ssid || "Unknown"),
+        label: network.wifi
+          .bind("ssid")
+          .as((ssid) => ` ${(ssid || "Unknown").trim()}`),
       }),
     ],
   });
 
 const WiredIndicator = () =>
   Widget.Box({
+    class_name: "network",
     children: [
       Widget.Icon({
         icon: network.wired.bind("icon_name"),
@@ -253,34 +257,33 @@ const WiredIndicator = () =>
   });
 
 const VpnIndicator = () => {
-  const connection = network.vpn
+  const connections = network.vpn
     .bind("activated_connections")
-    .as((connections) => (connections.length > 0 ? connections[0] : null));
-
+    .as((connections) =>
+      connections.map((connection) =>
+        Widget.Label({
+          label: "a",
+        }),
+      ),
+    );
   return Widget.Box({
-    children: [
-      Widget.Icon({
-        icon: connection.icon_name,
-      }),
-      Widget.Label({
-        label: connection.uuid,
-      }),
-    ],
+    class_name: "network",
+    children: connections,
   });
 };
 
 const Network = () =>
   Widget.Stack({
-    class_name: "network",
     children: {
       wifi: WifiIndicator(),
       wired: WiredIndicator(),
       vpn: VpnIndicator(),
     },
-    shown: Utils.merge(
-      [network.bind("primary"), network.vpn.bind("activated_connections")],
-      (p, vpn) => (vpn.length > 0 ? "vpn" : p ?? "wifi"),
-    ),
+    shown: "vpn",
+    // shown: Utils.merge(
+    //   [network.bind("primary"), network.vpn.bind("activated_connections")],
+    //   (p, vpn) => (vpn.length > 0 ? "vpn" : p ?? "wifi"),
+    // ),
   });
 
 const SysTray = () => {
