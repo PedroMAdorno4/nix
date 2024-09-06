@@ -33,7 +33,7 @@
     nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
 
     let
       pkgs = import nixpkgs {

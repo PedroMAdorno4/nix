@@ -11,6 +11,10 @@
         event = [ "VimEnter" ];
         command = ":TransparentEnable";
       }
+#      {
+#        event = [ "BufAdd" ];
+#        command = ":lua require('otter').activate()<CR>";
+#      }
       {
         group = "highlight_yank";
         event = [ "TextYankPost" ];

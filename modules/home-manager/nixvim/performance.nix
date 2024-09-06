@@ -4,7 +4,7 @@
       enable = true;
 
       standalonePlugins = [
-        "hmts"
+        # "otter"
       ];
     };
   };

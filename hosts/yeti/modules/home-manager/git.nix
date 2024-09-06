@@ -26,6 +26,9 @@
           gitignore = (pkgs.writeText "gitignore" ''
             .direnv
             .envrc
+            devbox.json
+            devbox.lock
+            nohup.out
             .idea
             .vscode
             __pycache__
@@ -33,8 +36,6 @@
             *.pyc
             *.pyo
             *.swp
-            devbox.json
-            devbox.lock
           '');
         in
         {

@@ -1,5 +1,10 @@
 {
   wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      #FCITx
+      "pseudo, fcitx"
+    ];
+
     windowrulev2 = [
       # Brave
       "float,title:^(Picture in picture)$"
@@ -24,6 +29,9 @@
       "workspace 18 silent, class:^(Waydroid)$, title:^(Waydroid)$"
       "float, class:^(Waydroid)$, title:^(Waydroid)$"
       "size 475 770, class:^(Waydroid)$, title:^(Waydroid)$"
+
+      # Steam
+      "float,class:^(Steam)$,title:^(Friends List)$"
     ];
   };
 }

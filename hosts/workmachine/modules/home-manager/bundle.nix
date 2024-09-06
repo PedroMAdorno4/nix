@@ -4,6 +4,7 @@
     ../../../../modules/home-manager/terminal/bundle.nix
     ../../../../modules/home-manager/ags.nix
     ../../../../modules/home-manager/firefox.nix
+    ../../../../modules/home-manager/gpg.nix
     ../../../../modules/home-manager/hyprlock.nix
     ../../../../modules/home-manager/keyboard.nix
     ../../../../modules/home-manager/lazygit.nix

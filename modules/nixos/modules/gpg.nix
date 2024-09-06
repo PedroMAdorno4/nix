@@ -10,11 +10,9 @@
   # $ touch test.tmp && gpg2 -sea -r case@sensitive.email test.tmp
 
   services.openssh.enable = true;
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-curses;
   };
-
 }

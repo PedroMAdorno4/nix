@@ -58,6 +58,7 @@
     vulkan-tools
     amdgpu_top
     ydotool
+    libreoffice-qt6-fresh
   ];
 
   fonts.packages = with pkgs; [

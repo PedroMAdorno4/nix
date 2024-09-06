@@ -33,19 +33,16 @@
       force_default_wallpaper = 0;
       animate_manual_resizes = true;
       disable_splash_rendering = true;
+      vfr = true;
     };
 
     decoration = {
       rounding = 6;
       blur = {
-        enabled = true;
-        size = 2;
-        passes = 1;
+        enabled = false;
       };
 
-      drop_shadow = true;
-      shadow_range = 4;
-      shadow_render_power = 3;
+      drop_shadow = false;
     };
 
     animations = {

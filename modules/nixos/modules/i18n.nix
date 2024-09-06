@@ -8,7 +8,7 @@
         fcitx5 = {
           waylandFrontend = true;
           addons = with pkgs; [
-            fcitx5-mozc
+            fcitx5-mozc # Japanese
             fcitx5-gtk
             fcitx5-nord
           ];

@@ -10,6 +10,7 @@
     ../../../../modules/nixos/modules/i18n.nix
     ../../../../modules/nixos/modules/ld.nix
     ../../../../modules/nixos/modules/nh.nix
+    ../../../../modules/nixos/modules/pam.nix
     ../../../../modules/nixos/modules/settings.nix
     ../../../../modules/nixos/modules/sound.nix
     ../../../../modules/nixos/modules/stylix.nix

@@ -78,7 +78,7 @@
                     ["grep", "auto-clicker"], input=ps.stdout, capture_output=True
                 )
                 grep2 = subprocess.run(
-                    ["grep", "-v", "grep"], input=grep.stdout, capture_output=True
+                    ["grep", "-v", "grep"], input=grep.stdout, capture_output=True, text=True
                 )
                 pid = grep2.stdout.split(None, 2)[1]
                 os.kill(int(pid), 9)
