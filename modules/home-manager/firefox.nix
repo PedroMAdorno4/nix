@@ -43,6 +43,11 @@
 
         "NixOS Wiki" = {
           urls = [{ template = "https://wiki.nixos.org/index.php?search={searchTerms}"; }];
+          definedAliases = [ "!ns" ];
+        };
+
+        "Searchix" = {
+          urls = [{ template = "https://searchix.alanpearce.eu/all/search?query={searchTerms}"; }];
           iconUpdateURL = "https://wiki.nixos.org/favicon.png";
           updateInterval = 24 * 60 * 60 * 1000; # every day
           definedAliases = [ "!nw" ];
@@ -54,7 +59,7 @@
 
         "Nyaa" = {
           urls = [{ template = "https://nyaa.si/?f=0&c=1_2&q=1080p+{searchTerms}"; }];
-          definedAliases = [ "!ns" ];
+          definedAliases = [ "!ani" ];
         };
       };
 

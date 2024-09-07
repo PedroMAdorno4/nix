@@ -53,6 +53,7 @@
     nix-index
     bun # for ags
     bruno
+    comma
   ];
 
   fonts.packages = with pkgs; [

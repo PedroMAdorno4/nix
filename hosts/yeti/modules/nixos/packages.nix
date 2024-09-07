@@ -47,9 +47,7 @@
     neofetch
     pulseaudio
     transmission_4-gtk
-    (callPackage ../../../../modules/packages/koreader.nix { })
     (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
-    gotop
     trackma
     busybox
     devbox
@@ -59,6 +57,7 @@
     amdgpu_top
     ydotool
     libreoffice-qt6-fresh
+    comma
   ];
 
   fonts.packages = with pkgs; [

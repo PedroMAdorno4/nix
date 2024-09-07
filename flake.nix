@@ -27,6 +27,7 @@
     };
 
     stylix.url = "github:danth/stylix";
+    # stylix.url = "git+file:/home/quatro/pjx/stylix";
 
     ags.url = "github:Aylur/ags";
 
@@ -43,12 +44,6 @@
         ];
         config = {
           allowUnfree = true;
-
-          permittedInsecurePackages = [
-            "python-2.7.18.8"
-            # For koreader
-            "openssl-1.1.1w"
-          ];
         };
       };
     in
