@@ -54,6 +54,8 @@
     bun # for ags
     bruno
     comma
+    libreoffice-qt6-fresh
+    kooha
   ];
 
   fonts.packages = with pkgs; [

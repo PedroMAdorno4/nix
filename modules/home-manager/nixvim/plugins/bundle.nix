@@ -13,6 +13,7 @@
     ./neotree.nix
     ./nix.nix
     ./otter.nix
+    ./markdown-preview.nix
     ./telescope.nix
     ./transparent.nix
     ./ts-autotag.nix
