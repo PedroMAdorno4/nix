@@ -2,8 +2,8 @@
   programs.nixvim.plugins.markdown-preview = {
     enable = true;
     settings = {
-      auto_close = true;
-      auto_start = true;
+      auto_close = false;
+      auto_start = false;
       browser = "firefox";
       port = "8099";
       page_title = "「\${name}」";

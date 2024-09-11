@@ -43,6 +43,7 @@
     neofetch
     pulseaudio
     (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
+    (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
     gotop
     busybox
     devbox
@@ -56,6 +57,7 @@
     comma
     libreoffice-qt6-fresh
     kooha
+    google-cloud-sdk
   ];
 
   fonts.packages = with pkgs; [
