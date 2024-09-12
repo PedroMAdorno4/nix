@@ -279,11 +279,11 @@ const Network = () =>
       wired: WiredIndicator(),
       vpn: VpnIndicator(),
     },
-    shown: "vpn",
-    // shown: Utils.merge(
-    //   [network.bind("primary"), network.vpn.bind("activated_connections")],
-    //   (p, vpn) => (vpn.length > 0 ? "vpn" : p ?? "wifi"),
-    // ),
+    // shown: "vpn",
+    shown: Utils.merge(
+      [network.bind("primary"), network.vpn.bind("activated_connections")],
+      (p, vpn) => (vpn.length > 0 ? "vpn" : p ?? "wifi"),
+    ),
   });
 
 const SysTray = () => {
@@ -331,6 +331,7 @@ export function Bar(monitor = 0) {
   return Widget.Window({
     name: `bar-${monitor}`, // name has to be unique
     class_name: "bar",
+    layer: "bottom",
     monitor,
     margins: [8, 8, 0, 8],
     anchor: ["top", "left", "right"],

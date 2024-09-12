@@ -58,6 +58,7 @@
     libreoffice-qt6-fresh
     kooha
     google-cloud-sdk
+    wl-gammarelay-rs
   ];
 
   fonts.packages = with pkgs; [

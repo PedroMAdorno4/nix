@@ -59,6 +59,7 @@
     ydotool
     libreoffice-qt6-fresh
     comma
+    wl-gammarelay-rs
   ];
 
   fonts.packages = with pkgs; [

@@ -78,7 +78,7 @@
           interval = 10;
         };
         "hyprland/workspaces" = {
-          active-only = false;
+          active-only = true;
           all-outputs = false;
           disable-scroll = true;
           on-click = "activate";

@@ -1,7 +1,7 @@
 { config, ... }: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "ags"
+      "wl-gammarelay-rs"
       ''dconf write /org/gnome/desktop/interface/cursor-theme "'Bibata-Modern-Ice'"''
       "hyprctl setcursor Bibata-modern 20"
       "fcitx5 -d -r"

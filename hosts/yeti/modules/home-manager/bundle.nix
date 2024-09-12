@@ -15,7 +15,7 @@
     ../../../../modules/home-manager/wofi.nix
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
-    ./wms/waybar.nix
+    # ./wms/waybar.nix
     ./git.nix
   ];
 }
