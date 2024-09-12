@@ -20,6 +20,9 @@
       rebase = {
         updateRefs = true;
       };
+      commit = {
+        gpgSign = true;
+      };
 
       core =
         let
