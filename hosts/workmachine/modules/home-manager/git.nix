@@ -5,7 +5,7 @@
     userEmail = "pedro.adorno@liven.tech";
 
     signing = {
-      key = null; # GnuPG decides what signing key to use depending on commit’s author details
+      key = "~/.ssh/id_ed25519";
       signByDefault = true;
     };
 

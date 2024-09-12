@@ -28,7 +28,7 @@
                 # back and fourth between the two most recent files
                 "<C-c>" = ":b#<CR>";
 
-                "<C-u>" = ":UndotreeToggle<CR>";
+                "<leader>u" = ":UndotreeToggle<CR>";
 
                 # resize with arrows
                 "<C-Up>" = ":resize -2<CR>";
