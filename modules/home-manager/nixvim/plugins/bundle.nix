@@ -6,6 +6,7 @@
     ./extra-plugins.nix
     ./fidget.nix
     ./git-blame.nix
+    ./image.nix
     ./lazygit.nix
     ./lsp.nix
     ./lspsaga.nix
