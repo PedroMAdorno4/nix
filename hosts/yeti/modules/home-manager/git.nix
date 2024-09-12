@@ -5,7 +5,7 @@
     userEmail = "pedroadorno99@gmail.com";
 
     signing = {
-      key = null; # GnuPG decides what signing key to use depending on commit’s author details
+      key = "~/.ssh/id_ed25519";
       signByDefault = true;
     };
 
@@ -22,6 +22,9 @@
       };
       commit = {
         gpgSign = true;
+      };
+      gpg = {
+        format = "ssh";
       };
 
       core =

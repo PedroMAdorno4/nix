@@ -3,6 +3,12 @@
     enable = true;
     userName = "Pedro Adorno";
     userEmail = "pedro.adorno@liven.tech";
+
+    signing = {
+      key = null; # GnuPG decides what signing key to use depending on commit’s author details
+      signByDefault = true;
+    };
+
     extraConfig = {
       rerere = {
         enabled = true;
@@ -14,11 +20,21 @@
       rebase = {
         updateRefs = true;
       };
+      commit = {
+        gpgSign = true;
+      };
+      gpg = {
+        format = "ssh";
+      };
+
       core =
         let
           gitignore = (pkgs.writeText "gitignore" ''
             .direnv
             .envrc
+            devbox.json
+            devbox.lock
+            nohup.out
             .idea
             .vscode
             __pycache__
@@ -26,8 +42,6 @@
             *.pyc
             *.pyo
             *.swp
-            devbox.json
-            devbox.lock
           '');
         in
         {
