@@ -5,7 +5,6 @@
     ../../../../modules/nixos/modules/console.nix
     ../../../../modules/nixos/modules/docker.nix
     ../../../../modules/nixos/modules/env.nix
-    ../../../../modules/nixos/modules/frps.nix
     ../../../../modules/nixos/modules/gamemode.nix
     ../../../../modules/nixos/modules/gpg.nix
     ../../../../modules/nixos/modules/hypr.nix
