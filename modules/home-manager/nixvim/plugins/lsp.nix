@@ -68,7 +68,7 @@
         pyright.enable = true;
         svelte.enable = true;
         tailwindcss.enable = true;
-        tsserver.enable = true;
+        ts-ls.enable = true;
 
         nixd = {
           enable = true;

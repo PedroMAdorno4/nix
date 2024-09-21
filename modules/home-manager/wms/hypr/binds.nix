@@ -112,8 +112,8 @@
         "$mainMod, T, togglesplit, " # dwindle
         "$mainMod, N, exec, ${lib.getExe rotateMonitor}"
         "$mainMod, M, exec, hyprctl dispatch movecursortocorner 1"
-        "$mainMod ,Up,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
-        "$mainMod ,Down,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
+        "$mainMod ,Up,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
+        "$mainMod ,Down,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
 
         '',107, exec, grim -g "$(slurp)" - | swappy -f - '' # take a screenshot
         ",121, exec, pamixer -t" # Speaker Mute FN+F1

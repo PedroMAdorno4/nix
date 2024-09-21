@@ -60,6 +60,10 @@
     libreoffice-qt6-fresh
     comma
     wl-gammarelay-rs
+    util-linux
+    exfat
+    ntfs3g
+    spotify
   ];
 
   fonts.packages = with pkgs; [
