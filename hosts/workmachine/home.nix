@@ -8,7 +8,7 @@
       mainMonitorName = "eDP-1";
       mainMonitorResolution = "1920x1080@59.99700";
       mainMonitorPosition = "1920x0";
-      mainMonitorScale = "1";
+      mainMonitorScale = "1.25";
       mainMonitor = "${config.home.sessionVariables.mainMonitorName},${config.home.sessionVariables.mainMonitorResolution},${config.home.sessionVariables.mainMonitorPosition},${config.home.sessionVariables.mainMonitorScale}";
       secondaryMonitorName = "HDMI-A-1";
       secondaryMonitorResolution = "1920x1080@59.99700";

@@ -64,6 +64,8 @@
     exfat
     ntfs3g
     spotify
+    sad
+    delta
   ];
 
   fonts.packages = with pkgs; [

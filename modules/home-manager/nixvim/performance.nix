@@ -4,6 +4,7 @@
       enable = true;
 
       standalonePlugins = [
+        # "sad"
         # "otter"
       ];
     };

@@ -60,6 +60,9 @@
     google-cloud-sdk
     wl-gammarelay-rs
     code-cursor
+    spotify
+    sad
+    delta
   ];
 
   fonts.packages = with pkgs; [
