@@ -59,6 +59,7 @@
     kooha
     google-cloud-sdk
     wl-gammarelay-rs
+    code-cursor
   ];
 
   fonts.packages = with pkgs; [

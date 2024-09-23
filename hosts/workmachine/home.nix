@@ -10,7 +10,7 @@
       mainMonitorPosition = "1920x0";
       mainMonitorScale = "1";
       mainMonitor = "${config.home.sessionVariables.mainMonitorName},${config.home.sessionVariables.mainMonitorResolution},${config.home.sessionVariables.mainMonitorPosition},${config.home.sessionVariables.mainMonitorScale}";
-      secondaryMonitorName = "HDMI-A-2";
+      secondaryMonitorName = "HDMI-A-1";
       secondaryMonitorResolution = "1920x1080@59.99700";
       secondaryMonitorPosition = "0x0";
       secondaryMonitorScale = "1";
