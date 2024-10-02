@@ -1,4 +1,5 @@
 import hyprland from "./hyprland.ts";
+const battery = await Service.import("battery");
 const network = await Service.import("network");
 const mpris = await Service.import("mpris");
 const audio = await Service.import("audio");
@@ -286,6 +287,16 @@ const Network = () =>
     ),
   });
 
+const Battery = () =>
+  Widget.CircularProgress({
+    child: Widget.Icon({
+      icon: battery.bind("icon_name"),
+    }),
+    visible: battery.bind("available"),
+    value: battery.bind("percent").as((p) => (p > 0 ? p / 100 : 0)),
+    class_name: battery.bind("charging").as((ch) => (ch ? "charging" : "")),
+  });
+
 const SysTray = () => {
   const items = systemtray.bind("items").as((items) =>
     items.map((item) =>
@@ -308,7 +319,7 @@ const SysTray = () => {
 function Left(monitor: number) {
   return Widget.Box({
     spacing: 8,
-    children: [Workspaces(monitor), Cpu(), Memory()],
+    children: [Workspaces(monitor), Battery(), Cpu(), Memory()],
   });
 }
 

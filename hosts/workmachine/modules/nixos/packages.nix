@@ -63,6 +63,7 @@
     spotify
     sad
     delta
+    teams
   ];
 
   fonts.packages = with pkgs; [

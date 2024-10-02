@@ -29,6 +29,8 @@
     };
   };
 
+  # virtualisation.waydroid.enable = true;
+
   home-manager = {
     extraSpecialArgs = { inherit inputs pkgs; };
     users = {
