@@ -104,13 +104,13 @@ function Memory() {
 }
 
 function Media() {
-  const playerName = "ncspot";
+  const playerName = "spotify";
   const label = Utils.watch(
     "Nothing is playing",
     mpris,
     "player-changed",
     () => {
-      const player = mpris.getPlayer(player);
+      const player = mpris.getPlayer(playerName);
       if (player) {
         const { track_artists, track_title } = player;
         return `${track_artists.join(", ")} - ${track_title}`;
