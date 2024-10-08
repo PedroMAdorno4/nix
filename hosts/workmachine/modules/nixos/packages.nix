@@ -63,7 +63,7 @@
     spotify
     sad
     delta
-    teams
+    teams-for-linux
   ];
 
   fonts.packages = with pkgs; [
