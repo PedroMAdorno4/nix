@@ -104,12 +104,13 @@ function Memory() {
 }
 
 function Media() {
+  const playerName = "ncspot";
   const label = Utils.watch(
     "Nothing is playing",
     mpris,
     "player-changed",
     () => {
-      const player = mpris.getPlayer("ncspot");
+      const player = mpris.getPlayer(player);
       if (player) {
         const { track_artists, track_title } = player;
         return `${track_artists.join(", ")} - ${track_title}`;
@@ -120,9 +121,9 @@ function Media() {
   );
 
   const button = Widget.Button({
-    on_primary_click: () => mpris.getPlayer("ncspot")?.playPause(),
-    on_scroll_up: () => mpris.getPlayer("ncspot")?.next(),
-    on_scroll_down: () => mpris.getPlayer("ncspot")?.previous(),
+    on_primary_click: () => mpris.getPlayer(playerName)?.playPause(),
+    on_scroll_up: () => mpris.getPlayer(playerName)?.next(),
+    on_scroll_down: () => mpris.getPlayer(playerName)?.previous(),
     child: Widget.Label({ label }),
   });
 
@@ -132,7 +133,7 @@ function Media() {
       mpris,
       "player-changed",
       () => {
-        const player = mpris.getPlayer("ncspot");
+        const player = mpris.getPlayer(playerName);
         if (player) {
           const { play_back_status } = player;
           return play_back_status === "Playing"

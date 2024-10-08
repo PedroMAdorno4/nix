@@ -47,7 +47,7 @@
                 "gi" = "<cmd>Lspsaga finder imp<CR>";
                 "gT" = "<cmd>Lspsaga peek_type_definition<CR>";
                 "K" = "<cmd>Lspsaga hover_doc<CR>";
-                "<leader>lf" = ":lua require('conform').format()<CR>";
+                "<leader>lf" = ":lua require('conform').format({ async = true })<CR>";
                 "<leader>lo" = "<cmd>Lspsaga outline<CR>";
                 "<leader>lr" = "<cmd>Lspsaga rename<CR>";
                 "<leader>la" = "<cmd>Lspsaga code_action<CR>";
