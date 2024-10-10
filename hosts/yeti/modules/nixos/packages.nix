@@ -66,6 +66,9 @@
     spotify
     sad
     delta
+    p7zip
+    filezilla
+    godot_4
   ];
 
   fonts.packages = with pkgs; [

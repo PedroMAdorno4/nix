@@ -5,26 +5,23 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/852210fb-86ba-493b-a99a-c12a4e2efc09";
+    { device = "/dev/disk/by-uuid/4226e1fa-87bd-4ad2-8033-7ff5b4c69c6b";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/DF89-CCB4";
+    { device = "/dev/disk/by-uuid/9528-598F";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
@@ -38,24 +35,4 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  # hardware.graphics = {
-  #   enable = true;
-  #   extraPackages = with pkgs; [
-  #     vulkan-loader
-  #     vulkan-validation-layers
-  #     vulkan-extension-layer
-  #     # amdvlk
-  #   ];
-  #   # extraPackages32 = with pkgs; [
-  #   #   driversi686Linux.amdvlk
-  #   # ];
-  # };
-  # hardware.amdgpu = {
-  #   initrd.enable = true;
-  #   amdvlk = {
-  #     enable = true;
-  #     support32Bit.enable = true;
-  #
-  #   };
-  # };
 }
