@@ -15,9 +15,11 @@
     ./nix.nix
     ./otter.nix
     ./markdown-preview.nix
+    ./mini.nix
     ./telescope.nix
     ./transparent.nix
     ./ts-autotag.nix
     ./undotree.nix
+    ./web-devicons.nix
   ];
 }

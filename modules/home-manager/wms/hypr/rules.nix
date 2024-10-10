@@ -32,6 +32,10 @@
 
       # Steam
       "float,class:^(Steam)$,title:^(Friends List)$"
+
+      # Godot
+      "size 950 620,class:^(Godot)$title:^(Create New Node)$"
+      "center 1,class:^(Godot)$title:^(Create New Node)$"
     ];
   };
 }
