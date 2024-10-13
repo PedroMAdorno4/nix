@@ -69,6 +69,11 @@
     p7zip
     filezilla
     godot_4
+    goxel
+    blender
+    bottles
+    cargo
+    rustc
   ];
 
   fonts.packages = with pkgs; [
