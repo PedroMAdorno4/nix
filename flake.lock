@@ -722,11 +722,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1729387778,
-        "narHash": "sha256-pHwL1mJ4yPKP5TxlVIxsrt3c9AXsDPKCicmx8jrYoGw=",
+        "lastModified": 1729390578,
+        "narHash": "sha256-CMWrmyY5BGos1lgsHWm7u9SFCU37Oyiabrqa9JOnwks=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "fab07edeffeb8a38bb910159de1200ca716a4284",
+        "rev": "9e00c4294e843c4980c79ed363f59424ac3f0052",
         "type": "github"
       },
       "original": {
@@ -801,16 +801,17 @@
         "nix-filter": "nix-filter"
       },
       "locked": {
-        "dirtyRev": "f5805a868543358adeb5f24fd411c2f72455c88c-dirty",
-        "dirtyShortRev": "f5805a8-dirty",
-        "lastModified": 1728502823,
+        "lastModified": 1729391399,
         "narHash": "sha256-sKrNN2/Jj9PDGpzIyBuy+N8CzryfDZl0J+Mj+UtiCIA=",
-        "type": "git",
-        "url": "file:/home/quatro/pjx/split-monitor-workspaces"
+        "owner": "PedroMAdorno4",
+        "repo": "split-monitor-workspaces",
+        "rev": "856e161c911f5eb3a995522a9008b8d6ab21f175",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:/home/quatro/pjx/split-monitor-workspaces"
+        "owner": "PedroMAdorno4",
+        "repo": "split-monitor-workspaces",
+        "type": "github"
       }
     },
     "stylix": {

@@ -33,7 +33,7 @@
     mpvpaper
     parted
     steam
-    steamPackages.steamcmd
+    steamcmd
     ripgrep
     fzf
     fd
