@@ -7,8 +7,7 @@
       "fcitx5 -d -r"
       "fcitx5-remote -r"
       "[workspace 1 silent] firefox"
-      # "[workspace 10 silent] kitty ncspot"
-      "[workspace 10 silent] spotify"
+      "[workspace 10 silent] kitty ncspot"
       "[workspace 9 silent] slack"
     ];
   };

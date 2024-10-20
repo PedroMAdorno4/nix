@@ -127,6 +127,7 @@
             "shfmt"
           ];
           json = [ "jq" ];
+          rust = [ "rustfmt" ];
           "_" = [ "trim_whitespace" ];
         };
 
@@ -160,6 +161,9 @@
           };
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
+          };
+          rustfmt = {
+            command = "${lib.getExe pkgs.rustfmt}";
           };
           nixpkgs-fmt = {
             command = "${lib.getExe pkgs.nixpkgs-fmt}";

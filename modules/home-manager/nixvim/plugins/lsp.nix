@@ -54,21 +54,22 @@
         bashls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
-        csharp-ls.enable = true;
-        docker-compose-language-service.enable = true;
+        csharp_ls.enable = true;
+        docker_compose_language_service.enable = true;
         dockerls.enable = true;
         eslint.enable = true;
         gopls.enable = true;
         html.enable = true;
         jsonls.enable = true;
-        lua-ls.enable = true;
+        lua_ls.enable = true;
         marksman.enable = true;
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         prismals.enable = true;
+        prismals.package = null;
         pyright.enable = true;
         svelte.enable = true;
         tailwindcss.enable = true;
-        ts-ls.enable = true;
+        ts_ls.enable = true;
 
         nixd = {
           enable = true;
@@ -94,8 +95,8 @@
       };
     };
 
-    # lsp-lines = {
-    #   enable = true;
-    # };
+    lsp-lines = {
+      enable = true;
+    };
   };
 }

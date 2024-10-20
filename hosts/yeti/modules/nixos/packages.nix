@@ -63,7 +63,6 @@
     util-linux
     exfat
     ntfs3g
-    spotify
     sad
     delta
     p7zip
@@ -72,8 +71,8 @@
     goxel
     blender
     bottles
-    cargo
     rustc
+    cargo
   ];
 
   fonts.packages = with pkgs; [

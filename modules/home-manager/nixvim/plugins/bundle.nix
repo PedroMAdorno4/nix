@@ -13,7 +13,8 @@
     ./mini.nix
     ./neotree.nix
     ./nix.nix
-    ./otter.nix
+    # ./otter.nix
+    ./rustacean.nix
     ./markdown-preview.nix
     ./mini.nix
     ./telescope.nix

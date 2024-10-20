@@ -12,7 +12,8 @@
     #    };
 
     split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
+      # url = "github:Duckonaut/split-monitor-workspaces";
+      url = "git+file:/home/quatro/pjx/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
 

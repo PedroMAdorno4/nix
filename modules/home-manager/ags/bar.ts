@@ -104,7 +104,7 @@ function Memory() {
 }
 
 function Media() {
-  const playerName = "spotify";
+  const playerName = "ncspot";
   const label = Utils.watch(
     "Nothing is playing",
     mpris,

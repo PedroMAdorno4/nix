@@ -124,8 +124,8 @@
         ",232, exec, brightnessctl set 10%- " # Screen brightness down FN+F7
         ",233, exec, brightnessctl set 10%+ " # Screen brightness up FN+F8
 
-        ",172, exec, playerctl -p spotify play-pause " # Play-pause music
-        ",171, exec, playerctl -p spotify next " # Next music
+        ",172, exec, playerctl -p ncspot play-pause " # Play-pause music
+        ",171, exec, playerctl -p ncspot next " # Next music
 
         # Move focus with mainMod + vim keys
         "$mainMod, H, movefocus, l"
