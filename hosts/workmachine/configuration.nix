@@ -10,7 +10,7 @@
   networking.hostName = "workmachine"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
-  services.resolved.enable = true;
+  # services.resolved.enable = true;
 
   time.timeZone = "America/Sao_Paulo";
 
@@ -25,7 +25,7 @@
 
     users.pedroma = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "docker" "adbusers" "wireshark" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "docker" "adbusers" "wireshark" "podman" ];
     };
   };
 

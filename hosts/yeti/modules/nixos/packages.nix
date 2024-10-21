@@ -8,6 +8,7 @@
     unzip
     zip
     lazygit
+    lazydocker
     xwayland
     wl-clipboard
     hyprland
@@ -73,6 +74,7 @@
     bottles
     rustc
     cargo
+    popsicle
   ];
 
   fonts.packages = with pkgs; [

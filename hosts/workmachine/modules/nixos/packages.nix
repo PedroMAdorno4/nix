@@ -7,6 +7,7 @@
     unzip
     zip
     lazygit
+    lazydocker
     xwayland
     wl-clipboard
     hyprland
@@ -63,6 +64,8 @@
     sad
     delta
     teams-for-linux
+    ntfs3g
+    popsicle
   ];
 
   fonts.packages = with pkgs; [
