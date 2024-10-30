@@ -2,7 +2,7 @@
   imports = [
     ../../../../modules/home-manager/nixvim/nixvim.nix
     ../../../../modules/home-manager/terminal/bundle.nix
-    ../../../../modules/home-manager/ags.nix
+    # ../../../../modules/home-manager/ags.nix
     ../../../../modules/home-manager/btop.nix
     ../../../../modules/home-manager/eww.nix
     ../../../../modules/home-manager/firefox.nix

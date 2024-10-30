@@ -50,7 +50,6 @@
     devbox
     slack
     openvpn
-    wireshark
     beekeeper-studio
     nix-index
     bun # for ags
