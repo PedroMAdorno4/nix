@@ -1,7 +1,7 @@
-{ pkgs, config, ... }: {
+{ config, lib, ... }: {
   programs.hyprlock = {
     enable = true;
-    settings = {
+    settings = lib.mkForce {
       general = {
         disable_loading_bar = false;
         grace = 3;
@@ -9,7 +9,7 @@
         no_fade_in = false;
       };
 
-      background = [
+      background = lib.mkForce [
         {
           path = "${config.home.homeDirectory}/nix/lockscreen.jpg";
           blur_passes = 1;

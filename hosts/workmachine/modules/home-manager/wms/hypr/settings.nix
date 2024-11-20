@@ -10,10 +10,15 @@
       follow_mouse = 1;
 
       touchpad = {
-        natural_scroll = false;
+        natural_scroll = true;
       };
 
       sensitivity = 0.0; # -1.0 - 1.0, 0 means no modification.
+    };
+
+    device = {
+      name = "at-translated-set-2-keyboard";
+      kb_options = "ctrl:nocaps";
     };
 
     debug = {
@@ -42,7 +47,9 @@
         enabled = false;
       };
 
-      drop_shadow = false;
+      shadow = {
+        enabled = false;
+      };
     };
 
     animations = {

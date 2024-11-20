@@ -42,7 +42,6 @@
     mako
     killall
     neofetch
-    pulseaudio
     (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
     gotop
@@ -65,6 +64,10 @@
     teams-for-linux
     ntfs3g
     popsicle
+    epson-escpr
+    epson-escpr2
+    gnumake
+    gnome-clocks
   ];
 
   fonts.packages = with pkgs; [

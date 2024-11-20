@@ -16,6 +16,7 @@
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
     ./wms/waybar.nix
+    ./bluetooth.nix
     ./git.nix
   ];
 }

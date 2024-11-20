@@ -19,7 +19,7 @@
       secondaryMonitorPortraitTransform = "1";
       secondaryMonitor = "${config.home.sessionVariables.secondaryMonitorName},${config.home.sessionVariables.secondaryMonitorResolution},${config.home.sessionVariables.secondaryMonitorPosition},${config.home.sessionVariables.secondaryMonitorScale},transform,0";
     };
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
 
   imports = [

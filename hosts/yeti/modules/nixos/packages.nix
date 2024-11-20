@@ -46,7 +46,6 @@
     mako
     killall
     neofetch
-    pulseaudio
     transmission_4-gtk
     (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
