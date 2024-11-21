@@ -54,14 +54,10 @@
     bun # for ags
     bruno
     comma
-    libreoffice-qt6-fresh
-    kooha
     google-cloud-sdk
     wl-gammarelay-rs
-    code-cursor
     sad
     delta
-    teams-for-linux
     ntfs3g
     popsicle
     epson-escpr

@@ -7,7 +7,7 @@
 
     # Binding workspace to monitors
     workspace = [
-      "1, monitor:${config.home.sessionVariables.mainMonitorName}, default: true"
+      "1, monitor:${config.home.sessionVariables.mainMonitorName}, default:true"
       "2, monitor:${config.home.sessionVariables.mainMonitorName}"
       "3, monitor:${config.home.sessionVariables.mainMonitorName}"
       "4, monitor:${config.home.sessionVariables.mainMonitorName}"
@@ -17,7 +17,7 @@
       "8, monitor:${config.home.sessionVariables.mainMonitorName}"
       "9, monitor:${config.home.sessionVariables.mainMonitorName}"
       "10, monitor:${config.home.sessionVariables.mainMonitorName}"
-      "11, monitor:${config.home.sessionVariables.secondaryMonitorName}, default: true"
+      "11, monitor:${config.home.sessionVariables.secondaryMonitorName}, default:true"
       "12, monitor:${config.home.sessionVariables.secondaryMonitorName}"
       "13, monitor:${config.home.sessionVariables.secondaryMonitorName}"
       "14, monitor:${config.home.sessionVariables.secondaryMonitorName}"
