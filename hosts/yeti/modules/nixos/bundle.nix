@@ -1,6 +1,7 @@
 {
   imports = [
     ../../../../modules/nixos/modules/android.nix
+    ../../../../modules/nixos/modules/appimage.nix
     # ../../../../modules/nixos/modules/audio.nix
     ../../../../modules/nixos/modules/boot.nix
     ../../../../modules/nixos/modules/console.nix

@@ -4,8 +4,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     image = ../../../wallpaper.webp;
 
-    targets.nixvim.enable = true;
-
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
@@ -14,8 +12,6 @@
 
     fonts = {
       monospace = {
-        #package = pkgs.nerdFonts.override { fonts = ["JetBrainsMono"]; };
-        #name = "JetBrainsMono Nerd Font Mono";
         package = pkgs.ibm-plex;
         name = "IBM Plex Mono";
       };
@@ -41,6 +37,17 @@
       desktop = 0.00;
       popups = 1.00;
       applications = 1.00;
+    };
+
+    targets.nixvim = {
+      enable = false;
+      # plugin = "mini.base16";
+      # transparentBackground = {
+      #   main = true;
+      #   signColumn = true;
+      #
+      # };
+
     };
 
 

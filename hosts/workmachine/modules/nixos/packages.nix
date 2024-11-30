@@ -64,6 +64,11 @@
     epson-escpr2
     gnumake
     gnome-clocks
+    brightnessctl
+    quickemu
+    spice
+    spice-gtk
+    bottles
   ];
 
   fonts.packages = with pkgs; [
@@ -74,6 +79,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
   ];
 }

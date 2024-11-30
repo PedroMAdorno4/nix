@@ -17,6 +17,7 @@
   # services.printing.enable = true;
 
   services.libinput.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
