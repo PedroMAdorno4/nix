@@ -1,2 +1,5 @@
 *.qcow2
+*.iso
+*.log
+windows-10/
 result
