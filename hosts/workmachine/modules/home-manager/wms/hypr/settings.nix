@@ -25,6 +25,11 @@
       disable_logs = false;
     };
 
+    env = [
+      "HYPRCURSOR_THEME=Bibata-Modern-Ice"
+      "HYPRCURSOR_SIZE,20"
+    ];
+
     general = {
       gaps_in = 8;
       gaps_out = 8;

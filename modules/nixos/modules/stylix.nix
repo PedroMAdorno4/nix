@@ -4,6 +4,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     image = ../../../wallpaper.webp;
 
+    targets.nixvim.enable = false;
+
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
@@ -37,17 +39,6 @@
       desktop = 0.00;
       popups = 1.00;
       applications = 1.00;
-    };
-
-    targets.nixvim = {
-      enable = false;
-      # plugin = "mini.base16";
-      # transparentBackground = {
-      #   main = true;
-      #   signColumn = true;
-      #
-      # };
-
     };
 
 

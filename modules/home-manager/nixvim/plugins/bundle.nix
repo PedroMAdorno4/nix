@@ -1,8 +1,10 @@
 {
   imports = [
-    ./cmp.nix
+    ./chadtree.nix
+    # ./cmp.nix
     ./comment.nix
     ./conform.nix
+    ./coq.nix
     ./extra-plugins.nix
     ./fidget.nix
     ./git-blame.nix
@@ -11,7 +13,7 @@
     ./lsp.nix
     ./lspsaga.nix
     ./mini.nix
-    ./neotree.nix
+    # ./neotree.nix
     ./nix.nix
     # ./otter.nix
     ./rustacean.nix

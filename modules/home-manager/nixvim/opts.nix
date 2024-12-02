@@ -18,14 +18,14 @@
       smartcase = true;
       scrolloff = 12;
       cursorline = true;
-      signcolumn = "yes";
+      signcolumn = "no";
       fileencoding = "utf-8";
       tabstop = 2;
       shiftwidth = 2;
       expandtab = true;
       autoindent = true;
       mouse = "";
-      completeopt = ["menu" "menuone" "noselect"];
+      completeopt = [ "menu" "menuone" "noselect" ];
     };
   };
 }

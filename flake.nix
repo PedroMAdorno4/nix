@@ -2,7 +2,7 @@
   description = "NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -18,12 +18,12 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager?ref=release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim?ref=nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -48,6 +48,9 @@
         system = "x86_64-linux";
         overlays = [
           inputs.nur.overlay
+          (final: prev: {
+            bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
+          })
         ];
         config = {
           allowUnfree = true;

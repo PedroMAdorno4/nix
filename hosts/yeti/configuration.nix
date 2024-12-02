@@ -34,7 +34,7 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11";
 
 }
 

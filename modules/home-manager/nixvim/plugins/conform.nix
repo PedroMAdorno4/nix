@@ -58,7 +58,7 @@
               end
             end
 
-            return { timeout_ms = 500, lsp_format = "fallback" }
+            return { timeout_ms = 1000, lsp_format = "fallback", quiet = false }
            end
         '';
 
@@ -120,7 +120,6 @@
             ]
           ];
           terraform = [ "terraform_fmt" ];
-          bicep = [ "bicep" ];
           bash = [
             "shellcheck"
             "shellharden"
@@ -158,9 +157,6 @@
           };
           shellharden = {
             command = "${lib.getExe pkgs.shellharden}";
-          };
-          bicep = {
-            command = "${lib.getExe pkgs.bicep}";
           };
           rustfmt = {
             command = "${lib.getExe pkgs.rustfmt}";

@@ -42,7 +42,6 @@
     mako
     killall
     neofetch
-    (callPackage ../../../../modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; })
     (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
     gotop
     busybox
@@ -79,6 +78,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    nerd-fonts.symbols-only
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 }
