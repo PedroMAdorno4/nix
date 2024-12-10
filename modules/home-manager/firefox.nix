@@ -101,10 +101,9 @@
         enhancer-for-youtube
         mal-sync
         sponsorblock
-        stylus
         ublock-origin
         videospeed
-        vimium
+        tridactyl
       ];
     };
   };

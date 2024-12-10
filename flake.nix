@@ -13,7 +13,7 @@
 
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
-      # url = "git+file:/home/quatro/pjx/split-monitor-workspaces";
+      # url = "git+file:///home/pedroma/pjx/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -28,7 +28,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix?ref=release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # stylix.url = "git+file:/home/quatro/pjx/stylix";
