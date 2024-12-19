@@ -57,7 +57,6 @@
     amdgpu_top
     ydotool
     libreoffice-qt6-fresh
-    comma
     wl-gammarelay-rs
     util-linux
     exfat

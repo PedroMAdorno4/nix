@@ -52,7 +52,6 @@
     nix-index
     bun # for ags
     bruno
-    comma
     google-cloud-sdk
     wl-gammarelay-rs
     sad

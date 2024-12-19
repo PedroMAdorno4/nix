@@ -39,6 +39,11 @@
     };
 
     nur.url = "github:nix-community/nur";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -47,7 +52,7 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         overlays = [
-          inputs.nur.overlay
+          inputs.nur.overlays.default
           (final: prev: {
             bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
           })
@@ -67,6 +72,8 @@
             ./hosts/yeti/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
         workmachine = nixpkgs.lib.nixosSystem {
@@ -75,6 +82,8 @@
             ./hosts/workmachine/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
       };

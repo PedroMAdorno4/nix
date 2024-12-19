@@ -19,6 +19,8 @@
     device = {
       name = "at-translated-set-2-keyboard";
       kb_options = "ctrl:nocaps";
+      kb_layout = "br";
+      kb_variant = "abnt2";
     };
 
     debug = {
