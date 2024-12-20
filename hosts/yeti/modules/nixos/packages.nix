@@ -72,6 +72,7 @@
     rustc
     cargo
     popsicle
+    timg
   ];
 
   fonts.packages = with pkgs; [

@@ -30,6 +30,7 @@
     users = {
       "quatro" = import ./home.nix;
     };
+    backupFileExtension = "bkp";
   };
 
   services.gnome.gnome-keyring.enable = true;

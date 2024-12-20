@@ -68,6 +68,7 @@
     spice-gtk
     bottles
     qutebrowser
+    timg
   ];
 
   fonts.packages = with pkgs; [

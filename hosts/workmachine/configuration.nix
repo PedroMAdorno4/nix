@@ -36,6 +36,7 @@
     users = {
       "pedroma" = import ./home.nix;
     };
+    backupFileExtension = "bkp";
   };
 
   programs.wireshark.enable = true;
