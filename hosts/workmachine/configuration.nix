@@ -7,11 +7,6 @@
       ./modules/nixos/bundle.nix
     ];
 
-  networking.hostName = "workmachine"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = false;
-  # services.resolved.enable = true;
-
   time.timeZone = "America/Sao_Paulo";
 
   # services.printing.enable = true;

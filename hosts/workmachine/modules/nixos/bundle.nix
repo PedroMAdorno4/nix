@@ -13,6 +13,7 @@
     ../../../../modules/nixos/modules/i18n.nix
     ../../../../modules/nixos/modules/ld.nix
     ../../../../modules/nixos/modules/logind.nix
+    ../../../../modules/nixos/modules/networking.nix
     ../../../../modules/nixos/modules/nh.nix
     ../../../../modules/nixos/modules/printer.nix
     # ../../../../modules/nixos/modules/podman.nix

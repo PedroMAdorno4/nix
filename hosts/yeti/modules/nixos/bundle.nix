@@ -11,6 +11,7 @@
     ../../../../modules/nixos/modules/gpg.nix
     ../../../../modules/nixos/modules/hypr.nix
     ../../../../modules/nixos/modules/i18n.nix
+    ../../../../modules/nixos/modules/networking.nix
     ../../../../modules/nixos/modules/nh.nix
     ../../../../modules/nixos/modules/podman.nix
     ../../../../modules/nixos/modules/removableMedia.nix
