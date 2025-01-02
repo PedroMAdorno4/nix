@@ -69,6 +69,8 @@
     bottles
     qutebrowser
     timg
+    teams-for-linux
+    woeusb
   ];
 
   fonts.packages = with pkgs; [

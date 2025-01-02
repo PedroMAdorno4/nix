@@ -7,7 +7,7 @@
     enableOnBoot = false;
     rootless = {
       enable = true;
-      setSocketVariable = true;
+      # setSocketVariable = true;
     };
     daemon.settings = {
       userland-proxy = false;

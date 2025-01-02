@@ -7,9 +7,9 @@
       "hyprctl setcursor Bibata-modern 20"
       "fcitx5 -d -r"
       "fcitx5-remote -r"
-      "[workspace 1 silent] firefox"
+      # "[workspace 1 silent] firefox"
       "[workspace 10 silent] kitty ncspot"
-      "[workspace 9 silent] slack"
+      # "[workspace 9 silent] slack"
     ];
   };
 }

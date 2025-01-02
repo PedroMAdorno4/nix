@@ -5,7 +5,7 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      systemd-boot.configurationLimit = 5;
+      systemd-boot.configurationLimit = 20;
     };
     kernel.sysctl = {
       # 20-shed.conf
