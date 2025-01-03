@@ -806,11 +806,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1735848731,
-        "narHash": "sha256-/1a5ekWSQO6IzL+EU0yICHSJiLstx/cnVZNyVxnnS3g=",
+        "lastModified": 1735857266,
+        "narHash": "sha256-P0Wdee51bHxa0rjAjTcRlSOLPXiKQZMkgNVz8aHZLJM=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "bf1b24c1625de090cb6eafef8c3ce9bbc4a8e27f",
+        "rev": "7a66c741d7d1f69e5c5e94ed8f6993a4bb4e3c6a",
         "type": "github"
       },
       "original": {
@@ -887,15 +887,16 @@
         "nix-filter": "nix-filter"
       },
       "locked": {
-        "lastModified": 1735854954,
-        "narHash": "sha256-jW65EsiA0oxt7ZilCMXU8xRSaHxEaXdin9vc/9OX4U0=",
+        "lastModified": 1732216105,
+        "narHash": "sha256-CaHjFzP/TI5gV5edWKguMn9qFX4j+YN/i9jpRB8PoV8=",
         "owner": "Duckonaut",
         "repo": "split-monitor-workspaces",
-        "rev": "c75ec3a643a98169acdea03336c06f3656fe0e76",
+        "rev": "4aee4a6d67f8714fedd33acc7c9e64befba9b5cb",
         "type": "github"
       },
       "original": {
         "owner": "Duckonaut",
+        "ref": "4aee4a6",
         "repo": "split-monitor-workspaces",
         "type": "github"
       }
