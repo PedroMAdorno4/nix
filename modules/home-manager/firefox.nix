@@ -28,7 +28,7 @@
           urls = [{
             template = "https://search.nixos.org/options";
             params = [
-              { name = "channel"; value = "24.05"; }
+              { name = "channel"; value = "24.11"; }
               { name = "from"; value = "0"; }
               { name = "size"; value = "50"; }
               { name = "sort"; value = "relevance"; }

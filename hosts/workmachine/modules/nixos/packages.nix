@@ -71,6 +71,7 @@
     timg
     teams-for-linux
     woeusb
+    transmission_4-gtk
   ];
 
   fonts.packages = with pkgs; [

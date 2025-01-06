@@ -36,6 +36,10 @@
       # Godot
       "size 950 760,class:^(Godot)$,title:^(Create New Node)$"
       "center 1,class:^(Godot)$,title:^(Create New Node)$"
+
+      # Bitwarden extension firefox
+      "float,title:^(Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox)$,class:^(firefox)$"
+      "size 420 620,title:^(Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox)$,class:^(firefox)$"
     ];
   };
 }
