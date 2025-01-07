@@ -10,6 +10,10 @@
       bold_italic_font = "auto";
       mouse_hide_wait = "2.0";
       cursor_shape = "block";
+      cursor_trail = 3;
+      scrollback_lines = 100000;
+      enable_audio_bell = false;
+      update_check_interval = 0;
       url_color = "#0087bd";
       url_style = "dotted";
       background_blur = 0;
@@ -28,6 +32,7 @@
       "alt+shift+home" = "change_font_size all 0";
       "alt+c" = "copy_to_clipboard";
       "alt+v" = "paste_from_clipboard";
+      "ctrl+t" = "new_window_with_cwd";
     };
 
     shellIntegration = {

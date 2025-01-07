@@ -95,7 +95,6 @@
       in
       [
         "$mainMod, RETURN, exec, kitty" #open the terminal
-        "$mainMod, W, exec, kitty" #open the terminal
         "$mainMod, Q, killactive," # close the active window
         "$mainMod, Semicolon, exec, hyprlock" # Lock the screen
         "$mainMod, BACKSPACE, exec, wlogout --protocol layer-shell" # show the logout window

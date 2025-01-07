@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
+    (import ../../../../modules/nixos/scripts/terminal.nix { inherit pkgs; })
+    (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
+    (callPackage ../../../../modules/packages/tmux-sessionizer.nix { inherit pkgs; })
     brave
     yazi
     gcc
@@ -16,7 +18,6 @@
     pamixer
     wlogout
     vim
-    kitty
     pavucontrol
     git
     playerctl
@@ -42,7 +43,6 @@
     mako
     killall
     neofetch
-    (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
     gotop
     busybox
     devbox

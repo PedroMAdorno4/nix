@@ -34,6 +34,7 @@
             .envrc
             devbox.json
             devbox.lock
+            .devbox
             nohup.out
             .idea
             .vscode
@@ -42,6 +43,7 @@
             *.pyc
             *.pyo
             *.swp
+            Session.vim
           '');
         in
         {

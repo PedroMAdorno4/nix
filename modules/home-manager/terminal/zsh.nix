@@ -9,7 +9,7 @@
       upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
 
       dev = ''nix develop "$FLAKE" --command zsh'';
-      s = "kitten ssh";
+      ssh = "kitten ssh";
       v = "nvim";
 
       conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
@@ -19,35 +19,8 @@
     };
 
     initExtra =
-      let
-        tmuxSessionizer = pkgs.writeShellScriptBin "tmuxSessionizer" ''
-          if [[ $# -eq 1 ]]; then
-              selected=$1
-          else
-              selected=$(find ~/pjx -mindepth 1 -maxdepth 1 -type d | fzf)
-          fi
-
-          if [[ -z $selected ]]; then
-              exit 0
-          fi
-
-          selected_name=$(basename "$selected" | tr . _)
-          tmux_running=$(pgrep tmux)
-
-          if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-              tmux new-session -s $selected_name -c $selected
-              exit 0
-          fi
-
-          if ! tmux has-session -t=$selected_name 2> /dev/null; then
-              tmux new-session -ds $selected_name -c $selected
-          fi
-
-          tmux switch-client -t $selected_name
-        '';
-      in
       ''
-        bindkey -s '^f' ' . ${lib.getExe tmuxSessionizer}\n';
+        bindkey -s ^f "tmux-sessionizer\n"
         bindkey "^$terminfo[kRIT5]" forward-word
         bindkey "^$terminfo[kLFT5]" backward-word
       '';

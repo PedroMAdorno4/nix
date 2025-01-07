@@ -1,18 +1,17 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   programs.tmux = {
     enable = true;
     shortcut = "a";
-    # aggressiveResize = true; -- Disabled to be iTerm-friendly
     baseIndex = 1;
-    newSession = true;
-    # Stop tmux+escape craziness.
+    newSession = false;
     escapeTime = 0;
-    # Force tmux to use /tmp for sockets (WSL2 compat)
-    # secureSocket = false;
+    clock24 = true;
+    keyMode = "vi";
 
     plugins = with pkgs; [
-      tmuxPlugins.better-mouse-mode
+      tmuxPlugins.continuum
+      tmuxPlugins.resurrect
     ];
 
     extraConfig = ''
@@ -22,12 +21,25 @@
       set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
       set-environment -g COLORTERM "truecolor"
 
-      # Mouse works as expected
-      set-option -g mouse on
-      # easy-to-remember split pane commands
-      bind | split-window -h -c "#{pane_current_path}"
-      bind - split-window -v -c "#{pane_current_path}"
-      bind c new-window -c "#{pane_current_path}"
+      set-option -g allow-passthrough on
+
+      set -g status-style 'bg=#333333 fg=#5eacd3'
+
+      bind -T copy-mode-vi v send-keys -X begin-selection
+      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+      # vim-like pane switching
+      bind -r ^ last-window
+      bind -r k select-pane -U
+      bind -r j select-pane -D
+      bind -r h select-pane -L
+      bind -r l select-pane -R
+
+      bind-key -r f run-shell "tmux neww ~/.local/bin/tmux-sessionizer"
+
+      set -g @continuum-boot 'on'
+      set -g @continuum-restore 'on'
+      set -g @resurrect-strategy-nvim 'session'
     '';
   };
 

@@ -17,7 +17,6 @@
     pamixer
     wlogout
     vim
-    kitty
     pavucontrol
     git
     playerctl
