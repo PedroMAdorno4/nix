@@ -10,7 +10,6 @@
     zip
     lazygit
     lazydocker
-    xwayland
     wl-clipboard
     hyprland
     waybar

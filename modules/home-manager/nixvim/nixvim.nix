@@ -3,6 +3,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins/bundle.nix
     ./autocmds.nix
+    ./colorscheme.nix
     ./extra-config.nix
     ./keymaps.nix
     ./performance.nix

@@ -9,7 +9,7 @@
       upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
 
       dev = ''nix develop "$FLAKE" --command zsh'';
-      ssh = "kitten ssh";
+      s = "kitten ssh";
       v = "nvim";
 
       conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
@@ -19,8 +19,21 @@
     };
 
     initExtra =
+      let
+        projectFinder = pkgs.writeShellScriptBin "projectFinder" ''
+          if [[ $# -eq 1 ]]; then
+              selected=$1
+          else
+              selected=$(find ~/pjx -mindepth 1 -maxdepth 1 -type d | ${pkgs.fzf}/bin/fzf)
+          fi
+
+          if [[ $selected ]]; then
+            cd "$selected" || exit
+          fi
+        '';
+      in
       ''
-        bindkey -s ^f "tmux-sessionizer\n"
+        bindkey -s '^f' ' . ${lib.getExe projectFinder}\n';
         bindkey "^$terminfo[kRIT5]" forward-word
         bindkey "^$terminfo[kLFT5]" backward-word
       '';

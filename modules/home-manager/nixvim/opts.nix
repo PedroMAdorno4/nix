@@ -1,5 +1,6 @@
 {
   programs.nixvim = {
+    colorscheme = "tokyonight";
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;

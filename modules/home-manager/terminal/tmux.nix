@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.tmux = {
-    enable = true;
+    enable = false;
     shortcut = "a";
     baseIndex = 1;
     newSession = false;

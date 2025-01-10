@@ -15,6 +15,10 @@
         event = [ "VimEnter" ];
         command = ":Obsess";
       }
+      {
+        event = [ "VimEnter" ];
+        command = "colorscheme tokyonight";
+      }
       #      {
       #        event = [ "BufAdd" ];
       #        command = ":lua require('otter').activate()<CR>";
