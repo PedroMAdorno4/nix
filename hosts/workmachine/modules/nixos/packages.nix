@@ -60,7 +60,6 @@
     epson-escpr
     epson-escpr2
     gnumake
-    gnome-clocks
     brightnessctl
     quickemu
     spice
@@ -71,6 +70,7 @@
     teams-for-linux
     woeusb
     transmission_4-gtk
+    wf-recorder
   ];
 
   fonts.packages = with pkgs; [

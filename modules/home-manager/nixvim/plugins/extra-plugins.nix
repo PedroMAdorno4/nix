@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   programs.nixvim.extraPlugins = [
-    pkgs.vimPlugins.vim-obsession
     pkgs.vimPlugins.actions-preview-nvim
     (pkgs.vimUtils.buildVimPlugin {
       name = "supermaven-nvim";

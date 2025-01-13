@@ -114,6 +114,7 @@
         "$mainMod ,Up,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
         "$mainMod ,Down,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
 
+        ''$mainMod, Minus, exec, wf-recorder -f test.gif -c gif -g "$(slurp)" '' # take a screenshot
         '',107, exec, grim -g "$(slurp)" - | swappy -f - '' # take a screenshot
         ",121, exec, pamixer -t" # Speaker Mute FN+F1
         ",122, exec, pamixer -d 5" # Volume lower key

@@ -13,10 +13,6 @@
       }
       {
         event = [ "VimEnter" ];
-        command = ":Obsess";
-      }
-      {
-        event = [ "VimEnter" ];
         command = "colorscheme tokyonight";
       }
       #      {

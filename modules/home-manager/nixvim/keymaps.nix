@@ -58,8 +58,6 @@
 
                 "<leader>gs" = ":LazyGit<CR>";
                 "<leader>vs" = "<cmd>VenvSelect<cr>";
-
-                "<C-f>" = "<cmd>silent !tmux neww tmux-sessionizer<CR>";
               };
           visual =
             lib.mapAttrsToList

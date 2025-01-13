@@ -1,7 +1,6 @@
-{ config, ... }: {
+{
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "tmux"
       "wl-gammarelay-rs"
       "waybar"
       ''dconf write /org/gnome/desktop/interface/cursor-theme "'Bibata-Modern-Ice'"''

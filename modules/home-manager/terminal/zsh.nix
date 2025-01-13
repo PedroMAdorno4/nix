@@ -5,8 +5,8 @@
     defaultKeymap = "emacs";
 
     shellAliases = {
-      rb = ''git -C "$FLAKE" add -A && nh os switch'';
-      upg = ''git -C "$FLAKE" add -A && nh os switch -u'';
+      rb = ''git -C "$FLAKE" add -A && nh os switch -- --accept-flake-config'';
+      upg = ''git -C "$FLAKE" add -A && nh os switch -u -- --accept-flake-config'';
 
       dev = ''nix develop "$FLAKE" --command zsh'';
       s = "kitten ssh";
