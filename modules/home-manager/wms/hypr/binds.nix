@@ -94,6 +94,8 @@
           '';
       in
       [
+        # See the xkbcommon-keysyms.h header for all the keysyms. The name you should use is the segment after XKB_KEY_.
+        # https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
         "$mainMod, RETURN, exec, kitty" #open the terminal
         "$mainMod, Q, killactive," # close the active window
         "$mainMod, Semicolon, exec, hyprlock" # Lock the screen
@@ -107,15 +109,19 @@
         "$mainMod SHIFT, SPACE, togglefloating, " # Allow a window to float
         "$mainMod, D, exec, wofi " # Show the graphicall app launcher
         # "$mainMod, A, exec, waydroid show-full-ui " # Show the Android interface
-        "$mainMod, P, exec, hyprpicker | wl-copy " # Color picker
         "$mainMod, T, togglesplit, " # dwindle
         "$mainMod, N, exec, ${lib.getExe rotateMonitor}"
         "$mainMod, M, exec, hyprctl dispatch movecursortocorner 1"
-        "$mainMod ,Up,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
-        "$mainMod ,Down,exec,busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
+        "$mainMod, Up, exec, busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
+        "$mainMod, Down, exec, busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
 
-        ''$mainMod, Minus, exec, wf-recorder -f test.gif -c gif -g "$(slurp)" '' # take a screenshot
-        '',107, exec, grim -g "$(slurp)" - | swappy -f - '' # take a screenshot
+        # Pyprland
+        "$mainMod, Y, exec, pypr expose"
+        "$mainMod, dead_acute, exec, pypr toggle term"
+        "$mainMod, Plus, exec, pypr zoom ++0.01"
+        "$mainMod, Minus, exec, pypr zoom --0.01"
+        "$mainMod, dead_grave, exec, pypr menu"
+
         ",121, exec, pamixer -t" # Speaker Mute FN+F1
         ",122, exec, pamixer -d 5" # Volume lower key
         ",123, exec, pamixer -i 5" # Volume Higher key
@@ -123,6 +129,7 @@
         "$mainMod, SLASH, exec, pamixer --default-source -t " # Mic mute key
         ",232, exec, brightnessctl set 10%- " # Screen brightness down FN+F7
         ",233, exec, brightnessctl set 10%+ " # Screen brightness up FN+F8
+        '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit -f -''
 
         ",172, exec, playerctl -p ncspot play-pause " # Play-pause music
         ",171, exec, playerctl -p ncspot next " # Next music

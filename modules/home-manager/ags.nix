@@ -15,6 +15,13 @@
       gtksourceview
       webkitgtk
       accountsservice
+      inputs.ags.packages.${pkgs.system}.battery
+      inputs.astal.packages.${pkgs.system}.hyprland
+      inputs.astal.packages.${pkgs.system}.mpris
+      inputs.astal.packages.${pkgs.system}.wireplumber
+      inputs.astal.packages.${pkgs.system}.network
+      inputs.astal.packages.${pkgs.system}.tray
+      fzf
     ];
   };
 }

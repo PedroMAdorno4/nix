@@ -1,9 +1,10 @@
-import { applauncher } from "applauncher";
-import { Bar } from "bar";
+import { App } from "astal/gtk3";
+import Bar from "./widgets/Bar";
+import style from "./style.scss";
 
-App.config({
-  style: "./style.css",
-  windows: [Bar(0), Bar(1)],
+App.start({
+  css: style,
+  main: () => App.get_monitors().map(Bar),
 });
 
 export {};

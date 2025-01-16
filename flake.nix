@@ -47,7 +47,17 @@
     # stylix.url = "git+file:/home/quatro/pjx/stylix";
 
     ags = {
-      url = "github:Aylur/ags";
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -66,6 +76,7 @@
         system = "x86_64-linux";
         overlays = [
           inputs.nur.overlays.default
+          inputs.hyprpanel.overlay
           (final: prev: {
             bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
           })
@@ -91,6 +102,7 @@
         };
         workmachine = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs pkgs; };
+
           modules = [
             ./hosts/workmachine/configuration.nix
             inputs.home-manager.nixosModules.default

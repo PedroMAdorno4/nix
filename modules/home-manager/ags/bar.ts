@@ -1,9 +1,4 @@
 import hyprland from "./hyprland.ts";
-const battery = await Service.import("battery");
-const network = await Service.import("network");
-const mpris = await Service.import("mpris");
-const audio = await Service.import("audio");
-const systemtray = await Service.import("systemtray");
 
 const date = Variable("", {
   poll: [1000, 'date "+%H:%M, %a %e"'],

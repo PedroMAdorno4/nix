@@ -40,6 +40,11 @@
       # Bitwarden extension firefox
       "float,title:^(Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox)$,class:^(firefox)$"
       "size 420 620,title:^(Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox)$,class:^(firefox)$"
+
+      # Satty screenshot tool
+      "float,title:^(satty)$"
+      "size 75% 75%,title:^(satty)$"
+      "center 1,title:^(satty)$"
     ];
   };
 }

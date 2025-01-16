@@ -71,6 +71,8 @@
     cargo
     popsicle
     timg
+    pyprland
+    hyprshot
   ];
 
   fonts.packages = with pkgs; [
