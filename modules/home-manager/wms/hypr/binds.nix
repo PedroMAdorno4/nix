@@ -129,7 +129,7 @@
         "$mainMod, SLASH, exec, pamixer --default-source -t " # Mic mute key
         ",232, exec, brightnessctl set 10%- " # Screen brightness down FN+F7
         ",233, exec, brightnessctl set 10%+ " # Screen brightness up FN+F8
-        '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit -f -''
+        '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit --copy-command wl-clopy -f -''
 
         ",172, exec, playerctl -p ncspot play-pause " # Play-pause music
         ",171, exec, playerctl -p ncspot next " # Next music
