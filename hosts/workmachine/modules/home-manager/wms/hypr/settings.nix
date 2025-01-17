@@ -46,6 +46,7 @@
       animate_manual_resizes = true;
       disable_splash_rendering = true;
       vfr = true;
+      focus_on_activate = true;
     };
 
     decoration = {

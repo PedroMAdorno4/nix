@@ -123,13 +123,13 @@
         "$mainMod, dead_grave, exec, pypr menu"
 
         ",121, exec, pamixer -t" # Speaker Mute FN+F1
-        ",122, exec, pamixer -d 5" # Volume lower key
-        ",123, exec, pamixer -i 5" # Volume Higher key
+        ",122, exec, pamixer -d 5 --allow-boost" # Volume lower key
+        ",123, exec, pamixer -i 5 --allow-boost" # Volume Higher key
         ",127, exec, ${lib.getExe switchAudio}" # Switch Audio Sink
         "$mainMod, SLASH, exec, pamixer --default-source -t " # Mic mute key
         ",232, exec, brightnessctl set 10%- " # Screen brightness down FN+F7
         ",233, exec, brightnessctl set 10%+ " # Screen brightness up FN+F8
-        '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit --copy-command wl-clopy -f -''
+        '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit --copy-command wl-copy -f -''
 
         ",172, exec, playerctl -p ncspot play-pause " # Play-pause music
         ",171, exec, playerctl -p ncspot next " # Next music
