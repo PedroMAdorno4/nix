@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
+{ pkgs, unstable-pkgs, ... }:
+let
+  stablePackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
     brave
     yazi
@@ -41,7 +42,6 @@
     socat
     jq
     libnotify
-    mako
     killall
     neofetch
     transmission_4-gtk
@@ -49,7 +49,6 @@
     trackma
     busybox
     devbox
-    nix-index
     vulkan-tools
     amdgpu_top
     ydotool
@@ -71,8 +70,15 @@
     popsicle
     timg
     pyprland
-    hyprshot
   ];
+
+  unstablePackages = with unstable-pkgs; [
+    lutris
+  ];
+in
+{
+  environment.systemPackages = stablePackages ++ unstablePackages;
+
 
   fonts.packages = with pkgs; [
     jetbrains-mono

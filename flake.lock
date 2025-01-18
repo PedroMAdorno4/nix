@@ -933,11 +933,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1736916166,
-        "narHash": "sha256-puPDoVKxkuNmYIGMpMQiK8bEjaACcCksolsG36gdaNQ=",
+        "lastModified": 1737165118,
+        "narHash": "sha256-s40Kk/OulP3J/1JvC3VT16U4r/Xw6Qdi7SRw3LYkPWs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e24b4c09e963677b1beea49d411cd315a024ad3a",
+        "rev": "6a3ae7a5a12fb8cac2d59d7df7cbd95f9b2f0566",
         "type": "github"
       },
       "original": {
@@ -999,11 +999,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1737223575,
-        "narHash": "sha256-Bl0S9BSh8znxe4OqEMs4rzAl4BmZJg9bRqyTRpynQ5s=",
+        "lastModified": 1737229531,
+        "narHash": "sha256-vBfwrN4k8iWdkhhNHZhlz2p2v0LoepsqvjN02irRqrI=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "1a008008ff98795d5f3e7014f303cfe86941f426",
+        "rev": "499bddd926c7496764215afa10c54e73ab368833",
         "type": "github"
       },
       "original": {
@@ -1070,7 +1070,8 @@
         "nixvim": "nixvim",
         "nur": "nur",
         "split-monitor-workspaces": "split-monitor-workspaces",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "unstable-pkgs": "unstable-pkgs"
       }
     },
     "split-monitor-workspaces": {
@@ -1263,6 +1264,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "unstable-pkgs": {
+      "locked": {
+        "lastModified": 1737062831,
+        "narHash": "sha256-Tbk1MZbtV2s5aG+iM99U8FqwxU/YNArMcWAv6clcsBc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5df43628fdf08d642be8ba5b3625a6c70731c19c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

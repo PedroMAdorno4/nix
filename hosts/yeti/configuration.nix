@@ -9,7 +9,6 @@
     ];
 
   networking.hostName = "yeti"; # Define your hostname.
-  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Sao_Paulo";
 

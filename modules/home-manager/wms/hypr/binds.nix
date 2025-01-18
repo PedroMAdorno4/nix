@@ -19,10 +19,10 @@
 
         switchAudio = pkgs.writeShellScriptBin "switch-audio" ''
           function get_current_sink() {
-            pactl info | sed -En 's/Default Sink: (.*)/\1/p'
+            ${lib.getExe' pkgs.pulseaudio "pactl"} info | sed -En 's/Default Sink: (.*)/\1/p'
           }
 
-          SINKS=$(pactl list short sinks | grep -v easyeffects)
+          SINKS=$(${lib.getExe' pkgs.pulseaudio "pactl"} list short sinks | grep -v easyeffects)
           SINK_COUNT=$(echo "$SINKS" | wc -l)
 
           CURRENT_SINK=$(get_current_sink)
@@ -38,7 +38,7 @@
             NEW_SINK=$(echo "$SINKS" | sed "''${NEW_SINK_INDEX}q;d" | awk '{ print $2 }')
 
             echo "Switching to sink: $NEW_SINK"
-            pactl set-default-sink "$NEW_SINK"
+            ${lib.getExe' pkgs.pulseaudio "pactl"} set-default-sink "$NEW_SINK"
 
             [ "$(get_current_sink)" = "$NEW_SINK" ] && break
 

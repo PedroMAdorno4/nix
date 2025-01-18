@@ -5,12 +5,12 @@
     ../../../../../../modules/home-manager/wms/hypr/rules.nix
     ./settings.nix
     ./display.nix
+    ./pyprland.nix
     ./startup.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 }

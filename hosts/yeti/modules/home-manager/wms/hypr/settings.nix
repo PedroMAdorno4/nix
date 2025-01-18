@@ -9,16 +9,17 @@
 
       follow_mouse = 1;
 
-      touchpad = {
-        natural_scroll = false;
-      };
-
       sensitivity = -1.0; # -1.0 - 1.0, 0 means no modification.
     };
 
     debug = {
       disable_logs = false;
     };
+
+    env = [
+      "HYPRCURSOR_THEME=Bibata-Modern-Ice"
+      "HYPRCURSOR_SIZE,20"
+    ];
 
     general = {
       gaps_in = 8;
@@ -29,9 +30,12 @@
     };
 
     misc = {
+      disable_hyprland_logo = true;
       force_default_wallpaper = 0;
       disable_splash_rendering = true;
+      animate_manual_resizes = true;
       middle_click_paste = false;
+      focus_on_activate = true;
     };
 
     decoration = {

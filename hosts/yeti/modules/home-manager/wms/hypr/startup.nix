@@ -2,8 +2,8 @@
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "wl-gammarelay-rs"
-      ''dconf write /org/gnome/desktop/interface/cursor-theme "'Bibata-Modern-Ice'"''
-      "hyprctl setcursor Bibata-modern 20"
+      "pypr"
+      "hyprpanel"
       "fcitx5 -d -r"
       "fcitx5-remote -r"
       "[workspace 1 silent] firefox"

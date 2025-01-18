@@ -70,7 +70,6 @@
     transmission_4-gtk
     wf-recorder
     pyprland
-    hyprshot
   ];
 
   fonts.packages = with pkgs; [

@@ -13,7 +13,8 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    unstable-pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # hyprland.url = "github:hyprwm/Hyprland/v0.45.2";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -72,7 +73,9 @@
   outputs = { nixpkgs, ... }@inputs:
 
     let
+      system = "x86_64-linux";
       nixpkgsConfig = {
+        nixpkgs.config.allowUnfree = true;
         nixpkgs.overlays = [
           inputs.nur.overlays.default
           inputs.hyprpanel.overlay
@@ -80,15 +83,21 @@
             bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
           })
         ];
-        nixpkgs.config.allowUnfree = true;
       };
+      unstable-pkgs = import inputs.unstable-pkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
     in
     {
 
       # yeti - system hostname
       nixosConfigurations = {
         yeti = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs unstable-pkgs;
+          };
           modules = [
             ./hosts/yeti/configuration.nix
             inputs.home-manager.nixosModules.default
@@ -99,7 +108,9 @@
           ];
         };
         workmachine = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs unstable-pkgs;
+          };
 
           modules = [
             ./hosts/workmachine/configuration.nix

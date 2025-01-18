@@ -6,16 +6,16 @@
     ../../../../modules/home-manager/firefox.nix
     ../../../../modules/home-manager/gpg.nix
     ../../../../modules/home-manager/hyprlock.nix
-    ../../../../modules/home-manager/hyprpanel.nix
     ../../../../modules/home-manager/keyboard.nix
     ../../../../modules/home-manager/lazygit.nix
+    ../../../../modules/home-manager/mpv.nix
     ../../../../modules/home-manager/ncspot.nix
     ../../../../modules/home-manager/theme.nix
     ../../../../modules/home-manager/wofi.nix
     ../../../../modules/home-manager/xdg.nix
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
-    ./wms/waybar.nix
+    ./wms/hyprpanel.nix
     ./bluetooth.nix
     ./git.nix
   ];

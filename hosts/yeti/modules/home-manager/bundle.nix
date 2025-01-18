@@ -15,7 +15,7 @@
     ../../../../modules/home-manager/xdg.nix
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
-    # ./wms/waybar.nix
+    ./wms/hyprpanel.nix
     ./git.nix
   ];
 }
