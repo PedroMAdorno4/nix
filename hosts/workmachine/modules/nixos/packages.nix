@@ -48,7 +48,6 @@
     openvpn
     beekeeper-studio
     nix-index
-    bun # for ags
     bruno
     google-cloud-sdk
     wl-gammarelay-rs

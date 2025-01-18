@@ -72,18 +72,15 @@
   outputs = { nixpkgs, ... }@inputs:
 
     let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        overlays = [
+      nixpkgsConfig = {
+        nixpkgs.overlays = [
           inputs.nur.overlays.default
           inputs.hyprpanel.overlay
           (final: prev: {
             bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
           })
         ];
-        config = {
-          allowUnfree = true;
-        };
+        nixpkgs.config.allowUnfree = true;
       };
     in
     {
@@ -91,17 +88,18 @@
       # yeti - system hostname
       nixosConfigurations = {
         yeti = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs pkgs; };
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/yeti/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
+            nixpkgsConfig
           ];
         };
         workmachine = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs pkgs; };
+          specialArgs = { inherit inputs; };
 
           modules = [
             ./hosts/workmachine/configuration.nix
@@ -109,6 +107,7 @@
             inputs.stylix.nixosModules.stylix
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
+            nixpkgsConfig
           ];
         };
       };

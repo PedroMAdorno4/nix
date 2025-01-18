@@ -49,7 +49,6 @@
     trackma
     busybox
     devbox
-    bun # for ags
     nix-index
     vulkan-tools
     amdgpu_top
