@@ -5,21 +5,28 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [
+    "video=DP-3:1920x1080@144"
+    "video=HDMI-A-1:1920x1080@60"
+  ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4226e1fa-87bd-4ad2-8033-7ff5b4c69c6b";
+    {
+      device = "/dev/disk/by-uuid/4226e1fa-87bd-4ad2-8033-7ff5b4c69c6b";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9528-598F";
+    {
+      device = "/dev/disk/by-uuid/9528-598F";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -35,4 +42,11 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [ rocmPackages.clr.icd amdvlk ];
+    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+  };
 }
