@@ -15,10 +15,7 @@
          },
        },
      }
-    require('venv-selector').setup {
-     }
     require("supermaven-nvim").setup({})
     -- require("otter").activate()
-    require("sad").setup({})
   '';
 }

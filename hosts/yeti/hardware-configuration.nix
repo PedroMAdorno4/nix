@@ -4,7 +4,7 @@
 { config, lib, pkgs, inputs, modulesPath, ... }:
 
 let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.system};
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   imports =
@@ -36,12 +36,16 @@ in
 
   swapDevices = [ ];
 
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
+  # networking.useDHCP = lib.mkDefault true;
+  networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -49,9 +53,7 @@ in
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    package = pkgs-unstable.mesa.drivers;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-    extraPackages = with pkgs; [ rocmPackages.clr.icd amdvlk ];
-    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+    # package = pkgs-unstable.mesa.drivers;
+    # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 }

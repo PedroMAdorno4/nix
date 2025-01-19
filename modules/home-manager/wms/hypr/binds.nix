@@ -18,38 +18,42 @@
         '';
 
         switchAudio = pkgs.writeShellScriptBin "switch-audio" ''
-          function get_current_sink() {
-            ${lib.getExe' pkgs.pulseaudio "pactl"} info | sed -En 's/Default Sink: (.*)/\1/p'
+          get_all_sinks() {
+            ${lib.getExe' pkgs.pulseaudio "pactl"} list short sinks | cut -f 2
           }
 
-          SINKS=$(${lib.getExe' pkgs.pulseaudio "pactl"} list short sinks | grep -v easyeffects)
-          SINK_COUNT=$(echo "$SINKS" | wc -l)
+          get_all_sink_inputs() {
+            ${lib.getExe' pkgs.pulseaudio "pactl"} list short sink-inputs | cut -f 1
+          }
 
-          CURRENT_SINK=$(get_current_sink)
-          CURRENT_SINK_INDEX=$(echo "$SINKS" | grep -n "$CURRENT_SINK" | grep -Eo '^[0-9]+')
+          get_default_sink() {
+            #pw-play --list-targets | grep \* | tail -n 1 | cut -d' ' -f 2 | cut -d : -f 1
+            ${lib.getExe' pkgs.pulseaudio "pactl"} info | grep 'Default Sink' | cut -d':' -f 2
+          }
 
-          MAX_RETRIES=6
-          RETRIES=0
-
-          while true; do
-            [ "$RETRIES" -ge "$MAX_RETRIES" ] && echo "Reached retry limit of $MAX_SINK_SKIPS, giving up." && break
-
-            NEW_SINK_INDEX=$(((CURRENT_SINK_INDEX + $RETRIES) % $SINK_COUNT + 1))
-            NEW_SINK=$(echo "$SINKS" | sed "''${NEW_SINK_INDEX}q;d" | awk '{ print $2 }')
-
-            echo "Switching to sink: $NEW_SINK"
-            ${lib.getExe' pkgs.pulseaudio "pactl"} set-default-sink "$NEW_SINK"
-
-            [ "$(get_current_sink)" = "$NEW_SINK" ] && break
-
-            # Note: switching could fail if, for example, the new sink does not have any available output port
-            echo "Failed to switch to sink: $NEW_SINK, skipping to next sink..."
-            RETRIES=$((RETRIES + 1))
+          DEF_SINK=$(get_default_sink)
+          for SINK in $(get_all_sinks) ; do
+            [ -z "$FIRST" ] && FIRST=$SINK # Save the first index in case the current default is the last in the list
+            # get_default_sink currently returns the index with a leading space
+            if [ " $SINK" = "$DEF_SINK" ]; then
+              NEXT=1;
+            # Subsequent pass, don't need continue above
+            elif [ -n "$NEXT"  ]; then
+              NEW_DEFAULT_SINK=$SINK
+              break
+            fi
           done
 
-          # Forward all playing audio (sink inputs) to the new sink (Uncomment if your system does not automatically do this)
-          #SINK_INPUTS=($(pactl list short sink-inputs | grep -Eo '^[0-9]+'))
-          #for SINK_INPUT in ''${SINK_INPUTS[*]}; do pactl move-sink-input $SINK_INPUT $NEW_SINK; done
+          # Don't particularly like this method of making it circular, but...
+          [ -z "$NEW_DEFAULT_SINK" ] && NEW_DEFAULT_SINK=$FIRST
+
+          # Set default sink for new audio playback
+          ${lib.getExe' pkgs.pulseaudio "pactl"} set-default-sink "$NEW_DEFAULT_SINK"
+
+          # Move all current inputs to the new default sink
+          for INPUT in $(get_all_sink_inputs); do
+            ${lib.getExe' pkgs.pulseaudio "pactl"} move-sink-input $INPUT $NEW_DEFAULT_SINK
+          done
         '';
 
 

@@ -33,9 +33,10 @@ in
     [{ device = "/dev/disk/by-uuid/d862cb7e-f26e-49e3-8ab3-b23b5d6e483d"; }];
 
   hardware.graphics = {
-    package = pkgs-unstable.mesa.drivers;
+    enable = true;
     enable32Bit = true;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+    # package = pkgs-unstable.mesa.drivers;
+    # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

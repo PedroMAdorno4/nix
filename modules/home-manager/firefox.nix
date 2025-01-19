@@ -1,6 +1,12 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox.override
+      {
+        nativeMessagingHosts = [
+          pkgs.tridactyl-native
+        ];
+      };
 
     languagePacks = [ "en-US" "pt-BR" ];
 
@@ -92,6 +98,7 @@
         "signon.autofillForms" = false;
         "signon.generation.enabled" = false;
         "signon.firefoxRelay.enabled" = false;
+        "extensions.autoDisableScopes" = 0;
       };
 
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [

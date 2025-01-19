@@ -32,7 +32,6 @@ let
     zathura
     mpvpaper
     parted
-    steam
     steamcmd
     ripgrep
     fzf
@@ -62,18 +61,17 @@ let
     p7zip
     filezilla
     godot_4
-    goxel
     blender
-    bottles
     rustc
     cargo
     popsicle
     timg
     pyprland
+    toybox
   ];
 
   unstablePackages = with unstable-pkgs; [
-    lutris
+    bottles
   ];
 in
 {
@@ -85,6 +83,6 @@ in
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
-    nerdfonts
-  ];
+  ]
+  ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
