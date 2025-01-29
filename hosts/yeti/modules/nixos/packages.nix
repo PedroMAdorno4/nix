@@ -68,6 +68,9 @@ let
     timg
     pyprland
     toybox
+    mangohud
+    hyprpolkitagent
+    uwsm
   ];
 
   unstablePackages = with unstable-pkgs; [

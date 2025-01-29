@@ -20,7 +20,7 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" "ydotool" "podman" ];
+      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" "ydotool" "podman" "gamemode" ];
     };
   };
 
