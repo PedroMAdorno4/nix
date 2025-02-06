@@ -1,6 +1,11 @@
 {
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = false;
-  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
   services.resolved.enable = false;
+  networking = {
+    useNetworkd = true;
+    useDHCP = false;
+    firewall.enable = false;
+    networkmanager.enable = true;
+    wireless.enable = false;
+    nameservers = [ "8.8.8.8" "8.8.4.4" ];
+  };
 }

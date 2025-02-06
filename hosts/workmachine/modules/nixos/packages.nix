@@ -72,7 +72,7 @@
     pyprland
     hyprpolkitagent
     uwsm
-    rkvm
+    input-leap
   ];
 
   fonts.packages = with pkgs; [

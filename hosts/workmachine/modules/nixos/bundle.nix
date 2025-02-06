@@ -23,6 +23,5 @@
     ../../../../modules/nixos/modules/xdg.nix
     ../../../../modules/nixos/modules/zsh.nix
     ./packages.nix
-    ./rkvm.nix
   ];
 }

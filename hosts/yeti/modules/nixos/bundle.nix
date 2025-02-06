@@ -25,6 +25,5 @@
     ../../../../modules/nixos/modules/ydotool.nix
     ../../../../modules/nixos/modules/zsh.nix
     ./packages.nix
-    ./rkvm.nix
   ];
 }

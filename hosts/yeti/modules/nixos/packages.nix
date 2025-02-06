@@ -76,6 +76,7 @@ let
     spice
     spice-gtk
     magic-wormhole
+    input-leap
   ];
 
   unstablePackages = with unstable-pkgs; [
