@@ -17,6 +17,5 @@
     ./wms/hypr/bundle.nix
     ./wms/hyprpanel.nix
     ./git.nix
-    ./lan-mouse.nix
   ];
 }

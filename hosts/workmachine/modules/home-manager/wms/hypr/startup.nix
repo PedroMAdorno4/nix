@@ -4,7 +4,6 @@
       "wl-gammarelay-rs"
       "pypr"
       "hyprpanel"
-      "lan-mouse --daemon"
       "fcitx5 -d -r"
       "fcitx5-remote -r"
       "[workspace 1 silent] firefox"
