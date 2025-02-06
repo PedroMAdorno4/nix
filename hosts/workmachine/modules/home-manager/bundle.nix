@@ -7,7 +7,6 @@
     ../../../../modules/home-manager/gpg.nix
     ../../../../modules/home-manager/hyprlock.nix
     ../../../../modules/home-manager/keyboard.nix
-    ../../../../modules/home-manager/lan-mouse.nix
     ../../../../modules/home-manager/lazygit.nix
     ../../../../modules/home-manager/mpv.nix
     ../../../../modules/home-manager/ncspot.nix
@@ -18,6 +17,7 @@
     ./wms/hypr/bundle.nix
     ./wms/hyprpanel.nix
     ./bluetooth.nix
+    ./lan-mouse.nix
     ./git.nix
   ];
 }
