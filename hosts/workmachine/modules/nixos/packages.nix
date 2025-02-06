@@ -72,6 +72,7 @@
     pyprland
     hyprpolkitagent
     uwsm
+    rkvm
   ];
 
   fonts.packages = with pkgs; [
@@ -79,6 +80,6 @@
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
-    nerdfonts
-  ];
+  ]
+  ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
