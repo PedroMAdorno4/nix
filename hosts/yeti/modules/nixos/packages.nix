@@ -1,4 +1,4 @@
-{ pkgs, unstable-pkgs, ... }:
+{ pkgs, unstable-pkgs, inputs, ... }:
 let
   stablePackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
@@ -71,14 +71,22 @@ let
     mangohud
     hyprpolkitagent
     uwsm
+    heroic
+    quickemu
+    spice
+    spice-gtk
+    magic-wormhole
   ];
 
   unstablePackages = with unstable-pkgs; [
     bottles
   ];
+
+  customPackages = [
+  ];
 in
 {
-  environment.systemPackages = stablePackages ++ unstablePackages;
+  environment.systemPackages = stablePackages ++ unstablePackages ++ customPackages;
 
 
   fonts.packages = with pkgs; [

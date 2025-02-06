@@ -20,7 +20,9 @@
     ../../../../modules/nixos/modules/sound.nix
     ../../../../modules/nixos/modules/stylix.nix
     ../../../../modules/nixos/modules/sudo.nix
+    ../../../../modules/nixos/modules/xdg.nix
     ../../../../modules/nixos/modules/zsh.nix
     ./packages.nix
+    ./rkvm.nix
   ];
 }

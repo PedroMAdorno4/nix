@@ -51,6 +51,7 @@
 
     decoration = {
       rounding = 6;
+      rounding_power = 4.0;
       blur = {
         enabled = false;
       };
@@ -90,6 +91,15 @@
     gestures = {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
       workspace_swipe = false;
+    };
+
+    ecosystem = {
+      no_donation_nag = true;
+    };
+
+    experimental = {
+      wide_color_gamut = true;
+      xx_color_management_v4 = true;
     };
   };
 }

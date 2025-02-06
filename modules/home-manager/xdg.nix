@@ -1,27 +1,17 @@
-{ pkgs, ... }: {
-  xdg = {
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "image/png" = [ "timg.desktop" ];
-        "image/jpeg" = [ "timg.desktop" ];
-        "image/jpg" = [ "timg.desktop" ];
-        "image/webp" = [ "timg.desktop" ];
-        "image/gif" = [ "timg.desktop" ];
-        "video/x-matroska" = [ "mpv.desktop" ];
-        "video/mp4" = [ "mpv.desktop" ];
-        "text/plain" = [ "nvim.desktop" ];
-        "inode/directory" = [ "yazi.desktop" ];
-      };
-    };
-    portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
-      configPackages = with pkgs; [
-        xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-wlr
-      ];
+{
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+      "image/png" = [ "timg.desktop" ];
+      "image/jpeg" = [ "timg.desktop" ];
+      "image/jpg" = [ "timg.desktop" ];
+      "image/webp" = [ "timg.desktop" ];
+      "image/gif" = [ "timg.desktop" ];
+      "video/x-matroska" = [ "mpv.desktop" ];
+      "video/mp4" = [ "mpv.desktop" ];
+      "text/plain" = [ "nvim.desktop" ];
+      "inode/directory" = [ "yazi.desktop" ];
     };
   };
 }
