@@ -1,8 +1,8 @@
 {
-  services.resolved.enable = false;
+  services.resolved.enable = true;
   networking = {
-    useNetworkd = true;
-    useDHCP = false;
+    # useNetworkd = true;
+    # useDHCP = false;
     firewall.enable = false;
     networkmanager.enable = true;
     wireless.enable = false;

@@ -38,6 +38,7 @@
           bang = true,
         })
       '';
+
     plugins.conform-nvim = {
       enable = true;
       settings = {
@@ -58,7 +59,7 @@
               end
             end
 
-            return { timeout_ms = 1000, lsp_format = "fallback", quiet = false }
+            return { timeout_ms = 1000, lsp_format = "fallback", quiet = false, stop_after_first = true }, on_format
            end
         '';
 
@@ -106,7 +107,7 @@
             "isort"
           ];
           lua = [ "stylua" ];
-          nix = [ "nixpkgs-fmt" ];
+          nix = [ "alejandra" ];
           markdown = [
             [
               "prettierd"
@@ -119,7 +120,6 @@
               "prettier"
             ]
           ];
-          terraform = [ "terraform_fmt" ];
           bash = [
             "shellcheck"
             "shellharden"
@@ -160,9 +160,6 @@
           };
           rustfmt = {
             command = "${lib.getExe pkgs.rustfmt}";
-          };
-          nixpkgs-fmt = {
-            command = "${lib.getExe pkgs.nixpkgs-fmt}";
           };
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";
