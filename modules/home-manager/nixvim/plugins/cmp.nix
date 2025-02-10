@@ -5,10 +5,10 @@
       autoEnableSources = true;
       settings = {
         sources = [
-          { name = "nvim_lsp"; }
+          {name = "nvim_lsp";}
           # { name = "supermaven"; }
-          { name = "path"; }
-          { name = "buffer"; }
+          {name = "path";}
+          {name = "buffer";}
         ];
 
         mapping = {

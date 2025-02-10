@@ -27,7 +27,7 @@
       numShortcut = true;
       keys = {
         exec = "<CR>";
-        quit = [ "<Esc>" "q" ];
+        quit = ["<Esc>" "q"];
       };
     };
     lightbulb = {
@@ -42,7 +42,7 @@
       autoSave = false;
       keys = {
         exec = "<CR>";
-        quit = [ "<Esc>" "q" ];
+        quit = ["<Esc>" "q"];
         select = "x";
       };
     };
@@ -54,7 +54,7 @@
       winPosition = "right"; # left or right
       keys = {
         jump = "e";
-        quit = [ "<Esc>" "q" ];
+        quit = ["<Esc>" "q"];
         toggleOrJump = "o";
       };
     };

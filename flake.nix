@@ -66,60 +66,58 @@
     lan-mouse.url = "github:feschber/lan-mouse";
   };
 
-  outputs = { nixpkgs, ... }@inputs:
-
-    let
-      system = "x86_64-linux";
-      nixpkgsConfig = {
-        nixpkgs.config.allowUnfree = true;
-        nixpkgs.overlays = [
-          inputs.nur.overlays.default
-          inputs.hyprpanel.overlay
-          (final: prev: {
-            bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix { baseColor = "#FFFFFF"; outlineColor = "#000000"; watchBackgroundColor = "#FFFFFF"; };
-          })
+  outputs = {nixpkgs, ...} @ inputs: let
+    system = "x86_64-linux";
+    nixpkgsConfig = {
+      nixpkgs.config.allowUnfree = true;
+      nixpkgs.overlays = [
+        inputs.nur.overlays.default
+        inputs.hyprpanel.overlay
+        (final: prev: {
+          bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix {
+            baseColor = "#FFFFFF";
+            outlineColor = "#000000";
+            watchBackgroundColor = "#FFFFFF";
+          };
+        })
+      ];
+    };
+    unstable-pkgs = import inputs.unstable-pkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
+    # yeti - system hostname
+    nixosConfigurations = {
+      yeti = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs unstable-pkgs;
+        };
+        modules = [
+          ./hosts/yeti/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          inputs.nix-index-database.nixosModules.nix-index
+          {programs.nix-index-database.comma.enable = true;}
+          nixpkgsConfig
         ];
       };
-      unstable-pkgs = import inputs.unstable-pkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-    in
-    {
-
-      # yeti - system hostname
-      nixosConfigurations = {
-        yeti = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs unstable-pkgs;
-          };
-          modules = [
-            ./hosts/yeti/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            inputs.nix-index-database.nixosModules.nix-index
-            { programs.nix-index-database.comma.enable = true; }
-            nixpkgsConfig
-          ];
+      workmachine = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs unstable-pkgs;
         };
-        workmachine = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs unstable-pkgs;
-          };
 
-          modules = [
-            ./hosts/workmachine/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            inputs.nix-index-database.nixosModules.nix-index
-            { programs.nix-index-database.comma.enable = true; }
-            nixpkgsConfig
-          ];
-        };
+        modules = [
+          ./hosts/workmachine/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          inputs.nix-index-database.nixosModules.nix-index
+          {programs.nix-index-database.comma.enable = true;}
+          nixpkgsConfig
+        ];
       };
-
-      # devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
-
     };
+
+    # devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
+  };
 }

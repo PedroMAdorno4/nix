@@ -1,14 +1,15 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override
+    package =
+      pkgs.firefox.override
       {
         nativeMessagingHosts = [
           pkgs.tridactyl-native
         ];
       };
 
-    languagePacks = [ "en-US" "pt-BR" ];
+    languagePacks = ["en-US" "pt-BR"];
 
     profiles.quatro = {
       search.engines = {
@@ -18,55 +19,82 @@
         "Wikipedia (en)".metaData.hidden = true;
 
         "Nix Packages" = {
-          urls = [{
-            template = "https://search.nixos.org/packages";
-            params = [
-              { name = "type"; value = "packages"; }
-              { name = "query"; value = "{searchTerms}"; }
-            ];
-          }];
+          urls = [
+            {
+              template = "https://search.nixos.org/packages";
+              params = [
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "!np" ];
+          definedAliases = ["!np"];
         };
 
         "Nix Options" = {
-          urls = [{
-            template = "https://search.nixos.org/options";
-            params = [
-              { name = "channel"; value = "24.11"; }
-              { name = "from"; value = "0"; }
-              { name = "size"; value = "50"; }
-              { name = "sort"; value = "relevance"; }
-              { name = "type"; value = "packages"; }
-              { name = "query"; value = "{searchTerms}"; }
-            ];
-          }];
+          urls = [
+            {
+              template = "https://search.nixos.org/options";
+              params = [
+                {
+                  name = "channel";
+                  value = "24.11";
+                }
+                {
+                  name = "from";
+                  value = "0";
+                }
+                {
+                  name = "size";
+                  value = "50";
+                }
+                {
+                  name = "sort";
+                  value = "relevance";
+                }
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "!no" ];
+          definedAliases = ["!no"];
         };
 
         "Searchix" = {
-          urls = [{ template = "https://searchix.alanpearce.eu/all/search?query={searchTerms}"; }];
+          urls = [{template = "https://searchix.alanpearce.eu/all/search?query={searchTerms}";}];
           iconUpdateURL = "https://wiki.nixos.org/favicon.png";
           updateInterval = 24 * 60 * 60 * 1000; # every day
-          definedAliases = [ "!ns" ];
+          definedAliases = ["!ns"];
         };
 
         "Brave Search" = {
-          urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+          urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
         };
 
         "Nyaa" = {
-          urls = [{ template = "https://nyaa.si/?f=0&c=1_2&q=1080p+{searchTerms}"; }];
-          definedAliases = [ "!ani" ];
+          urls = [{template = "https://nyaa.si/?f=0&c=1_2&q=1080p+{searchTerms}";}];
+          definedAliases = ["!ani"];
         };
       };
 
       search.default = "Brave Search";
       search.force = true;
-
 
       settings = {
         "media.ffmpeg.vaapi.enabled" = true;

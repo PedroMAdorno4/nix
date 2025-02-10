@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "wl-gammarelay-rs"

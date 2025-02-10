@@ -26,7 +26,7 @@
       expandtab = true;
       autoindent = true;
       mouse = "";
-      completeopt = [ "menu" "menuone" "noselect" ];
+      completeopt = ["menu" "menuone" "noselect"];
     };
   };
 }

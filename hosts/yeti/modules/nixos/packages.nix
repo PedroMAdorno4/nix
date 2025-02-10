@@ -1,7 +1,11 @@
-{ pkgs, unstable-pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  unstable-pkgs,
+  inputs,
+  ...
+}: let
   stablePackages = with pkgs; [
-    (import ../../../../modules/nixos/scripts/terminal.nix { inherit "pkgs"; })
+    (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
     brave
     yazi
     gcc
@@ -44,7 +48,7 @@ let
     killall
     neofetch
     transmission_4-gtk
-    (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
+    (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
     trackma
     busybox
     devbox
@@ -85,16 +89,15 @@ let
 
   customPackages = [
   ];
-in
-{
+in {
   environment.systemPackages = stablePackages ++ unstablePackages ++ customPackages;
 
-
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-emoji
-    twemoji-color-font
-  ]
-  ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages = with pkgs;
+    [
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-emoji
+      twemoji-color-font
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }

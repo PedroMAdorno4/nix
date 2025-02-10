@@ -1,18 +1,18 @@
 {
   programs.nixvim = {
     autoGroups = {
-      highlight_yank = { };
-      vim_enter = { };
-      indentscope = { };
-      restore_cursor = { };
+      highlight_yank = {};
+      vim_enter = {};
+      indentscope = {};
+      restore_cursor = {};
     };
     autoCmd = [
       {
-        event = [ "VimEnter" ];
+        event = ["VimEnter"];
         command = ":TransparentEnable";
       }
       {
-        event = [ "VimEnter" ];
+        event = ["VimEnter"];
         command = "colorscheme tokyonight";
       }
       #      {
@@ -21,7 +21,7 @@
       #      }
       {
         group = "highlight_yank";
-        event = [ "TextYankPost" ];
+        event = ["TextYankPost"];
         pattern = "*";
         callback = {
           __raw = ''
@@ -34,7 +34,7 @@
       ## from NVChad https://nvchad.com/docs/recipes (this autocmd will restore the cursor position when opening a file)
       {
         group = "restore_cursor";
-        event = [ "BufReadPost" ];
+        event = ["BufReadPost"];
         pattern = "*";
         callback = {
           __raw = ''

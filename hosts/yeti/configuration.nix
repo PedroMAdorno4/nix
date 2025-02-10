@@ -1,17 +1,18 @@
-{ pkgs, inputs, ... }:
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ./modules/nixos/bundle.nix
-    ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ./modules/nixos/bundle.nix
+  ];
 
   networking.hostName = "yeti"; # Define your hostname.
 
   time.timeZone = "America/Sao_Paulo";
-
 
   # services.printing.enable = true;
 
@@ -20,12 +21,12 @@
 
     users.quatro = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "adbusers" "docker" "ydotool" "podman" "gamemode" ];
+      extraGroups = ["wheel" "input" "networkmanager" "adbusers" "docker" "ydotool" "podman" "gamemode"];
     };
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs pkgs; };
+    extraSpecialArgs = {inherit inputs pkgs;};
     users = {
       "quatro" = import ./home.nix;
     };
@@ -35,6 +36,4 @@
   services.gnome.gnome-keyring.enable = true;
 
   system.stateVersion = "24.11";
-
 }
-

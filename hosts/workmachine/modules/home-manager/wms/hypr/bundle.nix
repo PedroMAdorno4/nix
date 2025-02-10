@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../../../../../modules/home-manager/wms/hypr/plugins.nix
     ../../../../../../modules/home-manager/wms/hypr/binds.nix

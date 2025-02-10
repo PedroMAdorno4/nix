@@ -1,6 +1,7 @@
-{ lib
-, pkgs
-, ...
+{
+  lib,
+  pkgs,
+  ...
 }: {
   programs.nixvim = {
     extraConfigLuaPre =
@@ -42,7 +43,6 @@
     plugins.conform-nvim = {
       enable = true;
       settings = {
-
         format_on_save = ''
           function(bufnr)
             if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -106,8 +106,8 @@
             "black"
             "isort"
           ];
-          lua = [ "stylua" ];
-          nix = [ "alejandra" ];
+          lua = ["stylua"];
+          nix = ["alejandra"];
           markdown = [
             [
               "prettierd"
@@ -125,9 +125,9 @@
             "shellharden"
             "shfmt"
           ];
-          json = [ "jq" ];
-          rust = [ "rustfmt" ];
-          "_" = [ "trim_whitespace" ];
+          json = ["jq"];
+          rust = ["rustfmt"];
+          "_" = ["trim_whitespace"];
         };
 
         formatters = {

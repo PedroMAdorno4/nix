@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    (import ../../../../modules/nixos/scripts/terminal.nix { inherit pkgs; })
-    (callPackage ../../../../modules/packages/nix-node.nix { inherit pkgs; })
-    (callPackage ../../../../modules/packages/tmux-sessionizer.nix { inherit pkgs; })
+    (import ../../../../modules/nixos/scripts/terminal.nix {inherit pkgs;})
+    (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
+    (callPackage ../../../../modules/packages/tmux-sessionizer.nix {inherit pkgs;})
     brave
     yazi
     gcc
@@ -74,11 +74,12 @@
     uwsm
   ];
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-emoji
-    twemoji-color-font
-  ]
-  ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages = with pkgs;
+    [
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-emoji
+      twemoji-color-font
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }

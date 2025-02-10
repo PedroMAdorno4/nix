@@ -1,5 +1,9 @@
-{ config, pkgs, ... }: {
-  home.file."${config.xdg.configHome}/hypr/pyprland.toml".source = (pkgs.formats.toml { }).generate "pyprland-config" {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  home.file."${config.xdg.configHome}/hypr/pyprland.toml".source = (pkgs.formats.toml {}).generate "pyprland-config" {
     pyprland = {
       plugins = [
         "scratchpads"
@@ -52,6 +56,5 @@
         Relayout = "pypr relayout";
       };
     };
-
   };
 }

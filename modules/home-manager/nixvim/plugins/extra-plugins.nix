@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.nixvim.extraPlugins = [
     pkgs.vimPlugins.actions-preview-nvim
     pkgs.vimPlugins.supermaven-nvim
@@ -30,5 +30,4 @@
     #   };
     # })
   ];
-
 }

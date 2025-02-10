@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{inputs, ...}: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins/bundle.nix
@@ -14,5 +14,4 @@
     enable = true;
     defaultEditor = true;
   };
-
 }

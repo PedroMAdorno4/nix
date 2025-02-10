@@ -1,8 +1,7 @@
 let
-  pkgs = import <nixpkgs> { };
+  pkgs = import <nixpkgs> {};
 
-
-  debugVm = { modulesPath, ... }: {
+  debugVm = {modulesPath, ...}: {
     imports = [
       ./modules/docker.nix
       "${modulesPath}/virtualisation/qemu-vm.nix"
@@ -10,10 +9,26 @@ let
 
     # Forward the hosts's port 2222 to the guest's SSH port.
     virtualisation.forwardPorts = [
-      { from = "host"; host.port = 2222; guest.port = 22; }
-      { from = "host"; host.port = 9000; guest.port = 3000; }
-      { from = "host"; host.port = 9001; guest.port = 5000; }
-      { from = "host"; host.port = 9002; guest.port = 3001; }
+      {
+        from = "host";
+        host.port = 2222;
+        guest.port = 22;
+      }
+      {
+        from = "host";
+        host.port = 9000;
+        guest.port = 3000;
+      }
+      {
+        from = "host";
+        host.port = 9001;
+        guest.port = 5000;
+      }
+      {
+        from = "host";
+        host.port = 9002;
+        guest.port = 3001;
+      }
     ];
     virtualisation.diskSize = 20000;
     virtualisation.memorySize = 2500;
@@ -32,5 +47,4 @@ let
     debugVm
   ];
 in
-
-nixosEvaluation.config.system.build.vm
+  nixosEvaluation.config.system.build.vm

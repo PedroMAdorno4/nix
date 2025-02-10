@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Use “RSA and RSA” with 4096 bits keysize
   # $ gpg2 --full-generate-key
   #

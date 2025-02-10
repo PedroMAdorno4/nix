@@ -1,4 +1,4 @@
-{ pkgs }:
+{pkgs}:
 pkgs.writeScriptBin "tmux-sessionizer" ''
   #!/usr/bin/env bash
 
@@ -29,4 +29,4 @@ pkgs.writeScriptBin "tmux-sessionizer" ''
   else
       tmux switch-client -t $selected_name
   fi
-'' 
+''

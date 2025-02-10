@@ -1,11 +1,13 @@
-{ pkgs, inputs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ./modules/nixos/bundle.nix
-    ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ./modules/nixos/bundle.nix
+  ];
 
   networking.hostName = "workmachine"; # Define your hostname.
 
@@ -22,14 +24,14 @@
 
     users.pedroma = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" "networkmanager" "docker" "adbusers" "wireshark" "podman" ];
+      extraGroups = ["wheel" "input" "networkmanager" "docker" "adbusers" "wireshark" "podman"];
     };
   };
 
   # virtualisation.waydroid.enable = true;
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs pkgs; };
+    extraSpecialArgs = {inherit inputs pkgs;};
     users = {
       "pedroma" = import ./home.nix;
     };
@@ -40,6 +42,4 @@
   programs.wireshark.package = pkgs.wireshark;
 
   system.stateVersion = "24.11";
-
 }
-

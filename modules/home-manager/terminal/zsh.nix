@@ -1,4 +1,10 @@
-{ config, osConfig, pkgs, lib, ... }: {
+{
+  config,
+  osConfig,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     zprof.enable = false;
@@ -18,29 +24,27 @@
       ll = "ls -lh";
     };
 
-    initExtra =
-      let
-        projectFinder = pkgs.writeShellScriptBin "projectFinder" ''
-          if [[ $# -eq 1 ]]; then
-              selected=$1
-          else
-              selected=$(find ~/pjx -mindepth 1 -maxdepth 1 -type d | ${pkgs.fzf}/bin/fzf)
-          fi
+    initExtra = let
+      projectFinder = pkgs.writeShellScriptBin "projectFinder" ''
+        if [[ $# -eq 1 ]]; then
+            selected=$1
+        else
+            selected=$(find ~/pjx -mindepth 1 -maxdepth 1 -type d | ${pkgs.fzf}/bin/fzf)
+        fi
 
-          if [[ $selected ]]; then
-            cd "$selected" || exit
-          fi
-        '';
-      in
-      ''
-        bindkey -s '^f' ' . ${lib.getExe projectFinder}\n';
-        bindkey "^$terminfo[kRIT5]" forward-word
-        bindkey "^$terminfo[kLFT5]" backward-word
-
-        if uwsm check may-start && uwsm select; then
-          exec systemd-cat -t uwsm_start uwsm start default
+        if [[ $selected ]]; then
+          cd "$selected" || exit
         fi
       '';
+    in ''
+      bindkey -s '^f' ' . ${lib.getExe projectFinder}\n';
+      bindkey "^$terminfo[kRIT5]" forward-word
+      bindkey "^$terminfo[kLFT5]" backward-word
+
+      if uwsm check may-start && uwsm select; then
+        exec systemd-cat -t uwsm_start uwsm start default
+      fi
+    '';
 
     history = {
       size = 9999;
@@ -68,6 +72,3 @@
     };
   };
 }
-
-
-

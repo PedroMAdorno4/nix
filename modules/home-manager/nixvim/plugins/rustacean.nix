@@ -5,10 +5,10 @@
       tools.enable_clippy = true;
       server = {
         default_settings = {
-          inlayHints = { lifetimeElisionHints = { enable = "always"; }; };
+          inlayHints = {lifetimeElisionHints = {enable = "always";};};
           rust-analyzer = {
-            cargo = { allFeatures = true; };
-            check = { command = "clippy"; };
+            cargo = {allFeatures = true;};
+            check = {command = "clippy";};
           };
         };
       };

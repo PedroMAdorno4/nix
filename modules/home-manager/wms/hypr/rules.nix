@@ -21,7 +21,7 @@
       "size 560 315,title:^(Picture-in-Picture)$"
       "move 100%-w-10 100%-w-10,title:^(Picture-in-Picture)$"
 
-      # Transmission-GTK 
+      # Transmission-GTK
       "float,title:^(Torrent Options)$"
       "workspace 5 silent, class:^(transmission-gtk)$, title:^(Transmission)$"
 

@@ -8,8 +8,8 @@
         height = 30;
         layer = "top";
         mod = "dock";
-        modules-center = [ "mpris" ];
-        modules-left = [ "hyprland/workspaces" ];
+        modules-center = ["mpris"];
+        modules-left = ["hyprland/workspaces"];
         modules-right = [
           "memory"
           "cpu"
@@ -22,7 +22,6 @@
           icon-size = 18;
           spacing = 10;
         };
-
 
         # Module definitions
         backlight = {
@@ -303,7 +302,7 @@
           color: #89b4fa;
           border-radius: 0px 6px 6px 0px;
           margin-right: 6px
-      } 
+      }
 
       #pulseaudio {
           color: #89b4fa;

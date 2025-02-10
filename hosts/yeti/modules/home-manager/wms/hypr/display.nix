@@ -1,8 +1,8 @@
-{ config, ... }: {
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
     #monitor=name,resolution,position,scale
 
-    monitor = [ "${config.home.sessionVariables.mainMonitor}" "${config.home.sessionVariables.secondaryMonitor}" ];
+    monitor = ["${config.home.sessionVariables.mainMonitor}" "${config.home.sessionVariables.secondaryMonitor}"];
 
     # Binding workspace to monitors
     workspace = [

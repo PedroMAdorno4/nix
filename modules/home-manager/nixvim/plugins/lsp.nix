@@ -1,6 +1,5 @@
 {
   programs.nixvim.plugins = {
-
     treesitter = {
       enable = true;
       nixvimInjections = true;
@@ -11,7 +10,7 @@
         ensure_installed = "all";
         highlight = {
           additional_vim_regex_highlighting = true;
-          custom_captures = { };
+          custom_captures = {};
           enable = true;
         };
 
@@ -74,7 +73,7 @@
         nixd = {
           enable = true;
           settings = {
-            formatting.command = [ "nixpkgs-fmt" ];
+            formatting.command = ["nixpkgs-fmt"];
           };
         };
         yamlls = {

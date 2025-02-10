@@ -1,4 +1,8 @@
-{ config, lib, ... }: {
+{
+  config,
+  lib,
+  ...
+}: {
   programs.wofi = {
     enable = true;
 
@@ -20,10 +24,9 @@
       gtk_dark = true;
     };
 
-    style =
-      let
-        colors = config.lib.stylix.colors.withHashtag;
-      in
+    style = let
+      colors = config.lib.stylix.colors.withHashtag;
+    in
       lib.mkForce ''
         window {
             font-family: "${config.stylix.fonts.monospace.name}";
@@ -111,5 +114,4 @@
         }
       '';
   };
-
 }

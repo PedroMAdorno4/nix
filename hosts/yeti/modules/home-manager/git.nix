@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "Pedro Adorno";
@@ -27,28 +27,26 @@
         format = "ssh";
       };
 
-      core =
-        let
-          gitignore = (pkgs.writeText "gitignore" ''
-            .direnv
-            .envrc
-            devbox.json
-            devbox.lock
-            .devbox
-            nohup.out
-            .idea
-            .vscode
-            __pycache__
-            node_modules
-            *.pyc
-            *.pyo
-            *.swp
-            Session.vim
-          '');
-        in
-        {
-          excludesFile = "${gitignore}";
-        };
+      core = let
+        gitignore = pkgs.writeText "gitignore" ''
+          .direnv
+          .envrc
+          devbox.json
+          devbox.lock
+          .devbox
+          nohup.out
+          .idea
+          .vscode
+          __pycache__
+          node_modules
+          *.pyc
+          *.pyo
+          *.swp
+          Session.vim
+        '';
+      in {
+        excludesFile = "${gitignore}";
+      };
     };
   };
 }

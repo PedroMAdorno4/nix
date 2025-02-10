@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -8,7 +8,7 @@
         height = 30;
         layer = "top";
         mod = "dock";
-        modules-center = [ "mpris" ];
+        modules-center = ["mpris"];
         modules-left = [
           "hyprland/workspaces"
           "memory"
@@ -28,7 +28,6 @@
           icon-size = 18;
           spacing = 10;
         };
-
 
         # Module definitions
         backlight = {
@@ -89,26 +88,26 @@
           disable-scroll = true;
           on-click = "activate";
           persistent-workspaces = {
-            "1" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "2" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "3" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "4" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "5" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "6" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "7" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "8" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "9" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "10" = [ "${config.home.sessionVariables.mainMonitorName}" ];
-            "11" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "12" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "13" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "14" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "15" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "16" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "17" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "18" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "19" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
-            "20" = [ "${config.home.sessionVariables.secondaryMonitorName}" ];
+            "1" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "2" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "3" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "4" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "5" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "6" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "7" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "8" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "9" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "10" = ["${config.home.sessionVariables.mainMonitorName}"];
+            "11" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "12" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "13" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "14" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "15" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "16" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "17" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "18" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "19" = ["${config.home.sessionVariables.secondaryMonitorName}"];
+            "20" = ["${config.home.sessionVariables.secondaryMonitorName}"];
           };
           sort-by-number = true;
         };
@@ -177,7 +176,6 @@
           format-critical = "{temperatureC}°C ";
           thermal-zone = 1;
         };
-
       };
     };
 
@@ -310,7 +308,7 @@
           color: #89b4fa;
           border-radius: 0px 6px 6px 0px;
           margin-right: 6px
-      } 
+      }
 
       #pulseaudio {
           color: #89b4fa;

@@ -3,19 +3,19 @@
     enable = true;
 
     modules = {
-      align = { };
+      align = {};
       # animate = { };
       basics = {
         # options.extra_ui = true;
       };
       # clue = { };
-      cursorword = { };
-      doc = { };
+      cursorword = {};
+      doc = {};
       # extra = { };
-      indentscope = { };
+      indentscope = {};
       # trailspace = { };
       # misc = { };
-      surround = { };
+      surround = {};
     };
   };
 }
