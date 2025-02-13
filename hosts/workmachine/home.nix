@@ -2,6 +2,8 @@
   home = {
     username = "pedroma";
     homeDirectory = "/home/pedroma";
+    musicPlayerMpris = "YoutubeMusic";
+    musicPlayerExecutable = "youtube-music";
 
     sessionVariables = {
       FLAKE = "/home/pedroma/nix";

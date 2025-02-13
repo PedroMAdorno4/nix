@@ -27,7 +27,6 @@
     swappy
     hyprpicker
     hyprlock
-    ncspot
     mpv
     zathura
     parted
@@ -72,6 +71,8 @@
     pyprland
     hyprpolkitagent
     uwsm
+    libreoffice-qt6
+    youtube-music
   ];
 
   fonts.packages = with pkgs;

@@ -31,7 +31,6 @@
     swappy
     hyprpicker
     hyprlock
-    ncspot
     mpv
     zathura
     mpvpaper

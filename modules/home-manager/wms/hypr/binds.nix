@@ -138,8 +138,8 @@
       ",233, exec, brightnessctl set 10%+ " # Screen brightness up FN+F8
       '', Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --early-exit --copy-command wl-copy -f -''
 
-      ",172, exec, playerctl -p ncspot play-pause " # Play-pause music
-      ",171, exec, playerctl -p ncspot next " # Next music
+      ",172, exec, playerctl -p ${config.home.musicPlayerMpris} play-pause " # Play-pause music
+      ",171, exec, playerctl -p ${config.home.musicPlayerMpris} next " # Next music
 
       # Move focus with mainMod + vim keys
       "$mainMod, H, movefocus, l"

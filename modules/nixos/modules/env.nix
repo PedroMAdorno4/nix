@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -10,7 +10,7 @@
     };
     variables = {
       EDITOR = "nvim";
-      QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_QPA_PLATFORMTHEME = lib.mkDefault "qt5ct";
     };
     pathsToLink = ["/share/zsh"];
   };
