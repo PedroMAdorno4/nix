@@ -80,6 +80,7 @@
     spice-gtk
     magic-wormhole
     input-leap
+    youtube-music
   ];
 
   unstablePackages = with unstable-pkgs; [

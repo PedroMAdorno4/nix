@@ -1,7 +1,9 @@
-{config, ...}: {
+{ config, ... }: {
   home = {
     username = "quatro";
     homeDirectory = "/home/quatro";
+    musicPlayerMpris = "YoutubeMusic";
+    musicPlayerExecutable = "youtube-music";
 
     sessionVariables = {
       FLAKE = "/home/quatro/nix";
