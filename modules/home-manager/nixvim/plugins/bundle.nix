@@ -1,10 +1,8 @@
 {
   imports = [
-    # ./chadtree.nix
     ./cmp.nix
     ./comment.nix
     ./conform.nix
-    # ./coq.nix
     ./extra-plugins.nix
     ./fidget.nix
     ./git-blame.nix
