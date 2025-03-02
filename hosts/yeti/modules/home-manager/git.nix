@@ -31,9 +31,8 @@
         gitignore = pkgs.writeText "gitignore" ''
           .direnv
           .envrc
-          devbox.json
-          devbox.lock
-          .devbox
+          devenv.nix
+          devenv.yaml
           nohup.out
           .idea
           .vscode

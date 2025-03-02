@@ -50,7 +50,7 @@
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
     trackma
     busybox
-    devbox
+    devenv
     vulkan-tools
     amdgpu_top
     ydotool
@@ -81,6 +81,7 @@
     magic-wormhole
     input-leap
     youtube-music
+    xdg-utils
   ];
 
   unstablePackages = with unstable-pkgs; [

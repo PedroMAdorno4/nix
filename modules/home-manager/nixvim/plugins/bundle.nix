@@ -5,6 +5,7 @@
     ./conform.nix
     ./extra-plugins.nix
     ./fidget.nix
+    ./flutter.nix
     ./git-blame.nix
     ./image.nix
     ./lazygit.nix
