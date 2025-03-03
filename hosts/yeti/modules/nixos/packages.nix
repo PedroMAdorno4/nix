@@ -1,7 +1,6 @@
 {
   pkgs,
   unstable-pkgs,
-  inputs,
   ...
 }: let
   stablePackages = with pkgs; [
@@ -82,6 +81,7 @@
     input-leap
     youtube-music
     xdg-utils
+    bambu-studio
   ];
 
   unstablePackages = with unstable-pkgs; [

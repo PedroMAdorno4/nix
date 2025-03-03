@@ -11,6 +11,7 @@
     ./lazygit.nix
     ./lsp.nix
     ./lspsaga.nix
+    ./luasnip.nix
     ./mini.nix
     ./neotree.nix
     ./nix.nix

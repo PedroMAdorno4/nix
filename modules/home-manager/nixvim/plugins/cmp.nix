@@ -6,7 +6,7 @@
       settings = {
         sources = [
           {name = "nvim_lsp";}
-          # { name = "supermaven"; }
+          {name = "luasnip";}
           {name = "path";}
           {name = "buffer";}
         ];

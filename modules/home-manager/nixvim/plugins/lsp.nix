@@ -69,7 +69,7 @@
         svelte.enable = true;
         tailwindcss.enable = true;
         ts_ls.enable = true;
-        dartls.enable = true;
+        # dartls.enable = true;
 
         nixd = {
           enable = true;

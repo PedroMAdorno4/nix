@@ -127,6 +127,7 @@
           ];
           json = ["jq"];
           rust = ["rustfmt"];
+          dart = ["dart_format"];
           "_" = ["trim_whitespace"];
         };
 

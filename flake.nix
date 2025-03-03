@@ -35,27 +35,32 @@
     home-manager = {
       # url = "github:nix-community/home-manager?ref=release-24.11";
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
       # url = "github:nix-community/nixvim?ref=nixos-24.11";
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
       # url = "github:danth/stylix?ref=release-24.11";
       url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # stylix.url = "git+file:/home/quatro/pjx/stylix";
 
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur.url = "github:nix-community/nur";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lan-mouse.url = "github:feschber/lan-mouse";

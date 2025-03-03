@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       closing_tags = {
-        enabled = false;
+        enabled = true;
         highlight = "ErrorMsg";
         prefix = ">";
         priority = 10;
@@ -21,6 +21,14 @@
       lsp = {
         color = {
           enabled = true;
+        };
+
+        settings = {
+          showTodos = true;
+          completeFunctionCalls = true;
+          renameFilesWithClasses = "prompt";
+          enableSnippets = true;
+          updateImportsOnRename = true;
         };
       };
       widget_guides = {

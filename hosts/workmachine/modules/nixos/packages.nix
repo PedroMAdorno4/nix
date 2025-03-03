@@ -73,6 +73,7 @@
     uwsm
     libreoffice-qt6
     youtube-music
+    xdg-utils
   ];
 
   fonts.packages = with pkgs;
