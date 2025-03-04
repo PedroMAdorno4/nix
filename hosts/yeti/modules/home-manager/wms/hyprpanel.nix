@@ -26,6 +26,7 @@
       bar = {
         launcher.autoDetectIcon = true;
         workspaces.show_icons = false;
+        workspaces.ignored = "-\\\\d+";
         clock.format = "%a %d/%m  %H:%M:%S";
       };
       scalingPriority = "hyprland";
