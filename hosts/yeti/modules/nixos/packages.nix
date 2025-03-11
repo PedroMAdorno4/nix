@@ -5,6 +5,8 @@
 }: let
   stablePackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
+    (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
+    (callPackage ../../../../modules/packages/zen.nix {inherit pkgs;})
     brave
     yazi
     gcc
@@ -46,7 +48,6 @@
     killall
     neofetch
     transmission_4-gtk
-    (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
     trackma
     busybox
     devenv

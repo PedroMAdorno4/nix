@@ -34,6 +34,7 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+  virtualisation.waydroid.enable = true;
 
   system.stateVersion = "24.11";
 }

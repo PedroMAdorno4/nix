@@ -2,7 +2,7 @@
   programs.nixvim.plugins.markdown-preview = {
     enable = true;
     settings = {
-      browser = "firefox";
+      browser = "zen";
       port = "8099";
       page_title = "「\${name}」";
       preview_options = {
