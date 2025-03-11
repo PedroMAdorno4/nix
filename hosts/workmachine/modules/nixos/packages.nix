@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit pkgs;})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
-    (callPackage ../../../../modules/packages/tmux-sessionizer.nix {inherit pkgs;})
+    (callPackage ../../../../modules/packages/zen.nix {inherit pkgs;})
     brave
     yazi
     gcc
