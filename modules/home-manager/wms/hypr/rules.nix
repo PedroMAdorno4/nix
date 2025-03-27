@@ -1,10 +1,5 @@
 {
   wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      #FCITx
-      "pseudo, fcitx"
-    ];
-
     windowrulev2 = [
       # Brave
       "float,title:^(Picture in picture)$"

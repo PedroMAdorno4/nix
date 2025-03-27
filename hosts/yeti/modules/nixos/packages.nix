@@ -1,12 +1,13 @@
 {
   pkgs,
+  inputs,
   unstable-pkgs,
   ...
 }: let
   stablePackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
-    (callPackage ../../../../modules/packages/zen.nix {inherit pkgs;})
+    inputs.zen-browser.packages."${system}".default
     brave
     yazi
     gcc
