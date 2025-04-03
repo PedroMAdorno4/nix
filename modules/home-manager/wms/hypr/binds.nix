@@ -122,12 +122,8 @@
       "$mainMod, Up, exec, busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +1000 "
       "$mainMod, Down, exec, busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
 
-      # Pyprland
-      "$mainMod, Y, exec, pypr expose"
-      "$mainMod, dead_acute, exec, pypr toggle term"
-      "$mainMod, Plus, exec, pypr zoom ++0.01"
-      "$mainMod, Minus, exec, pypr zoom --0.01"
-      "$mainMod, dead_grave, exec, pypr menu"
+      # Scratchpad
+      "$mainMod, dead_acute, togglespecialworkspace, term"
 
       ",121, exec, pamixer -t" # Speaker Mute FN+F1
       ",122, exec, pamixer -d 5 --allow-boost" # Volume lower key

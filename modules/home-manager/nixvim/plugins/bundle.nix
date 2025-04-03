@@ -7,7 +7,7 @@
     ./fidget.nix
     ./flutter.nix
     ./git-blame.nix
-    ./image.nix
+    # ./image.nix
     ./lazygit.nix
     ./lsp.nix
     ./lspsaga.nix

@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
+    windowrule = [
       # Brave
       "float,title:^(Picture in picture)$"
       "pin,title:^(Picture in picture)$"
@@ -40,6 +40,12 @@
       "float,title:^(satty)$"
       "size 75% 75%,title:^(satty)$"
       "center 1,title:^(satty)$"
+
+      # Kitty scratchpad
+      "float,class:^(special.*)$"
+      "size 50% 75%,title:^(special.*)$"
+      "center 1,title:^(special.*)$"
+      "animation popin,title:^(special.*)$"
     ];
   };
 }
