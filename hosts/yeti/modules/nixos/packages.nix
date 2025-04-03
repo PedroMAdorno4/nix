@@ -70,7 +70,6 @@
     cargo
     popsicle
     timg
-    pyprland
     toybox
     mangohud
     hyprpolkitagent

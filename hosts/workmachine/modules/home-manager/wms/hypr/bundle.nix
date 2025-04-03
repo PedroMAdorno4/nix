@@ -9,7 +9,6 @@
     ../../../../../../modules/home-manager/wms/hypr/rules.nix
     ./settings.nix
     ./display.nix
-    ./pyprland.nix
     ./startup.nix
   ];
 

@@ -67,7 +67,6 @@
     woeusb
     transmission_4-gtk
     wf-recorder
-    pyprland
     hyprpolkitagent
     uwsm
     libreoffice-qt6
