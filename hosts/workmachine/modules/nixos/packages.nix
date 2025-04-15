@@ -41,8 +41,8 @@
     neofetch
     gotop
     busybox
-    devbox
     slack
+    devenv
     openvpn
     beekeeper-studio
     nix-index

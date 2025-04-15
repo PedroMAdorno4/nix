@@ -69,7 +69,12 @@
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
     nixpkgsConfig = {
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs.config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "beekeeper-studio-5.1.5"
+        ];
+      };
       nixpkgs.overlays = [
         inputs.nur.overlays.default
         inputs.hyprpanel.overlay

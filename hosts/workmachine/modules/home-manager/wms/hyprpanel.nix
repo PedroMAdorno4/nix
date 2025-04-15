@@ -5,19 +5,27 @@
     enable = true;
     config.enable = true;
     overwrite.enable = true;
-    theme = "one_dark";
-
-    layout = {
-      "bar.layouts" = {
-        "0" = {
-          left = ["workspaces" "ram" "cpu"];
-          middle = ["media"];
-          right = ["battery" "network" "volume" "clock" "systray" "notifications"];
-        };
-      };
-    };
 
     settings = {
+      theme = {
+        name = "one_dark";
+        bar.transparent = true;
+        font.size = "12px";
+        bar.floating = false;
+        bar.outer_spacing = "4px";
+        bar.layer = "bottom";
+      };
+
+      layout = {
+        "bar.layouts" = {
+          "0" = {
+            left = ["workspaces" "ram" "cpu"];
+            middle = ["media"];
+            right = ["battery" "network" "volume" "clock" "systray" "notifications"];
+          };
+        };
+      };
+
       bar = {
         launcher.autoDetectIcon = true;
         workspaces.show_icons = false;
@@ -48,11 +56,6 @@
 
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = false;
-      theme.bar.transparent = true;
-      theme.font.size = "12px";
-      theme.bar.floating = false;
-      theme.bar.outer_spacing = "4px";
-      theme.bar.layer = "bottom";
     };
   };
 }

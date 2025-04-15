@@ -30,7 +30,10 @@
       core = let
         gitignore = pkgs.writeText "gitignore" ''
           .direnv
+          .devenv
           .envrc
+          devenv.nix
+          devenv.yaml
           devbox.json
           devbox.lock
           .devbox
