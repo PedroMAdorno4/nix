@@ -6,7 +6,7 @@
       "hyprpanel"
       "fcitx5 -d -r"
       "fcitx5-remote -r"
-      "[workspace 1 silent] zen"
+      "[workspace 1 silent] firefox"
       "[workspace 10 silent] ${config.home.musicPlayerExecutable}"
       "[workspace 9 silent] sleep 10; slack"
     ];

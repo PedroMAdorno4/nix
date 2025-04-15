@@ -5,7 +5,13 @@
     image = ../../../wallpaper.webp;
     polarity = "dark";
 
-    targets.nixvim.enable = false;
+    targets = {
+      nixvim.enable = false;
+      # firefox = {
+      #   enable = true;
+      #   profileNames = ["quatro"];
+      # };
+    };
 
     cursor = {
       package = pkgs.bibata-cursors;

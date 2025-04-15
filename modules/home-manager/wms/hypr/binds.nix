@@ -123,7 +123,7 @@
       "$mainMod, Down, exec, busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -1000"
 
       # Scratchpad
-      "$mainMod, dead_acute, togglespecialworkspace, term"
+      # "$mainMod, dead_acute, togglespecialworkspace, term"
 
       ",121, exec, pamixer -t" # Speaker Mute FN+F1
       ",122, exec, pamixer -d 5 --allow-boost" # Volume lower key

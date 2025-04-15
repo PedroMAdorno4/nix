@@ -16,10 +16,10 @@
         id = 0;
         isDefault = true;
         search.engines = {
-          "Bing".metaData.hidden = true;
-          "Google".metaData.hidden = true;
-          "DuckDuckGo".metaData.hidden = true;
-          "Wikipedia (en)".metaData.hidden = true;
+          "bing".metaData.hidden = true;
+          "google".metaData.hidden = true;
+          "ddg".metaData.hidden = true;
+          "wikipedia".metaData.hidden = true;
 
           "Nix Packages" = {
             urls = [
@@ -81,7 +81,7 @@
 
           "Searchix" = {
             urls = [{template = "https://searchix.alanpearce.eu/all/search?query={searchTerms}";}];
-            iconUpdateURL = "https://wiki.nixos.org/favicon.png";
+            icon = "https://wiki.nixos.org/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = ["!ns"];
           };
