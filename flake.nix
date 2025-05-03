@@ -32,6 +32,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    hyprsplit = {
+      url = "github:shezdy/hyprsplit";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     home-manager = {
       # url = "github:nix-community/home-manager?ref=release-24.11";
       url = "github:nix-community/home-manager";

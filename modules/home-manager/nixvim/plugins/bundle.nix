@@ -19,6 +19,7 @@
     ./rustacean.nix
     ./markdown-preview.nix
     ./mini.nix
+    ./openscad.nix
     ./telescope.nix
     ./transparent.nix
     ./ts-autotag.nix

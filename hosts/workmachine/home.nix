@@ -6,7 +6,7 @@
     musicPlayerExecutable = "youtube-music";
 
     sessionVariables = {
-      FLAKE = "/home/pedroma/nix";
+      NH_FLAKE = "/home/pedroma/nix";
       mainMonitorName = "eDP-1";
       mainMonitorResolution = "1920x1080@59.99700";
       mainMonitorPosition = "1920x0";

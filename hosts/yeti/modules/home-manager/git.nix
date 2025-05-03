@@ -32,8 +32,8 @@
           .direnv
           .devenv
           .envrc
-          devenv.nix
-          devenv.yaml
+          .devenv*
+          devenv*
           devbox.json
           devbox.lock
           .devbox

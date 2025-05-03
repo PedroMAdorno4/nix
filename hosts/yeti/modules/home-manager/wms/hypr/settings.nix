@@ -36,6 +36,7 @@
       animate_manual_resizes = true;
       middle_click_paste = false;
       focus_on_activate = true;
+      anr_missed_pings = 10;
     };
 
     decoration = {

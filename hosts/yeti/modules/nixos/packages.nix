@@ -79,10 +79,13 @@
     spice
     spice-gtk
     magic-wormhole
-    input-leap
     youtube-music
     xdg-utils
     bambu-studio
+    orca-slicer
+    openscad-unstable
+    freecad-wayland
+    unrar
   ];
 
   unstablePackages = with unstable-pkgs; [

@@ -75,6 +75,10 @@
         ts_ls.enable = true;
         # dartls.enable = true;
 
+        openscad_lsp = {
+          enable = true;
+          autostart = true;
+        };
         nixd = {
           enable = true;
           settings = {

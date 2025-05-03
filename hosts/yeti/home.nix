@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   home = {
     username = "quatro";
     homeDirectory = "/home/quatro";
@@ -6,7 +6,7 @@
     musicPlayerExecutable = "youtube-music";
 
     sessionVariables = {
-      FLAKE = "/home/quatro/nix";
+      NH_FLAKE = "/home/quatro/nix";
       mainMonitorName = "DP-3";
       mainMonitorResolution = "1920x1080@143.98100";
       mainMonitorPosition = "0x0";

@@ -11,6 +11,7 @@
     ../../../../modules/home-manager/lazygit.nix
     ../../../../modules/home-manager/mpv.nix
     ../../../../modules/home-manager/ncspot.nix
+    ../../../../modules/home-manager/qt.nix
     ../../../../modules/home-manager/theme.nix
     ../../../../modules/home-manager/wofi.nix
     ../../../../modules/home-manager/xdg.nix

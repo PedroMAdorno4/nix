@@ -24,7 +24,7 @@
       ll = "ls -lh";
     };
 
-    initExtra = let
+    initContent = let
       projectFinder = pkgs.writeShellScriptBin "projectFinder" ''
         if [[ $# -eq 1 ]]; then
             selected=$1
