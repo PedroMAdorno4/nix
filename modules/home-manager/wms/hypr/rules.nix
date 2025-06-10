@@ -26,7 +26,7 @@
       "size 475 770, class:^(Waydroid)$, title:^(Waydroid)$"
 
       # Steam
-      "float,class:^(Steam)$,title:^(Friends List)$"
+      "float,class:^(steam)$,title:^(Friends List)$"
 
       # Godot
       "size 950 760,class:^(Godot)$,title:^(Create New Node)$"

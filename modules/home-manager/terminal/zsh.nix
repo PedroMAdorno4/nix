@@ -11,15 +11,15 @@
     defaultKeymap = "emacs";
 
     shellAliases = {
-      rb = ''git -C "$FLAKE" add -A && nh os switch -- --accept-flake-config'';
-      upg = ''git -C "$FLAKE" add -A && nh os switch -u -- --accept-flake-config'';
+      rb = ''git -C "$NH_FLAKE" add -A && nh os switch -- --accept-flake-config'';
+      upg = ''git -C "$NH_FLAKE" add -A && nh os switch -u -- --accept-flake-config'';
 
-      dev = ''nix develop "$FLAKE" --command zsh'';
+      dev = ''nix develop "$NH_FLAKE" --command zsh'';
       s = "kitten ssh";
       v = "nvim";
 
-      conf = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
-      pkgs = "nvim $FLAKE/hosts/${osConfig.networking.hostName}/modules/nixos/packages.nix";
+      conf = "nvim $NH_FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
+      pkgs = "nvim $NH_FLAKE/hosts/${osConfig.networking.hostName}/modules/nixos/packages.nix";
 
       ll = "ls -lh";
     };

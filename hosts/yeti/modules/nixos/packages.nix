@@ -7,7 +7,7 @@
   stablePackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
-    inputs.zen-browser.packages."${system}".default
+    # inputs.zen-browser.packages."${system}".default
     brave
     yazi
     gcc
@@ -83,9 +83,11 @@
     xdg-utils
     bambu-studio
     orca-slicer
-    openscad-unstable
     freecad-wayland
     unrar
+    hydralauncher
+    ergogen
+    obs-studio
   ];
 
   unstablePackages = with unstable-pkgs; [

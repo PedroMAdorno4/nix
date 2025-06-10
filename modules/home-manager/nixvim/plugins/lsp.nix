@@ -83,6 +83,7 @@
           enable = true;
           settings = {
             formatting.command = ["nixpkgs-fmt"];
+            autoArchive = true;
           };
         };
         yamlls = {
