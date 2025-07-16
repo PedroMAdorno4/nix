@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit pkgs;})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
@@ -42,9 +46,9 @@
     gotop
     busybox
     slack
-    devenv
     openvpn
-    beekeeper-studio
+    devenv
+    dbeaver-bin
     nix-index
     bruno
     google-cloud-sdk

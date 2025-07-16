@@ -7,7 +7,6 @@
 
       settings = {
         auto_install = true;
-        ensure_installed = "all";
         highlight = {
           additional_vim_regex_highlighting = true;
           custom_captures = {};
@@ -79,6 +78,7 @@
           enable = true;
           autostart = true;
         };
+
         nixd = {
           enable = true;
           settings = {
@@ -86,6 +86,7 @@
             autoArchive = true;
           };
         };
+
         yamlls = {
           enable = true;
           extraOptions = {

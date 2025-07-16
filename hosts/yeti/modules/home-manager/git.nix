@@ -34,6 +34,8 @@
           .envrc
           .devenv*
           devenv*
+          devenv.*
+          devenv.lock
           devbox.json
           devbox.lock
           .devbox

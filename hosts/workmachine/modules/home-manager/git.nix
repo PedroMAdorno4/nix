@@ -35,6 +35,9 @@
           devenv.nix
           .devenv*
           devenv*
+          devenv.*
+          devenv.lock
+          devenv.yaml
           devbox.json
           devbox.lock
           .devbox
