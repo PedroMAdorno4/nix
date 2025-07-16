@@ -21,6 +21,7 @@
     ../../../../modules/nixos/modules/steam.nix
     ../../../../modules/nixos/modules/stylix.nix
     ../../../../modules/nixos/modules/sudo.nix
+    ../../../../modules/nixos/modules/virtManager.nix
     ../../../../modules/nixos/modules/xdg.nix
     ../../../../modules/nixos/modules/ydotool.nix
     ../../../../modules/nixos/modules/zsh.nix

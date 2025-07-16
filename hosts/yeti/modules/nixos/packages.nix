@@ -88,6 +88,10 @@
     hydralauncher
     ergogen
     obs-studio
+    inkscape
+    lutris
+    protonup-qt
+    devtoolbox
   ];
 
   unstablePackages = with unstable-pkgs; [

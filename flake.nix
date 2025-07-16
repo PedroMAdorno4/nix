@@ -56,11 +56,6 @@
     };
     # stylix.url = "git+file:/home/quatro/pjx/stylix";
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nur.url = "github:nix-community/nur";
 
     nix-index-database = {
@@ -82,7 +77,6 @@
       };
       nixpkgs.overlays = [
         inputs.nur.overlays.default
-        inputs.hyprpanel.overlay
         (final: prev: {
           bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix {
             baseColor = "#FFFFFF";

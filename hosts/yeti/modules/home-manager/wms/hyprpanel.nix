@@ -1,10 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
-
+{...}: {
   programs.hyprpanel = {
     enable = true;
-    config.enable = true;
-    overwrite.enable = true;
 
     settings = {
       theme = {
@@ -16,18 +12,16 @@
         bar.layer = "bottom";
       };
 
-      layout = {
-        "bar.layouts" = {
-          "0" = {
-            left = ["workspaces" "ram" "cpu"];
-            middle = ["media"];
-            right = ["network" "volume" "clock" "systray" "notifications"];
-          };
-          "1" = {
-            left = ["workspaces" "ram" "cpu"];
-            middle = ["media"];
-            right = ["network" "volume" "clock" "systray" "notifications"];
-          };
+      "bar.layouts" = {
+        "0" = {
+          left = ["workspaces" "ram" "cpu"];
+          middle = ["media"];
+          right = ["network" "volume" "clock" "systray" "notifications"];
+        };
+        "1" = {
+          left = ["workspaces" "ram" "cpu"];
+          middle = ["media"];
+          right = ["network" "volume" "clock" "systray" "notifications"];
         };
       };
 
@@ -61,7 +55,7 @@
       };
 
       menus.dashboard.directories.enabled = false;
-      menus.dashboard.stats.enable_gpu = false;
+      menus.dashboard.stats.enable_gpu = true;
     };
   };
 }

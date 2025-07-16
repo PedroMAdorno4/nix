@@ -1,10 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
-
+{
   programs.hyprpanel = {
     enable = true;
-    config.enable = true;
-    overwrite.enable = true;
 
     settings = {
       theme = {
