@@ -7,7 +7,7 @@
     };
 
     opts = {
-      updatetime = 100;
+      # updatetime = 100;
       relativenumber = true;
       number = true;
       splitbelow = true;
@@ -18,7 +18,7 @@
       ignorecase = true;
       smartcase = true;
       scrolloff = 12;
-      cursorline = true;
+      cursorline = false;
       signcolumn = "no";
       fileencoding = "utf-8";
       tabstop = 2;
@@ -27,6 +27,7 @@
       autoindent = true;
       mouse = "";
       completeopt = ["menu" "menuone" "noselect"];
+      winborder = "rounded";
     };
   };
 }

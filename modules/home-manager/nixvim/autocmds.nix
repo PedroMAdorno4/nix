@@ -2,23 +2,9 @@
   programs.nixvim = {
     autoGroups = {
       highlight_yank = {};
-      vim_enter = {};
-      indentscope = {};
       restore_cursor = {};
     };
     autoCmd = [
-      {
-        event = ["VimEnter"];
-        command = ":TransparentEnable";
-      }
-      {
-        event = ["VimEnter"];
-        command = "colorscheme tokyonight";
-      }
-      #      {
-      #        event = [ "BufAdd" ];
-      #        command = ":lua require('otter').activate()<CR>";
-      #      }
       {
         group = "highlight_yank";
         event = ["TextYankPost"];

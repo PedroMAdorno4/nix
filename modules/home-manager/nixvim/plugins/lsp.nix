@@ -1,15 +1,16 @@
+{ lib, ... }:
 {
   programs.nixvim.plugins = {
     treesitter = {
-      enable = true;
+      enable = false;
       nixvimInjections = true;
       folding = false;
 
       settings = {
-        auto_install = true;
+        auto_install = false;
         highlight = {
           additional_vim_regex_highlighting = true;
-          custom_captures = {};
+          custom_captures = { };
           enable = true;
           disable = ''
             function(lang, bufnr) -- Disable in large buffers
@@ -22,15 +23,6 @@
         };
       };
     };
-
-    # treesitter-refactor = {
-    #   enable = true;
-    #   highlightDefinitions = {
-    #     enable = true;
-    #     # Set to false if you have an `updatetime` of ~100.
-    #     clearOnCursorMove = false;
-    #   };
-    # };
 
     # lspkind = {
     #   enable = true;
@@ -52,6 +44,24 @@
     lsp = {
       enable = true;
 
+      keymaps = {
+        diagnostic = {
+          "<leader>j" = "goto_next";
+          "<leader>k" = "goto_prev";
+        };
+
+        lspBuf = {
+          K = "hover";
+          H = "signature_help";
+          lf = "format";
+          gD = "references";
+          gd = "definition";
+          gi = "implementation";
+          gt = "type_definition";
+
+        };
+      };
+
       servers = {
         bashls.enable = true;
         clangd.enable = true;
@@ -60,17 +70,20 @@
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         eslint.enable = true;
+        gitlab_ci_ls.enable = true;
         gopls.enable = true;
         html.enable = true;
         jsonls.enable = true;
         lua_ls.enable = true;
         marksman.enable = true;
         nil_ls.enable = true;
+        postgres_lsp.enable = true;
         prismals.enable = true;
         prismals.package = null;
-        pyright.enable = true;
+        pylyzer.enable = true;
         svelte.enable = true;
         tailwindcss.enable = true;
+        tinymist.enable = true;
         ts_ls.enable = true;
         # dartls.enable = true;
 
@@ -82,7 +95,7 @@
         nixd = {
           enable = true;
           settings = {
-            formatting.command = ["nixpkgs-fmt"];
+            formatting.command = [ "nixpkgs-fmt" ];
             autoArchive = true;
           };
         };
@@ -96,7 +109,8 @@
                   kubernetes = "'*.yaml";
                   "http://json.schemastore.org/github-workflow" = ".github/workflows/*";
                   "http://json.schemastore.org/github-action" = ".github/action.{yml,yaml}";
-                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" = "*docker-compose*.{yml,yaml}";
+                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" =
+                    "*docker-compose*.{yml,yaml}";
                 };
               };
             };

@@ -67,66 +67,69 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-    nixpkgsConfig = {
-      nixpkgs.config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [
-          "beekeeper-studio-5.1.5"
+  outputs =
+    { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      nixpkgsConfig = {
+        nixpkgs.config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "beekeeper-studio-5.1.5"
+          ];
+        };
+        nixpkgs.overlays = [
+          inputs.nur.overlays.default
+          (final: prev: {
+            bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix {
+              baseColor = "#FFFFFF";
+              outlineColor = "#000000";
+              watchBackgroundColor = "#FFFFFF";
+            };
+          })
         ];
       };
-      nixpkgs.overlays = [
-        inputs.nur.overlays.default
-        (final: prev: {
-          bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix {
-            baseColor = "#FFFFFF";
-            outlineColor = "#000000";
-            watchBackgroundColor = "#FFFFFF";
+      unstable-pkgs = import inputs.unstable-pkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      stable-pkgs = import inputs.stable-pkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      # yeti - system hostname
+      nixosConfigurations = {
+        yeti = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs unstable-pkgs stable-pkgs;
           };
-        })
-      ];
-    };
-    unstable-pkgs = import inputs.unstable-pkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    stable-pkgs = import inputs.stable-pkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    # yeti - system hostname
-    nixosConfigurations = {
-      yeti = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs unstable-pkgs stable-pkgs;
+          modules = [
+            ./hosts/yeti/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
+            nixpkgsConfig
+          ];
         };
-        modules = [
-          ./hosts/yeti/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
-          inputs.nix-index-database.nixosModules.nix-index
-          {programs.nix-index-database.comma.enable = true;}
-          nixpkgsConfig
-        ];
-      };
-      workmachine = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs unstable-pkgs stable-pkgs;
+        workmachine = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs unstable-pkgs stable-pkgs;
+          };
+
+          modules = [
+            ./hosts/workmachine/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
+            nixpkgsConfig
+          ];
         };
-
-        modules = [
-          ./hosts/workmachine/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
-          inputs.nix-index-database.nixosModules.nix-index
-          {programs.nix-index-database.comma.enable = true;}
-          nixpkgsConfig
-        ];
       };
-    };
 
-    # devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
-  };
+      # devShells.${system}.default = (import ./nixos/shell.nix { inherit pkgs; });
+    };
 }
