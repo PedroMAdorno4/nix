@@ -27,6 +27,7 @@
 
       # Steam
       "float,class:^(steam)$,title:^(Friends List)$"
+      "minsize 1 1,class:^(steam)$"
 
       # Godot
       "size 950 760,class:^(Godot)$,title:^(Create New Node)$"

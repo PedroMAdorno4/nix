@@ -2,9 +2,10 @@
   pkgs,
   inputs,
   unstable-pkgs,
+  stable-pkgs,
   ...
 }: let
-  stablePackages = with pkgs; [
+  packages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
     # inputs.zen-browser.packages."${system}".default
@@ -81,9 +82,6 @@
     magic-wormhole
     youtube-music
     xdg-utils
-    bambu-studio
-    orca-slicer
-    freecad-wayland
     unrar
     hydralauncher
     ergogen
@@ -92,16 +90,24 @@
     lutris
     protonup-qt
     devtoolbox
+    ffmpeg-full
+    tldr
+
+	# LSPs for nvim
+
   ];
 
   unstablePackages = with unstable-pkgs; [
     bottles
   ];
+  stablePackages = with stable-pkgs; [
+    freecad-wayland
+  ];
 
   customPackages = [
   ];
 in {
-  environment.systemPackages = stablePackages ++ unstablePackages ++ customPackages;
+  environment.systemPackages = packages ++ stablePackages ++ unstablePackages ++ customPackages;
 
   fonts.packages = with pkgs;
     [

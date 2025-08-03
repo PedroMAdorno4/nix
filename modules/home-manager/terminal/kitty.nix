@@ -20,19 +20,32 @@
 
       #Close the terminal without confirmation
       confirm_os_window_close = 0;
+
+      kitty_mod = "alt";
     };
 
     keybindings = {
-      "alt+k" = "scroll_line_up";
-      "alt+j" = "scroll_line_down";
-      "alt+u" = "scroll_page_up";
-      "alt+d" = "scroll_page_down";
-      "alt+shift+k" = "change_font_size all +1.0";
-      "alt+shift+j" = "change_font_size all -1.0";
-      "alt+shift+home" = "change_font_size all 0";
-      "alt+c" = "copy_to_clipboard";
-      "alt+v" = "paste_from_clipboard";
-      "ctrl+t" = "new_window_with_cwd";
+      # Scrolling
+      "kitty_mod+k" = "scroll_line_up";
+      "kitty_mod+j" = "scroll_line_down";
+      "kitty_mod+u" = "scroll_page_up";
+      "kitty_mod+d" = "scroll_page_down";
+
+      # Font
+      "kitty_mod+shift+k" = "change_font_size all +1.0";
+      "kitty_mod+shift+j" = "change_font_size all -1.0";
+      "kitty_mod+shift+home" = "change_font_size all 0";
+
+      # Clipboard
+      "kitty_mod+c" = "copy_to_clipboard";
+      "kitty_mod+v" = "paste_from_clipboard";
+
+      # Tabs
+      "kitty_mod+t" = "new_tab";
+      "kitty_mod+l" = "next_tab";
+      "kitty_mod+h" = "previous_tab";
+      "kitty_mod+shift+l" = "move_tab_forward";
+      "kitty_mod+shift+h" = "move_tab_backward";
     };
 
     shellIntegration = {

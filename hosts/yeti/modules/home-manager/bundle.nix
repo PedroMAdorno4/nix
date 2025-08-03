@@ -1,6 +1,7 @@
 {
   imports = [
-    ../../../../modules/home-manager/nixvim/nixvim.nix
+    # ../../../../modules/home-manager/nixvim/nixvim.nix
+    ../../../../modules/home-manager/nvim/nvim.nix
     ../../../../modules/home-manager/terminal/bundle.nix
     ../../../../modules/home-manager/btop.nix
     ../../../../modules/home-manager/custom-options.nix

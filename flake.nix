@@ -16,6 +16,7 @@
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     unstable-pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable-pkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # hyprland.url = "github:hyprwm/Hyprland/v0.45.2";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -63,7 +64,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -90,12 +91,16 @@
       inherit system;
       config.allowUnfree = true;
     };
+    stable-pkgs = import inputs.stable-pkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     # yeti - system hostname
     nixosConfigurations = {
       yeti = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs unstable-pkgs;
+          inherit inputs unstable-pkgs stable-pkgs;
         };
         modules = [
           ./hosts/yeti/configuration.nix
@@ -108,7 +113,7 @@
       };
       workmachine = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs unstable-pkgs;
+          inherit inputs unstable-pkgs stable-pkgs;
         };
 
         modules = [

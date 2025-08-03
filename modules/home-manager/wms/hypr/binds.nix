@@ -105,6 +105,7 @@
       # https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
       "$mainMod, RETURN, exec, kitty" #open the terminal
       "$mainMod, Q, killactive," # close the active window
+      "$mainMod SHIFT, Q, exec, hyprctl kill" # kills the active window
       "$mainMod, Semicolon, exec, hyprlock" # Lock the screen
       "$mainMod, BACKSPACE, exec, wlogout --protocol layer-shell" # show the logout window
       "$mainMod SHIFT, M, exit," # Exit Hyprland all together no (force quit Hyprland)
