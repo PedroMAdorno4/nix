@@ -20,8 +20,17 @@
 
       conf = "nvim $NH_FLAKE/hosts/${osConfig.networking.hostName}/configuration.nix";
       pkgs = "nvim $NH_FLAKE/hosts/${osConfig.networking.hostName}/modules/nixos/packages.nix";
+      dcl = "docker compose logs";
+      dclf = "docker compose logs -f";
+      dcd = "docker compose down";
+      dcu = "docker compose up";
+      dcb = "docker compose build";
+      dcud = "docker compose up -d";
+      dl = "docker compose logs";
+      dlf = "docker compose logs -f";
+      dcs = "docker compose ps";
 
-      ll = "ls -lh";
+      ll = "ls -lah";
     };
 
     initContent = let

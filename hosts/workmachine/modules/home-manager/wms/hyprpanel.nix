@@ -12,20 +12,18 @@
         bar.layer = "bottom";
       };
 
-      layout = {
-        "bar.layouts" = {
-          "0" = {
-            left = ["workspaces" "ram" "cpu"];
-            middle = ["media"];
-            right = ["battery" "network" "volume" "clock" "systray" "notifications"];
-          };
+      "bar.layouts" = {
+        "0" = {
+          left = ["workspaces" "ram" "cpu"];
+          middle = ["media"];
+          right = ["battery" "network" "volume" "clock" "systray" "notifications"];
         };
       };
 
       bar = {
         launcher.autoDetectIcon = true;
         workspaces.show_icons = false;
-        workspaces.ignored = "-\\\\d+";
+        workspaces.ignored = "-\\d+";
         clock.format = "%a %d/%m  %H:%M:%S";
       };
       scalingPriority = "hyprland";
