@@ -8,6 +8,7 @@
   packages = with pkgs; [
     (import ../../../../modules/nixos/scripts/terminal.nix {inherit "pkgs";})
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
+    hueforge
     # inputs.zen-browser.packages."${system}".default
     brave
     yazi

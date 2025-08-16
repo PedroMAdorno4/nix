@@ -86,6 +86,7 @@
               outlineColor = "#000000";
               watchBackgroundColor = "#FFFFFF";
             };
+            hueforge = final.callPackage ./modules/packages/hueforge.nix {};
           })
         ];
       };
