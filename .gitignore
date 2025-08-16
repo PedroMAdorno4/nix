@@ -4,4 +4,4 @@
 windows-10/
 result
 vms/
-modules/packages/binaries
+appimage-inputs.nix

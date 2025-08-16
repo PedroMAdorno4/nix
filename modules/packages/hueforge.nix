@@ -1,11 +1,16 @@
 {
   appimageTools,
   nix-update-script,
+  appImageSrc
 }:
 let
   pname = "HueForge";
   version = "v0.9.1.2-test";
-  src = ./binaries/${pname}_${version}.AppImage;
+  # src = builtins.path {
+  #   path = "/home/quatro/binaries/${pname}_${version}.AppImage";
+  #   name = "${pname}_${version}.AppImage";
+  # };
+  src = appImageSrc;
   appimageContents = appimageTools.extractType2 { inherit pname src version; };
 in
 appimageTools.wrapType2 {

@@ -71,11 +71,11 @@
     { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
+      hueForgeAppImagePath = ./modules/packages/binaries/HueForge_v0.9.1.2-test.AppImage;
       nixpkgsConfig = {
         nixpkgs.config = {
           allowUnfree = true;
           permittedInsecurePackages = [
-            "beekeeper-studio-5.1.5"
           ];
         };
         nixpkgs.overlays = [
@@ -86,7 +86,20 @@
               outlineColor = "#000000";
               watchBackgroundColor = "#FFFFFF";
             };
-            hueforge = final.callPackage ./modules/packages/hueforge.nix {};
+            hueforge =
+              if builtins.pathExists hueForgeAppImagePath then
+                prev.callPackage ./modules/packages/hueforge.nix {
+                  appImageSrc = builtins.path {
+                    path = hueForgeAppImagePath;
+                    name = "HueForge.AppImage";
+                  };
+                }
+              else
+                prev.writeShellScriptBin "HueForge" ''
+                  echo "HueForge AppImage not found at: ${hueForgeAppImagePath}"
+                  echo "Please download the AppImage and place it at the expected location."
+                  exit 1
+                '';
           })
         ];
       };
