@@ -5,18 +5,20 @@
     modules = {
       # align = {};
       # animate = { };
-      # basics = {
-        # options.extra_ui = true;
-      # };
+      basics = {
+        options.extra_ui = true;
+      };
+      # completion = {};
       # clue = { };
       # cursorword = {};
       # doc = {};
       # extra = { };
-      # indentscope = {};
+      indentscope = {};
       pick = { };
       # trailspace = { };
       # misc = { };
-      # surround = {};
+      surround = {};
+      icons = { };
     };
   };
 }

@@ -2,19 +2,19 @@
 {
   programs.nixvim.plugins = {
     treesitter = {
-      enable = false;
+      enable = true;
       nixvimInjections = true;
       folding = false;
 
       settings = {
-        auto_install = false;
+        auto_install = true;
         highlight = {
           additional_vim_regex_highlighting = true;
           custom_captures = { };
           enable = true;
           disable = ''
             function(lang, bufnr) -- Disable in large buffers
-              return vim.api.nvim_buf_line_count(bufnr) > 50000
+              return vim.api.nvim_buf_line_count(bufnr) > 10000
             end'';
         };
 
@@ -45,20 +45,22 @@
       enable = true;
 
       keymaps = {
-        diagnostic = {
-          "<leader>j" = "goto_next";
-          "<leader>k" = "goto_prev";
-        };
+        # diagnostic = {
+        #   "]d" = "goto_next";
+        #   "[d" = "goto_prev";
+        #   "<leader>ld" = "open_float";
+        # };
 
         lspBuf = {
-          K = "hover";
-          H = "signature_help";
-          lf = "format";
-          gD = "references";
-          gd = "definition";
-          gi = "implementation";
-          gt = "type_definition";
-
+          # K = "hover";
+          # H = "signature_help";
+          "<leader>lf" = "format";
+          # "<leader>lf" = ":lua require('conform').format({ async = true })<CR>";
+          # "<leader>la" = "code_action";
+          # "gr" = "references";
+          # "gd" = "definition";
+          # "gi" = "implementation";
+          # "gt" = "type_definition";
         };
       };
 
@@ -71,16 +73,31 @@
         dockerls.enable = true;
         eslint.enable = true;
         gitlab_ci_ls.enable = true;
-        gopls.enable = true;
+        gopls = {
+          enable = true;
+          settings = {
+            gopls = {
+              env = {
+                "CGO_ENABLED" = 1;
+                "LD_LIBRARY_PATH" = "~/pjx/tropico-lbs/internal/protocols/rppa/codec/";
+              };
+              completeUnimported = true;
+              staticcheck = true;
+              analyses = {
+                unusedparams = true;
+              };
+            };
+
+          };
+        };
         html.enable = true;
         jsonls.enable = true;
         lua_ls.enable = true;
         marksman.enable = true;
-        nil_ls.enable = true;
         postgres_lsp.enable = true;
         prismals.enable = true;
         prismals.package = null;
-        pylyzer.enable = true;
+        pylsp.enable = true;
         svelte.enable = true;
         tailwindcss.enable = true;
         tinymist.enable = true;

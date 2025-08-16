@@ -1,15 +1,15 @@
 {
   programs.nixvim = {
-    colorscheme = "tokyonight";
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
 
     opts = {
-      # updatetime = 100;
+      updatetime = 100;
       relativenumber = true;
       number = true;
+      wrap = false;
       splitbelow = true;
       splitright = true;
       undofile = true;
