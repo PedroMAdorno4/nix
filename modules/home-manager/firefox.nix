@@ -136,7 +136,7 @@
           augmented-steam
           bitwarden
           darkreader
-          enhancer-for-youtube
+          # enhancer-for-youtube
           mal-sync
           sponsorblock
           ublock-origin
