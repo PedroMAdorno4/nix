@@ -1,8 +1,9 @@
-{
+{ config, ... }: {
   imports = [
     ../../../../modules/home-manager/nixvim/nixvim.nix
     ../../../../modules/home-manager/terminal/bundle.nix
     ../../../../modules/home-manager/btop.nix
+    ../../../../modules/home-manager/brave.nix
     ../../../../modules/home-manager/custom-options.nix
     ../../../../modules/home-manager/dconf.nix
     ../../../../modules/home-manager/firefox.nix
@@ -21,4 +22,9 @@
     ./wms/hyprpanel.nix
     ./git.nix
   ];
+
+  config.stylix.targets.firefox = {
+    enable = true;
+    profileNames = [ "quatro" ];
+  };
 }

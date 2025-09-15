@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./plugins/bundle.nix
     ./autocmds.nix
     ./colorscheme.nix

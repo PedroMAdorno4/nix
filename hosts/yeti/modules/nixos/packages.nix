@@ -90,12 +90,14 @@
     inkscape
     lutris
     protonup-qt
-    devtoolbox
+    # devtoolbox
     ffmpeg-full
     tldr
-
-	# LSPs for nvim
-
+    mindustry-wayland
+    (vivaldi.override {
+      proprietaryCodecs = true;
+      enableWidevine = true;
+    })
   ];
 
   unstablePackages = with unstable-pkgs; [

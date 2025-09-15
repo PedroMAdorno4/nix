@@ -7,10 +7,6 @@
 
     targets = {
       nixvim.enable = false;
-      # firefox = {
-      #   enable = true;
-      #   profileNames = ["quatro"];
-      # };
     };
 
     cursor = {

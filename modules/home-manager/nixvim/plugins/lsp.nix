@@ -67,7 +67,7 @@
       servers = {
         bashls.enable = true;
         clangd.enable = true;
-        cmake.enable = true;
+        # cmake.enable = true;
         csharp_ls.enable = true;
         docker_compose_language_service.enable = true;
         dockerls.enable = true;

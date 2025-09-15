@@ -16,5 +16,6 @@
     ./openscad.nix
     ./rustacean.nix
     ./undotree.nix
+    ./web-devicons.nix
   ];
 }

@@ -6,6 +6,7 @@
       "pin,title:^(Picture in picture)$"
       "size 560 315,title:^(Picture in picture)$"
       "move 100%-w-10 100%-w-10,title:^(Picture in picture)$"
+
       # Opens brave windows on their workspaces. To set the title, Right-click title bar > Name window...
       "workspace 1 silent, class:^(brave-browser)$, title:^(Brave: Main)$"
       "workspace 11 silent, class:^(brave-browser)$, title:^(Brave: Secondary)$"
@@ -47,6 +48,9 @@
       "size 50% 75%,title:^(special.*)$"
       "center 1,title:^(special.*)$"
       "animation popin,title:^(special.*)$"
+
+      # YouTube Music
+      "opacity 0.9,class:(com.github.th_ch.youtube_music)"
     ];
   };
 }

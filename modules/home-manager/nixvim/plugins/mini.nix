@@ -18,7 +18,7 @@
       # trailspace = { };
       # misc = { };
       surround = {};
-      icons = { };
+      # icons = { };
     };
   };
 }
