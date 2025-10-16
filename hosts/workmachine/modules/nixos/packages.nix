@@ -76,6 +76,7 @@
     libreoffice-qt6
     youtube-music
     xdg-utils
+    vscode
   ];
 
   fonts.packages = with pkgs;
