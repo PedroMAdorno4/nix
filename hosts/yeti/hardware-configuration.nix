@@ -65,10 +65,5 @@ in {
       # package = pkgs-unstable.mesa.drivers;
       # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
     };
-
-    amdgpu.amdvlk = {
-      enable = true;
-      support32Bit.enable = true;
-    };
   };
 }

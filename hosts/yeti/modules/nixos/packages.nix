@@ -73,7 +73,7 @@
     popsicle
     timg
     toybox
-    mangohud
+    mangojuice
     hyprpolkitagent
     uwsm
     heroic

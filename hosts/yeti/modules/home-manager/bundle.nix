@@ -11,6 +11,7 @@
     ../../../../modules/home-manager/hyprlock.nix
     ../../../../modules/home-manager/keyboard.nix
     ../../../../modules/home-manager/lazygit.nix
+    ../../../../modules/home-manager/mangohud.nix
     ../../../../modules/home-manager/mpv.nix
     ../../../../modules/home-manager/ncspot.nix
     ../../../../modules/home-manager/qt.nix
