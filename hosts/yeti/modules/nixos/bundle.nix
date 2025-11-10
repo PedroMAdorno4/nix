@@ -6,6 +6,7 @@
     ../../../../modules/nixos/modules/console.nix
     # ../../../../modules/nixos/modules/docker.nix
     ../../../../modules/nixos/modules/env.nix
+    ../../../../modules/nixos/modules/earlyoom.nix
     ../../../../modules/nixos/modules/flatpak.nix
     ../../../../modules/nixos/modules/gamemode.nix
     ../../../../modules/nixos/modules/gpg.nix

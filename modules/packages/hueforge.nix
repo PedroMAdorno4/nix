@@ -20,9 +20,9 @@ appimageTools.wrapType2 {
     pkgs:
     let
       qtPkgs = with pkgs; [
-        qt6.qtbase
-        qt6.qtwayland
-        qt6.full
+        # qt6.qtbase
+        # qt6.qtwayland
+        # qt6.full
       ];
 
       systemPkgs = with pkgs; [
