@@ -63,6 +63,17 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri.url = "github:sodiboo/niri-flake";
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+    };
   };
 
   outputs =
@@ -78,6 +89,7 @@
         };
         nixpkgs.overlays = [
           inputs.nur.overlays.default
+          inputs.niri.overlays.niri
           (final: prev: {
             bibata-hyprcursor = final.callPackage ./modules/packages/bibata-hyprcursor/default.nix {
               baseColor = "#FFFFFF";
@@ -122,6 +134,7 @@
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.nix-index-database.nixosModules.nix-index
+            inputs.niri.nixosModules.niri
             { programs.nix-index-database.comma.enable = true; }
             nixpkgsConfig
           ];

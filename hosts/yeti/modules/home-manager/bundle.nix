@@ -21,6 +21,7 @@
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
     ./wms/hyprpanel.nix
+    ./wms/niri/bundle.nix
     ./git.nix
   ];
 

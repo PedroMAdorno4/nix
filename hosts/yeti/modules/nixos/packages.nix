@@ -10,6 +10,8 @@
     (callPackage ../../../../modules/packages/nix-node.nix {inherit pkgs;})
     hueforge
     # inputs.zen-browser.packages."${system}".default
+    inputs.noctalia.packages.${system}.default
+    inputs.quickshell.packages.${system}.default
     brave
     yazi
     gcc
@@ -99,6 +101,7 @@
       enableWidevine = true;
     })
     prismlauncher
+    xwayland-satellite
   ];
 
   unstablePackages = with unstable-pkgs; [
