@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, pkgs, ... }: {
   home = {
     username = "quatro";
     homeDirectory = "/home/quatro";
@@ -29,4 +29,24 @@
   ];
 
   programs.home-manager.enable = true;
+
+  xdg.configFile."openvr/openvrpaths.vrpath".text = ''
+    {
+      "config" :
+      [
+        "${config.xdg.dataHome}/Steam/config"
+      ],
+      "external_drivers" : null,
+      "jsonid" : "vrpathreg",
+      "log" :
+      [
+        "${config.xdg.dataHome}/Steam/logs"
+      ],
+      "runtime" :
+      [
+        "${pkgs.opencomposite}/lib/opencomposite"
+      ],
+      "version" : 1
+    }
+  '';
 }

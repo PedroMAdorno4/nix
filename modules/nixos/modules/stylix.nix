@@ -3,7 +3,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     # image = ../../../wallpaper.webp;
-    image = ../../../wallpaper2.jpg;
+    image = ../../../wallpapers/wallpaper2.jpg;
     polarity = "dark";
 
     targets = {

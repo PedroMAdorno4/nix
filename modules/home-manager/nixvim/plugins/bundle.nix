@@ -6,6 +6,7 @@
     ./extra-plugins.nix
     ./flutter.nix
     ./git-blame.nix
+    ./godot.nix
     ./lazygit.nix
     ./lsp.nix
     ./lspsaga.nix

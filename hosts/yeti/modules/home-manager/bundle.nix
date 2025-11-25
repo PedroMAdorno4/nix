@@ -17,7 +17,7 @@
     ../../../../modules/home-manager/qt.nix
     ../../../../modules/home-manager/theme.nix
     ../../../../modules/home-manager/wofi.nix
-    ../../../../modules/home-manager/xdg.nix
+    ../../../../modules/home-manager/mime.nix
     ../../../../modules/home-manager/zathura.nix
     ./wms/hypr/bundle.nix
     ./wms/hyprpanel.nix

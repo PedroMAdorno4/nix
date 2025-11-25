@@ -5,10 +5,12 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://hyprland.cachix.org"
+      "https://devenv.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
     ];
   };
 
@@ -72,7 +74,7 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
   };
 
@@ -98,12 +100,13 @@
             };
             hueforge =
               if builtins.pathExists hueForgeAppImagePath then
-                prev.callPackage ./modules/packages/hueforge.nix {
-                  appImageSrc = builtins.path {
-                    path = hueForgeAppImagePath;
-                    name = "HueForge.AppImage";
-                  };
-                }
+                prev.callPackage ./modules/packages/hueforge.nix
+                  {
+                    appImageSrc = builtins.path {
+                      path = hueForgeAppImagePath;
+                      name = "HueForge.AppImage";
+                    };
+                  }
               else
                 prev.writeShellScriptBin "HueForge" ''
                   echo "HueForge AppImage not found at: ${hueForgeAppImagePath}"

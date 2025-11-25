@@ -21,7 +21,6 @@
     lazygit
     lazydocker
     wl-clipboard
-    hyprland
     waybar
     home-manager
     pamixer
@@ -35,8 +34,6 @@
     slurp
     grim
     swappy
-    hyprpicker
-    hyprlock
     mpv
     zathura
     mpvpaper
@@ -56,6 +53,7 @@
     trackma
     busybox
     devenv
+    devbox
     vulkan-tools
     amdgpu_top
     ydotool
@@ -101,6 +99,7 @@
       enableWidevine = true;
     })
     prismlauncher
+    pwvucontrol
     xwayland-satellite
   ];
 

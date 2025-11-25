@@ -10,7 +10,7 @@
       setupCompleted = false;
       bar = {
         position = "top";
-        backgroundOpacity = 0.85;
+        backgroundOpacity = 0.0;
         monitors = [ ];
         density = "default";
         showCapsule = true;
@@ -31,6 +31,13 @@
           center = [
             {
               id = "MediaMini";
+              hideMode = "hidden";
+              maxWidth = 300;
+              scrollingMode = "always";
+              showAlbumArt = true;
+              showVisualizer = false;
+              useFixedWidth = false;
+              visualizerType = "mirrored";
             }
           ];
           right = [
@@ -39,9 +46,11 @@
             }
             {
               id = "Microphone";
+              displayMode = "alwaysShow";
             }
             {
               id = "Volume";
+              displayMode = "alwaysShow";
             }
             {
               id = "Clock";
@@ -106,21 +115,53 @@
       };
       wallpaper = {
         enabled = true;
-        overviewEnabled = false;
-        directory = "";
+        overviewEnabled = true;
+        directory = "/home/quatro/nix/wallpapers/";
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
         setWallpaperOnAllMonitors = true;
-        defaultWallpaper = "";
+        defaultWallpaper = "/home/quatro/nix/wallpapers/wallpaper2.jpg";
         fillMode = "crop";
         fillColor = "#000000";
-        randomEnabled = false;
+        randomEnabled = true;
         randomIntervalSec = 300;
         transitionDuration = 1500;
         transitionType = "random";
         transitionEdgeSmoothness = 0.05;
         monitors = [ ];
         panelPosition = "follow_bar";
+      };
+      sessionMenu = {
+        countdownDuration = 10000;
+        enableCountdown = false;
+        position = "center";
+        powerOptions = [
+          {
+            action = "lock";
+            enabled = true;
+          }
+          {
+            action = "logout";
+            enabled = true;
+          }
+          {
+            action = "suspend";
+            enabled = true;
+          }
+          {
+            action = "hibernate";
+            enabled = false;
+          }
+          {
+            action = "reboot";
+            enabled = true;
+          }
+          {
+            action = "shutdown";
+            enabled = true;
+          }
+        ];
+        showHeader = false;
       };
       appLauncher = {
         enableClipboardHistory = false;
@@ -134,37 +175,6 @@
         customLaunchPrefix = "";
       };
       controlCenter = {
-        position = "close_to_bar_button";
-        shortcuts = {
-          left = [
-            {
-              id = "WiFi";
-            }
-            {
-              id = "Bluetooth";
-            }
-            {
-              id = "ScreenRecorder";
-            }
-            {
-              id = "WallpaperSelector";
-            }
-          ];
-          right = [
-            {
-              id = "Notifications";
-            }
-            {
-              id = "PowerProfile";
-            }
-            {
-              id = "KeepAwake";
-            }
-            {
-              id = "NightLight";
-            }
-          ];
-        };
         cards = [
           {
             enabled = true;
@@ -187,6 +197,22 @@
             id = "media-sysmon-card";
           }
         ];
+        icon = "snowflake";
+        position = "close_to_bar_button";
+        shortcuts = {
+          left = [
+            { id = "WiFi"; }
+            { id = "Bluetooth"; }
+            { id = "ScreenRecorder"; }
+            { id = "WallpaperSelector"; }
+          ];
+          right = [
+            { id = "Notifications"; }
+            { id = "PowerProfile"; }
+            { id = "KeepAwake"; }
+            { id = "NightLight"; }
+          ];
+        };
       };
       dock = {
         enabled = false;
@@ -215,7 +241,7 @@
       };
       osd = {
         enabled = true;
-        location = "top_right";
+        location = "bottom_center";
         monitors = [ ];
         autoHideMs = 2000;
         overlayLayer = true;
@@ -226,8 +252,8 @@
         cavaFrameRate = 30;
         visualizerType = "linear";
         visualizerQuality = "high";
-        mprisBlacklist = [ ];
-        preferredPlayer = "";
+        mprisBlacklist = [ "firefox" ];
+        preferredPlayer = "YoutubeMusic";
       };
       brightness = {
         brightnessStep = 5;

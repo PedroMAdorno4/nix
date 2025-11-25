@@ -73,6 +73,18 @@
         dockerls.enable = true;
         eslint.enable = true;
         gitlab_ci_ls.enable = true;
+        gdscript = {
+          enable = true;
+          package = null;
+          settings = {
+            host = "127.0.0.1";
+            port = 6005;
+          };
+        };
+        gdshader_lsp = {
+          enable = true;
+          package = null;
+        };
         gopls = {
           enable = true;
           settings = {
