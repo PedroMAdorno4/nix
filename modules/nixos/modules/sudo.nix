@@ -40,6 +40,8 @@
       ]}:${lib.makeBinPath [
         nixos-rebuild
       ]}:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
+      Defaults        timestamp_timeout=60
+      Defaults timestamp_type=global
     '';
   };
 }

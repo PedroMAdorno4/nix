@@ -36,33 +36,6 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  services.greetd =
-    let
-      niri-config = pkgs.writeText "niri-config" ''
-        hotkey-overlay {
-            skip-at-startup
-        }
-        environment {
-            GTK_USE_PORTAL "0"
-            GDK_DEBUG "no-portals"
-        }
-
-        // other settings
-
-        spawn-at-startup "sh" "-c" "${pkgs.greetd.regreet}/bin/regreet; pkill -f niri"
-      '';
-    in
-    {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "niri -c ${niri-config}";
-          user = "greeter";
-        };
-      };
-    };
-  programs.regreet.enable = true;
-
   virtualisation.waydroid.enable = true;
   services.wivrn = {
     enable = true;

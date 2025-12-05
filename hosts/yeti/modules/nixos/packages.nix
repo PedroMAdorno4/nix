@@ -101,6 +101,10 @@
     prismlauncher
     pwvucontrol
     xwayland-satellite
+    koreader
+    hyprpicker
+    colloid-icon-theme
+    colloid-gtk-theme
   ];
 
   unstablePackages = with unstable-pkgs; [

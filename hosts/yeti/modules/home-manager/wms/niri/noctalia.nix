@@ -248,7 +248,7 @@
       };
       audio = {
         volumeStep = 5;
-        volumeOverdrive = false;
+        volumeOverdrive = true;
         cavaFrameRate = 30;
         visualizerType = "linear";
         visualizerQuality = "high";

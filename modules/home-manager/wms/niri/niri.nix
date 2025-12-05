@@ -224,7 +224,7 @@ in
         Mod+Return { spawn "kitty"; }
         Mod+D { spawn-sh "noctalia-shell ipc call launcher toggle"; }
         Mod+Backspace  { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
-        Mod+Semicolon  { spawn-sh "noctalia-shell ipc call sessionMenu lockAndSuspend"; }
+        // Mod+Semicolon  { spawn-sh "noctalia-shell ipc call sessionMenu lockAndSuspend"; }
 
         Super+Alt+L { spawn "swaylock"; }
 
@@ -245,7 +245,8 @@ in
         Mod+0 repeat=false { toggle-overview; }
         Mod+Q repeat=false { close-window; }
         Mod+Shift+Q repeat=false { spawn-sh "kill -9 $(niri msg -j pick-window | jq '.pid')"; }
-        Mod+E { spawn "kitty -e yazi"; }
+        Mod+E { spawn-sh "kitty -e yazi"; }
+        Mod+P { spawn "hyprpicker"; }
 
         Mod+Left  { focus-column-left; }
         Mod+Down  { focus-window-down; }

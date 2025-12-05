@@ -15,6 +15,7 @@
     ../../../../modules/nixos/modules/lact.nix
     ../../../../modules/nixos/modules/nh.nix
     ../../../../modules/nixos/modules/podman.nix
+    ../../../../modules/nixos/modules/polkit.nix
     ../../../../modules/nixos/modules/removableMedia.nix
     ../../../../modules/nixos/modules/samba.nix
     ../../../../modules/nixos/modules/settings.nix
@@ -28,5 +29,6 @@
     ../../../../modules/nixos/modules/zsh.nix
     ../../../../modules/nixos/modules/niri/niri.nix
     ./packages.nix
+    ./greet.nix
   ];
 }

@@ -13,14 +13,15 @@
     ../../../../modules/home-manager/lazygit.nix
     ../../../../modules/home-manager/mangohud.nix
     ../../../../modules/home-manager/mpv.nix
+    ../../../../modules/home-manager/polkit.nix
     ../../../../modules/home-manager/ncspot.nix
     ../../../../modules/home-manager/qt.nix
     ../../../../modules/home-manager/theme.nix
     ../../../../modules/home-manager/wofi.nix
     ../../../../modules/home-manager/mime.nix
     ../../../../modules/home-manager/zathura.nix
-    ./wms/hypr/bundle.nix
-    ./wms/hyprpanel.nix
+    # ./wms/hypr/bundle.nix
+    # ./wms/hyprpanel.nix
     ./wms/niri/bundle.nix
     ./git.nix
   ];

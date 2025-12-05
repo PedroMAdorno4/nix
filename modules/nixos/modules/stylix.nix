@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     # image = ../../../wallpaper.webp;
     image = ../../../wallpapers/wallpaper2.jpg;
@@ -14,6 +15,12 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
       size = 20;
+    };
+
+    icons = {
+      enable = true;
+      dark = "Colloid-Dark";
+      light = "Colloid-Light";
     };
 
     fonts = {
