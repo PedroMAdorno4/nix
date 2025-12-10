@@ -80,24 +80,18 @@
     quickemu
     spice
     spice-gtk
-    magic-wormhole
+    magic-wormhole-rs
     youtube-music
     xdg-utils
     unrar
     hydralauncher
     ergogen
-    obs-studio
     inkscape
     lutris
     protonup-qt
     # devtoolbox
     ffmpeg-full
     tldr
-    mindustry-wayland
-    (vivaldi.override {
-      proprietaryCodecs = true;
-      enableWidevine = true;
-    })
     prismlauncher
     pwvucontrol
     xwayland-satellite
@@ -105,6 +99,10 @@
     hyprpicker
     colloid-icon-theme
     colloid-gtk-theme
+    code-cursor-fhs
+    bruno
+    peaclock
+    obs-studio
   ];
 
   unstablePackages = with unstable-pkgs; [

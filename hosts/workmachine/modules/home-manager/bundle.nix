@@ -15,8 +15,9 @@
     ../../../../modules/home-manager/wofi.nix
     ../../../../modules/home-manager/mime.nix
     ../../../../modules/home-manager/zathura.nix
-    ./wms/hypr/bundle.nix
-    ./wms/hyprpanel.nix
+    # ./wms/hypr/bundle.nix
+    # ./wms/hyprpanel.nix
+    ./wms/niri/bundle.nix
     ./bluetooth.nix
     ./git.nix
   ];

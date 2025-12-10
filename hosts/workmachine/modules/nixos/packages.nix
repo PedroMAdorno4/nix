@@ -76,7 +76,15 @@
     libreoffice-qt6
     youtube-music
     xdg-utils
-    vscode
+    code-cursor-fhs
+    magic-wormhole-rs
+    pwvucontrol
+    xwayland-satellite
+    hyprpicker
+    colloid-icon-theme
+    colloid-gtk-theme
+    peaclock
+    obs-studio
   ];
 
   fonts.packages = with pkgs;

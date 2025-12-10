@@ -23,6 +23,8 @@
     ../../../../modules/nixos/modules/upower.nix
     ../../../../modules/nixos/modules/xdg.nix
     ../../../../modules/nixos/modules/zsh.nix
+    ../../../../modules/nixos/modules/niri/niri.nix
     ./packages.nix
+    ./greet.nix
   ];
 }
