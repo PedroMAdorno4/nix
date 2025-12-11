@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, config, ... }: {
 
   imports = [
     inputs.noctalia.homeModules.default
@@ -123,7 +123,7 @@
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
         setWallpaperOnAllMonitors = true;
-        defaultWallpaper = "/home/quatro/nix/wallpapers/wallpaper2.jpg";
+        defaultWallpaper = "${config.home.homeDirectory}/nix/wallpapers/wallpaper2.jpg";
         fillMode = "crop";
         fillColor = "#000000";
         randomEnabled = true;

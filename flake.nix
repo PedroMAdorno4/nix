@@ -151,6 +151,7 @@
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.nix-index-database.nixosModules.nix-index
+            inputs.niri.nixosModules.niri
             { programs.nix-index-database.comma.enable = true; }
             nixpkgsConfig
           ];

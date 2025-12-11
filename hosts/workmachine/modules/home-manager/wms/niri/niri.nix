@@ -46,8 +46,9 @@ in
 
         keyboard {
             xkb {
-                layout "us"
-                variant "intl"
+                layout "br"
+                variant "abnt2"
+                options "ctrl:nocaps"
             }
             repeat-delay 200
             repeat-rate 35
@@ -55,8 +56,8 @@ in
         }
 
         touchpad {
-            // tap
-            // natural-scroll
+            tap
+            natural-scroll
             // accel-speed 0.2
             // accel-profile "flat"
             // scroll-method "two-finger"
@@ -64,7 +65,7 @@ in
         }
 
         mouse {
-            accel-speed -1
+            accel-speed 0
         }
 
         trackpoint {
@@ -89,6 +90,13 @@ in
         hot-corners {
             off
         }
+    }
+
+    output "eDP-1" {
+        mode "1366x768@60.059"
+        scale 0.9
+        transform "normal"
+        position x=0 y=0
     }
 
     layout {
